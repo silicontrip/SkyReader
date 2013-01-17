@@ -5,8 +5,8 @@ LDFLAGS=-L/opt/local/lib -lusb-1.0
 OBJ= checksum.o fileio.o md5.o  rijndael.o crypt.o skylander.o \
 	 portalio_libusb.o main.o
 
-main: $(OBJ)
-	g++ $(LDFLAGS) -o main $(OBJ)	
+editor: $(OBJ)
+	g++ $(LDFLAGS) -o editor $(OBJ)	
 
 usbtest: usbtest.o
 	gcc $(LDFLAGS) -o usbtest $<
