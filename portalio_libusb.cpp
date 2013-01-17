@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
+#include <unistd.h>
+
 
 #include <libusb.h>
 #include <string.h>
@@ -11,6 +13,8 @@
 
 libusb_context *g_ctx = NULL;
 libusb_device_handle *g_hPortalHandle = NULL;
+
+#define OVERLAP_SIZE 8192
 
 bool OpenPortalHandle(libusb_device_handle **phPortalHandle)
 {
@@ -65,6 +69,148 @@ bool Write(libusb_device_handle *hPortalHandle, RWBlock *pb) {
 	pb->buf[0] = 0; // Use report 0
 //	return HidD_SetOutputReport(hPortalHandle, pb->buf, 0x21);
 }
+
+bool ReadBlock(libusb_device_handle *hPortalHandle, unsigned int block, unsigned char data[0x10],
+			   bool isNEWskylander) {
+	RWBlock req, res;
+	bool running = true;
+	bool gotData;
+	unsigned char ovlr[OVERLAP_SIZE];
+	unsigned short err;
+	unsigned char followup;
+	
+	if(block >= 0x40) {
+		return false;
+	}
+	
+	printf(".");
+	
+	for(int retries = 0; retries < 3; retries++)
+	{
+		// Send query request
+		memset(req.buf, 0, rw_buf_size);
+		req.buf[1] = 'Q';
+		if(isNEWskylander) {
+			followup = 0x11;
+			if(block == 0) {
+				req.buf[2] = 0x21;
+			} else {
+				req.buf[2] = followup;
+			}
+		} else {
+			followup = 0x10;
+			if(block == 0) {
+				req.buf[2] = 0x20;
+			} else {
+				req.buf[2] = followup;
+			}
+		}
+		
+		req.buf[3] = (unsigned char)block;
+		
+		memset(&(res.buf), 0, rw_buf_size);
+		
+		
+		// Must set the Offset and OffsetHigh members of the OVERLAPPED structure to zero.
+	//	memset(&ovlr, 0, sizeof(ovlr));
+		
+	//	ovlr.hEvent = CreateEvent(NULL, TRUE, FALSE, NULL); // read event
+		
+		int i=0;
+		gotData = false;
+		
+		
+		Write(hPortalHandle, &req);
+		// Don't wait.  Start polling for result immediately
+		
+		for(; i<40; ++i) // try up to 40 reads
+		{ 
+			bool b;
+		//	bool b = ReadFile(hPortalHandle, res.buf, rw_buf_size, &(res.dwBytesTransferred), &ovlr);
+			if(!b)
+			{ 
+				/* failed to get data immediately*/
+				 // err = GetLastError();
+				if(err == 0)
+				{ 
+					/* wait for data */
+				//	b = GetOverlappedResult(hPortalHandle, &ovlr, &res.dwBytesTransferred, TRUE);
+					if(!b)
+					{ 
+						/* wait failed */
+						break;
+					} 
+				} 
+				else
+				{ 
+					/* some other error */
+					break;
+				} 
+			} 
+			if(res.dwBytesTransferred > 0)
+			{ 
+				/* has data */
+				if(res.buf[1] == 'Q' && res.buf[3] == (unsigned char)block) {
+					// Got our query back
+					if(res.buf[2] == followup) {
+						/* got the query back with no error */
+						gotData = true;
+						break;
+					}
+				}
+				
+				res.buf[0] = 0; // make sure we are using report 0
+			} 
+		} /* read loop */
+		
+		// CloseHandle(ovlr.hEvent);
+		
+		if(gotData) {
+			break;
+		}
+		
+	} // retries
+	
+	if(gotData) {
+		memcpy(data, res.buf + 4, 0x10);
+	}
+	
+	return gotData;
+}
+
+bool WriteBlock(libusb_device_handle *hPortalHandle, unsigned int block, unsigned char data[0x10],
+				bool isNEWskylander) {
+	RWBlock req;
+	unsigned char verify[0x10];
+	bool OK;
+	
+	printf(".");
+	
+	for(int retries=0; retries < 3; retries++) 
+	{
+		// Write request
+		// W	57 10 <block number> <0x10 bytes of data>
+		memset(req.buf, 0, rw_buf_size);
+		req.buf[1] = 'W';
+		req.buf[2] = 0x10;
+		req.buf[3] = (unsigned char) block;
+		memcpy(req.buf+4, data, 0x10);
+		
+		Write(hPortalHandle, &req);
+		usleep(100000); // wait for write to take effect.
+		
+		memset(verify, 0xCD, sizeof(verify));
+		
+		OK = ReadBlock(hPortalHandle, block, verify, isNEWskylander); 
+		OK = OK && (memcmp(data, verify, sizeof(verify)) == 0);
+		if(OK) break;
+	}
+	
+	return OK;
+}
+
+
+
 // Start portal
 void RestartPortal(libusb_device_handle *hPortalHandle)
 {
@@ -136,3 +282,105 @@ void ConnectToPortal(void) {
 		atexit(DisconnectPortal);
 	}
 }
+
+unsigned char *ReadSkylanderFromPortal(void) {
+	bool bResult;
+	bool bNewSkylander = false;
+	unsigned char data[0x10]; 
+	unsigned char *buffer;
+	unsigned char *ptr;
+	
+	ConnectToPortal();
+	
+	printf("Reading Skylander from portal.\n");
+	
+	// must start with a read of block zero
+	bResult = ReadBlock(g_hPortalHandle, 0, data, bNewSkylander); 
+	
+	if(!bResult) {
+		bNewSkylander = !bNewSkylander;
+		bResult = ReadBlock(g_hPortalHandle, 0, data, bNewSkylander); 
+	}
+	
+	if(!bResult) {
+		fprintf(stderr, "\nCould not read Skylander on portal.  Please disconnect/reconnect device.\n");
+		return NULL;
+	}
+	
+	// I don't know that we need this, but the web driver sets the color when reading the data
+	SetPortalColor(g_hPortalHandle, 0xC8, 0xC8, 0xC8);
+	
+	buffer = (unsigned char *)malloc(1024);
+	if(!buffer) {
+		fprintf(stderr, "\nCould not allocate memory to read Skylander data.\n");
+		return NULL;
+	}
+	
+	ptr = buffer;
+	memcpy(ptr, data, sizeof(data));
+	
+	for(int block=1; block < 0x40; ++block) {
+		ptr += 0x10;
+		bResult = ReadBlock(g_hPortalHandle, block, data, bNewSkylander); 
+		memcpy(ptr, data, sizeof(data));
+	}
+	
+	printf("\nSkylander read from portal.\n");
+	return buffer;
+}
+
+bool WriteSkylanderToPortal(unsigned char *encrypted_new_data, unsigned char *encrypted_old_data)
+{
+	bool bResult;
+	bool bNewSkylander = false;
+	unsigned char data[0x10]; 
+	
+	ConnectToPortal();
+	
+	// must start with a read of block zero
+	bResult = ReadBlock(g_hPortalHandle, 0, data, bNewSkylander); 
+	
+	if(!bResult) {
+		bNewSkylander = !bNewSkylander;
+		bResult = ReadBlock(g_hPortalHandle, 0, data, bNewSkylander); 
+		if(!bResult) {
+			fprintf(stderr, "Abort before write. Could not read data from Skylander portal.\n");
+			return false;
+		}
+	}
+	
+	if(encrypted_old_data == NULL) {
+		encrypted_old_data = ReadSkylanderFromPortal();
+	}
+	
+	printf("\nWriting Skylander to portal.\n");
+	
+	for(int i=0; i<2; i++) {
+        // two pass write
+		// write the access control blocks first
+		bool selectAccessControlBlock;
+		if(i == 0) {
+			selectAccessControlBlock = 1;
+		} else {
+			selectAccessControlBlock = 0;
+		}
+		
+		for(int block=0; block < 0x40; ++block) {
+			bool changed, OK;
+			int offset = block * 0x10;
+			changed = (memcmp(encrypted_old_data+offset, encrypted_new_data+offset, 0x10) != 0);
+			if(changed) {
+				if(IsAccessControlBlock(block) == selectAccessControlBlock) {
+					OK = WriteBlock(g_hPortalHandle, block, encrypted_new_data+offset, bNewSkylander);
+					if(!OK) {
+						fprintf(stderr, "Failed to write block %d. Aborting.\n", block);
+						return false;
+					}
+				}
+			}
+		}
+	}
+	return true;
+}
+
+
