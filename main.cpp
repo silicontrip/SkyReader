@@ -42,6 +42,12 @@ int main(int argc, char* argv[])
 	unsigned char *buffer, *original_data;
 	bool OK, OK2;
 	
+	if (argc<2)
+	{
+		usage();
+		return 1;
+	}
+	
 	switch(*argv[1]) {
 		case 'r':
 			// read from portal
