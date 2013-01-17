@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
-#include <windows.h>
 #include "checksum.h"
 #include "crypt.h"
 #include "fileio.h"
@@ -41,7 +40,7 @@ void usage()
 int main(int argc, char* argv[])
 {
 	unsigned char *buffer, *original_data;
-	BOOL OK, OK2;
+	bool OK, OK2;
 	
 	switch(*argv[1]) {
 		case 'r':
