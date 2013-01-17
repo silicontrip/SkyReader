@@ -1,3 +1,5 @@
 *.o
 a.out
 *.pdf
+editor
+usbtest
