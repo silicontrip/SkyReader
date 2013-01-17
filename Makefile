@@ -1,15 +1,19 @@
 
-CFLAGS=-I/opt/local/include/libusb-1.0
+
+CFLAGS=-I/opt/local/include/libusb-1.0 -g
 LDFLAGS=-L/opt/local/lib -lusb-1.0
 OBJ= checksum.o fileio.o md5.o  rijndael.o crypt.o skylander.o \
-	usbtest.o
+	 portalio_libusb.o main.o
 
-
+main: $(OBJ)
+	g++ $(LDFLAGS) -o main $(OBJ)	
 
 usbtest: usbtest.o
 	gcc $(LDFLAGS) -o usbtest $<
 
-objects: $(OBJ)
 
 %.o:%.cpp
-	gcc $(CFLAGS) -c $<
+	g++ $(CFLAGS) -c $<
+
+clean:
+	rm -f *.o usbtest
