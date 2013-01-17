@@ -113,7 +113,7 @@ void list_endpoints(libusb_device *dev)
 	{
 		epdesc = &interdesc->endpoint[i];
 		if(epdesc->bEndpointAddress & 0x80)
-			printf("found an IN End Point %d with attributes %s and address 0x%x\n",i,endpoint_attribute(epdesc->bmAttributes), epdesc->bEndpointAddress);
+			printf("found an IN End Point %d with attributes %s and address 0x%x\n",i,endpoint_attribute(epdesc->bmAttributes), epdesc->bEndpointAddress&0x7f);
 		else  
 			printf("found an OUT End Point %d with attributes %s and address 0x%x\n",i,endpoint_attribute(epdesc->bmAttributes),epdesc->bEndpointAddress);
 	}
