@@ -16,6 +16,59 @@ libusb_device_handle *g_hPortalHandle = NULL;
 
 #define OVERLAP_SIZE 8192
 
+const char * libusb_error(int err) {
+
+	switch(err)
+	{
+		case 0: return "SUCCESS";
+		case LIBUSB_ERROR_IO: return "IO error";
+		case LIBUSB_ERROR_INVALID_PARAM: "Invalid Parameter";
+		case LIBUSB_ERROR_ACCESS: "Access denied";
+		case LIBUSB_ERROR_NO_DEVICE: return "No such device";
+		case LIBUSB_ERROR_NOT_FOUND: return "Entity not found";
+		case LIBUSB_ERROR_BUSY: return "Resource busy";
+		case LIBUSB_ERROR_TIMEOUT: return "Operation timed out";
+		case LIBUSB_ERROR_PIPE: return "PIPE";
+		case LIBUSB_ERROR_INTERRUPTED: "call interrupted";
+		case LIBUSB_ERROR_OVERFLOW: return "OVERFLOW";
+		case LIBUSB_ERROR_NO_MEM: return "Insufficient memory";
+		case LIBUSB_ERROR_NOT_SUPPORTED: return "Operation not supported";
+		case LIBUSB_ERROR_OTHER: return "Other error";
+		default: return "UNKNOWN";
+	}
+	
+	
+}
+
+void fprinthex(FILE *f, unsigned char *c, unsigned int n) {
+	unsigned int h,i;
+	unsigned char j;
+	
+	
+	for (h=0; h<n; h+=16) {
+		
+		fprintf (f,"%04x: ",h);
+		
+		for (i=0; i<16; i++) {
+			if (i+h < n) 
+				fprintf (f,"%02x ",*(c+i+h) & 0xff);
+			else
+				fprintf (f,"   ");
+		}
+		for (i=0; i<16; i++) {
+			if (i+h < n) { 
+				j = *(c+i+h);	
+				if (j<32) j='.';
+				if (j>127) j='.';
+				fprintf (f,"%c",j);
+			} else
+				fprintf(f," ");
+		}
+		fprintf(f,"\n");
+	}
+}
+
+
 bool OpenPortalHandle(libusb_device_handle **phPortalHandle)
 {
 	int OK;
@@ -41,8 +94,15 @@ bool OpenPortalHandle(libusb_device_handle **phPortalHandle)
 		{
 			if ((attributes.idProduct == 0x150) || (attributes.idProduct == 0x967))
 			{
+				printf("Found portal usb device\n");
+				int err;
 				libusb_ref_device(device);
-				libusb_open(device, phPortalHandle);
+				err= libusb_open(device, phPortalHandle);
+				printf ("usb open: %s\n",libusb_error(err));
+
+				err = libusb_claim_interface(*phPortalHandle, 0);
+				printf ("claim interface: %s\n",libusb_error(err));
+
 				break;
 			}
 		}
@@ -60,13 +120,36 @@ bool OpenPortalHandle(libusb_device_handle **phPortalHandle)
 
 typedef struct  {
 	unsigned char buf[rw_buf_size];
-	unsigned short dwBytesTransferred;
+	int dwBytesTransferred;
 } RWBlock;
 
+/*
+ Number of possible configurations: 1  Device Class: 0  VendorID: 1430  ProductID: 0150
+ Total interface number: 1 ||| Number of alternate settings: 1 | Interface Number: 0 | 
+ Number of endpoints:  2
+ found an IN End Point 0 with attributes interrupt and address 0x1
+ found an OUT End Point 1 with attributes interrupt and address 0x1
+*/ 
 
 // Send a command to the portal
 bool Write(libusb_device_handle *hPortalHandle, RWBlock *pb) {
+	
+	int transferred;
+	int err;
+	
+	printf("Write\n");
+	
 	pb->buf[0] = 0; // Use report 0
+	
+	fprinthex(stdout,pb->buf,0x21);
+	
+	err = libusb_interrupt_transfer (hPortalHandle, 0x1, pb->buf, 0x21, &transferred, 30000);
+
+	
+	printf("Write, %d bytes transferred (err = %s)\n",transferred,libusb_error(err));
+
+	return err == 0;
+	
 //	return HidD_SetOutputReport(hPortalHandle, pb->buf, 0x21);
 }
 
@@ -78,6 +161,9 @@ bool ReadBlock(libusb_device_handle *hPortalHandle, unsigned int block, unsigned
 	unsigned char ovlr[OVERLAP_SIZE];
 	unsigned short err;
 	unsigned char followup;
+	
+	printf("ReadBlock\n");
+
 	
 	if(block >= 0x40) {
 		return false;
@@ -125,13 +211,22 @@ bool ReadBlock(libusb_device_handle *hPortalHandle, unsigned int block, unsigned
 		
 		for(; i<40; ++i) // try up to 40 reads
 		{ 
-			bool b;
+			int b;
 		//	bool b = ReadFile(hPortalHandle, res.buf, rw_buf_size, &(res.dwBytesTransferred), &ovlr);
-			if(!b)
+			b = libusb_interrupt_transfer (hPortalHandle, 0x81, res.buf, rw_buf_size, &(res.dwBytesTransferred), 30000);
+			
+			
+			if (b>=0) fprinthex(stdout,res.buf,res.dwBytesTransferred);
+
+			
+			if(b<0)
 			{ 
+				
+				printf("error reading from usb handle: %s\n",libusb_error(b));
+				
 				/* failed to get data immediately*/
 				 // err = GetLastError();
-				if(err == 0)
+				if(b == 0)
 				{ 
 					/* wait for data */
 				//	b = GetOverlappedResult(hPortalHandle, &ovlr, &res.dwBytesTransferred, TRUE);
@@ -247,6 +342,7 @@ void SetPortalColor(libusb_device_handle *hPortalHandle, unsigned char r, unsign
 
 // Release hPortalInstance
 void DisconnectPortal(void) {
+	libusb_release_interface(g_hPortalHandle,0);
 	libusb_unref_device(libusb_get_device(g_hPortalHandle));
 	libusb_close(g_hPortalHandle);
 	libusb_exit	(g_ctx);
