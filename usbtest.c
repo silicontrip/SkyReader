@@ -86,7 +86,11 @@ void printdev(libusb_device *dev) {
 		int j;
 		for( j=0; j<inter->num_altsetting; j++) {
 			interdesc = &inter->altsetting[j];
-			printf("Interface Number: %d | ",(int)interdesc->bInterfaceNumber);
+			printf("Interface Number: %d | interface class: %d | Interface endpoints: %d ",
+				   (int)interdesc->bInterfaceNumber,
+				   (int)interdesc->bInterfaceClass,
+				   (int)interdesc->bNumEndpoints
+				   );
 		}
 	}
 	printf("\n");
