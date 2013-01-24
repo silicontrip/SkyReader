@@ -42,12 +42,13 @@ public:
 	
 private:
 	
-void fprinthex(FILE *f, unsigned char *c, unsigned int n);
 void OpenPortalHandle() throw (int);
 void Write(RWBlock *pb) throw (int);
 void RestartPortal(void) throw (int);
 void ActivatePortal(void) throw (int);
 void DisconnectPortal(void);
 void ConnectToPortal(void) throw (int);
+bool CheckResponse (RWBlock *, char ) throw (int); 
+
 
 }; 

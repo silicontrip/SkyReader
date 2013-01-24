@@ -19,6 +19,7 @@ class SkylanderIO {
 public:
 	SkylanderIO();
 	~SkylanderIO();
+	void fprinthex(FILE *, unsigned char *, unsigned int);
 	void initWithUnencryptedFile(char *) throw (int);
 	void initWithEncryptedFile(char *) throw (int);
 	void initWithPortal() throw (int);

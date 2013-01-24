@@ -500,6 +500,195 @@
 			449FBF8816B0FFF80045855B /* PBXTextBookmark */ = 449FBF8816B0FFF80045855B /* PBXTextBookmark */;
 			449FBF8916B0FFF80045855B /* PBXTextBookmark */ = 449FBF8916B0FFF80045855B /* PBXTextBookmark */;
 			449FBF8A16B0FFF80045855B /* PBXTextBookmark */ = 449FBF8A16B0FFF80045855B /* PBXTextBookmark */;
+			449FBF8D16B1359A0045855B /* PBXBookmark */ = 449FBF8D16B1359A0045855B /* PBXBookmark */;
+			449FBF9216B1363D0045855B /* PBXTextBookmark */ = 449FBF9216B1363D0045855B /* PBXTextBookmark */;
+			449FBF9516B1363D0045855B /* PBXTextBookmark */ = 449FBF9516B1363D0045855B /* PBXTextBookmark */;
+			449FBF9C16B1396D0045855B /* PBXTextBookmark */ = 449FBF9C16B1396D0045855B /* PBXTextBookmark */;
+			449FBF9D16B1396D0045855B /* PBXTextBookmark */ = 449FBF9D16B1396D0045855B /* PBXTextBookmark */;
+			449FBFA016B139760045855B /* PBXBookmark */ = 449FBFA016B139760045855B /* PBXBookmark */;
+			449FBFA716B139BE0045855B /* PBXTextBookmark */ = 449FBFA716B139BE0045855B /* PBXTextBookmark */;
+			449FBFAA16B139BE0045855B /* PBXTextBookmark */ = 449FBFAA16B139BE0045855B /* PBXTextBookmark */;
+			449FBFAB16B139BE0045855B /* PBXTextBookmark */ = 449FBFAB16B139BE0045855B /* PBXTextBookmark */;
+			449FBFAE16B13A210045855B /* PBXTextBookmark */ = 449FBFAE16B13A210045855B /* PBXTextBookmark */;
+			449FBFAF16B13A210045855B /* PBXTextBookmark */ = 449FBFAF16B13A210045855B /* PBXTextBookmark */;
+			449FBFB016B13A210045855B /* PBXTextBookmark */ = 449FBFB016B13A210045855B /* PBXTextBookmark */;
+			449FBFB816B13DF60045855B /* XCBuildMessageTextBookmark */ = 449FBFB816B13DF60045855B /* XCBuildMessageTextBookmark */;
+			449FBFB916B13E100045855B /* XCBuildMessageTextBookmark */ = 449FBFB916B13E100045855B /* XCBuildMessageTextBookmark */;
+			449FBFBC16B13E190045855B /* XCBuildMessageTextBookmark */ = 449FBFBC16B13E190045855B /* XCBuildMessageTextBookmark */;
+			449FBFC116B13EBE0045855B /* PBXTextBookmark */ = 449FBFC116B13EBE0045855B /* PBXTextBookmark */;
+			449FBFC216B13EBE0045855B /* PBXTextBookmark */ = 449FBFC216B13EBE0045855B /* PBXTextBookmark */;
+			449FBFC516B13EBE0045855B /* PBXTextBookmark */ = 449FBFC516B13EBE0045855B /* PBXTextBookmark */;
+			449FBFC616B13EBE0045855B /* PBXTextBookmark */ = 449FBFC616B13EBE0045855B /* PBXTextBookmark */;
+			449FBFC916B13EBE0045855B /* PBXTextBookmark */ = 449FBFC916B13EBE0045855B /* PBXTextBookmark */;
+			449FBFCA16B13EBE0045855B /* PBXTextBookmark */ = 449FBFCA16B13EBE0045855B /* PBXTextBookmark */;
+			449FBFCD16B1441E0045855B /* PBXTextBookmark */ = 449FBFCD16B1441E0045855B /* PBXTextBookmark */;
+			449FBFCE16B1441E0045855B /* PBXTextBookmark */ = 449FBFCE16B1441E0045855B /* PBXTextBookmark */;
+			449FBFCF16B1441E0045855B /* PBXTextBookmark */ = 449FBFCF16B1441E0045855B /* PBXTextBookmark */;
+			449FBFD016B1441E0045855B /* PBXTextBookmark */ = 449FBFD016B1441E0045855B /* PBXTextBookmark */;
+			449FBFD116B1441E0045855B /* PBXTextBookmark */ = 449FBFD116B1441E0045855B /* PBXTextBookmark */;
+			449FBFD416B1453B0045855B /* PBXTextBookmark */ = 449FBFD416B1453B0045855B /* PBXTextBookmark */;
+			449FBFD716B1453B0045855B /* PBXBookmark */ = 449FBFD716B1453B0045855B /* PBXBookmark */;
+			449FBFD816B1453B0045855B /* PBXTextBookmark */ = 449FBFD816B1453B0045855B /* PBXTextBookmark */;
+			449FBFD916B1453B0045855B /* PBXTextBookmark */ = 449FBFD916B1453B0045855B /* PBXTextBookmark */;
+			449FBFDA16B1453B0045855B /* PBXTextBookmark */ = 449FBFDA16B1453B0045855B /* PBXTextBookmark */;
+			449FBFDB16B1453B0045855B /* PBXTextBookmark */ = 449FBFDB16B1453B0045855B /* PBXTextBookmark */;
+			449FBFDC16B1453B0045855B /* PBXTextBookmark */ = 449FBFDC16B1453B0045855B /* PBXTextBookmark */;
+			449FBFDD16B145590045855B /* PBXTextBookmark */ = 449FBFDD16B145590045855B /* PBXTextBookmark */;
+			449FBFDE16B145590045855B /* PBXTextBookmark */ = 449FBFDE16B145590045855B /* PBXTextBookmark */;
+			449FBFDF16B145590045855B /* PBXTextBookmark */ = 449FBFDF16B145590045855B /* PBXTextBookmark */;
+			449FBFE016B145590045855B /* PBXTextBookmark */ = 449FBFE016B145590045855B /* PBXTextBookmark */;
+			449FBFE116B145590045855B /* PBXTextBookmark */ = 449FBFE116B145590045855B /* PBXTextBookmark */;
+			449FBFE216B145590045855B /* PBXTextBookmark */ = 449FBFE216B145590045855B /* PBXTextBookmark */;
+			449FBFE516B145F10045855B /* PBXTextBookmark */ = 449FBFE516B145F10045855B /* PBXTextBookmark */;
+			449FBFE616B145F10045855B /* PBXTextBookmark */ = 449FBFE616B145F10045855B /* PBXTextBookmark */;
+			449FBFE716B145F10045855B /* PBXTextBookmark */ = 449FBFE716B145F10045855B /* PBXTextBookmark */;
+			449FBFE816B145F10045855B /* PBXTextBookmark */ = 449FBFE816B145F10045855B /* PBXTextBookmark */;
+			449FBFE916B145F10045855B /* PBXTextBookmark */ = 449FBFE916B145F10045855B /* PBXTextBookmark */;
+			449FBFEA16B145F10045855B /* PBXTextBookmark */ = 449FBFEA16B145F10045855B /* PBXTextBookmark */;
+			449FBFED16B148240045855B /* PBXTextBookmark */ = 449FBFED16B148240045855B /* PBXTextBookmark */;
+			449FBFEE16B148240045855B /* PBXTextBookmark */ = 449FBFEE16B148240045855B /* PBXTextBookmark */;
+			449FBFEF16B148240045855B /* PBXTextBookmark */ = 449FBFEF16B148240045855B /* PBXTextBookmark */;
+			449FBFF016B148240045855B /* PBXTextBookmark */ = 449FBFF016B148240045855B /* PBXTextBookmark */;
+			449FBFF116B148240045855B /* PBXTextBookmark */ = 449FBFF116B148240045855B /* PBXTextBookmark */;
+			449FBFF216B148240045855B /* PBXTextBookmark */ = 449FBFF216B148240045855B /* PBXTextBookmark */;
+			449FBFF516B148EC0045855B /* PBXTextBookmark */ = 449FBFF516B148EC0045855B /* PBXTextBookmark */;
+			449FBFF616B148EC0045855B /* PBXTextBookmark */ = 449FBFF616B148EC0045855B /* PBXTextBookmark */;
+			449FBFF716B148EC0045855B /* PBXTextBookmark */ = 449FBFF716B148EC0045855B /* PBXTextBookmark */;
+			449FBFF816B148EC0045855B /* PBXTextBookmark */ = 449FBFF816B148EC0045855B /* PBXTextBookmark */;
+			449FBFF916B148EC0045855B /* PBXTextBookmark */ = 449FBFF916B148EC0045855B /* PBXTextBookmark */;
+			449FBFFA16B148EC0045855B /* PBXTextBookmark */ = 449FBFFA16B148EC0045855B /* PBXTextBookmark */;
+			449FBFFD16B14AAC0045855B /* PBXTextBookmark */ = 449FBFFD16B14AAC0045855B /* PBXTextBookmark */;
+			449FBFFE16B14AAC0045855B /* PBXTextBookmark */ = 449FBFFE16B14AAC0045855B /* PBXTextBookmark */;
+			449FBFFF16B14AAC0045855B /* PBXTextBookmark */ = 449FBFFF16B14AAC0045855B /* PBXTextBookmark */;
+			449FC00016B14AAC0045855B /* PBXTextBookmark */ = 449FC00016B14AAC0045855B /* PBXTextBookmark */;
+			449FC00116B14AAC0045855B /* PBXTextBookmark */ = 449FC00116B14AAC0045855B /* PBXTextBookmark */;
+			449FC00216B14AAC0045855B /* PBXTextBookmark */ = 449FC00216B14AAC0045855B /* PBXTextBookmark */;
+			449FC00716B14ADB0045855B /* PBXTextBookmark */ = 449FC00716B14ADB0045855B /* PBXTextBookmark */;
+			449FC00816B14ADB0045855B /* PBXTextBookmark */ = 449FC00816B14ADB0045855B /* PBXTextBookmark */;
+			449FC00916B14ADB0045855B /* PBXTextBookmark */ = 449FC00916B14ADB0045855B /* PBXTextBookmark */;
+			449FC00A16B14ADB0045855B /* PBXTextBookmark */ = 449FC00A16B14ADB0045855B /* PBXTextBookmark */;
+			449FC00B16B14ADB0045855B /* PBXTextBookmark */ = 449FC00B16B14ADB0045855B /* PBXTextBookmark */;
+			449FC00C16B14ADB0045855B /* PBXTextBookmark */ = 449FC00C16B14ADB0045855B /* PBXTextBookmark */;
+			449FC01116B14B690045855B /* PBXTextBookmark */ = 449FC01116B14B690045855B /* PBXTextBookmark */;
+			449FC01216B14B690045855B /* PBXTextBookmark */ = 449FC01216B14B690045855B /* PBXTextBookmark */;
+			449FC01316B14B690045855B /* PBXTextBookmark */ = 449FC01316B14B690045855B /* PBXTextBookmark */;
+			449FC01416B14B690045855B /* PBXTextBookmark */ = 449FC01416B14B690045855B /* PBXTextBookmark */;
+			449FC01516B14B690045855B /* PBXTextBookmark */ = 449FC01516B14B690045855B /* PBXTextBookmark */;
+			449FC01616B14B690045855B /* PBXTextBookmark */ = 449FC01616B14B690045855B /* PBXTextBookmark */;
+			449FC01716B14B860045855B /* PBXTextBookmark */ = 449FC01716B14B860045855B /* PBXTextBookmark */;
+			449FC01816B14B860045855B /* PBXTextBookmark */ = 449FC01816B14B860045855B /* PBXTextBookmark */;
+			449FC01916B14B860045855B /* PBXTextBookmark */ = 449FC01916B14B860045855B /* PBXTextBookmark */;
+			449FC01A16B14B860045855B /* PBXTextBookmark */ = 449FC01A16B14B860045855B /* PBXTextBookmark */;
+			449FC01B16B14B860045855B /* PBXTextBookmark */ = 449FC01B16B14B860045855B /* PBXTextBookmark */;
+			449FC01C16B14B860045855B /* PBXTextBookmark */ = 449FC01C16B14B860045855B /* PBXTextBookmark */;
+			449FC02216B14BB80045855B /* PBXTextBookmark */ = 449FC02216B14BB80045855B /* PBXTextBookmark */;
+			449FC02316B14BB80045855B /* PBXTextBookmark */ = 449FC02316B14BB80045855B /* PBXTextBookmark */;
+			449FC02416B14BB80045855B /* PBXTextBookmark */ = 449FC02416B14BB80045855B /* PBXTextBookmark */;
+			449FC02516B14BB80045855B /* PBXTextBookmark */ = 449FC02516B14BB80045855B /* PBXTextBookmark */;
+			449FC02616B14BB80045855B /* PBXTextBookmark */ = 449FC02616B14BB80045855B /* PBXTextBookmark */;
+			449FC02716B14BB80045855B /* PBXTextBookmark */ = 449FC02716B14BB80045855B /* PBXTextBookmark */;
+			449FC02816B14BB80045855B /* PBXTextBookmark */ = 449FC02816B14BB80045855B /* PBXTextBookmark */;
+			449FC02E16B14D740045855B /* PBXTextBookmark */ = 449FC02E16B14D740045855B /* PBXTextBookmark */;
+			449FC02F16B14D740045855B /* PBXTextBookmark */ = 449FC02F16B14D740045855B /* PBXTextBookmark */;
+			449FC03016B14D740045855B /* PBXTextBookmark */ = 449FC03016B14D740045855B /* PBXTextBookmark */;
+			449FC03116B14D740045855B /* PBXTextBookmark */ = 449FC03116B14D740045855B /* PBXTextBookmark */;
+			449FC03216B14D740045855B /* PBXTextBookmark */ = 449FC03216B14D740045855B /* PBXTextBookmark */;
+			449FC03316B14D740045855B /* PBXTextBookmark */ = 449FC03316B14D740045855B /* PBXTextBookmark */;
+			449FC03616B14E680045855B /* PBXTextBookmark */ = 449FC03616B14E680045855B /* PBXTextBookmark */;
+			449FC03716B14E680045855B /* PBXTextBookmark */ = 449FC03716B14E680045855B /* PBXTextBookmark */;
+			449FC03816B14E680045855B /* PBXTextBookmark */ = 449FC03816B14E680045855B /* PBXTextBookmark */;
+			449FC03916B14E680045855B /* PBXTextBookmark */ = 449FC03916B14E680045855B /* PBXTextBookmark */;
+			449FC03A16B14E680045855B /* PBXTextBookmark */ = 449FC03A16B14E680045855B /* PBXTextBookmark */;
+			449FC04516B152960045855B /* PBXTextBookmark */ = 449FC04516B152960045855B /* PBXTextBookmark */;
+			449FC04616B152960045855B /* PBXTextBookmark */ = 449FC04616B152960045855B /* PBXTextBookmark */;
+			449FC04716B152960045855B /* PBXTextBookmark */ = 449FC04716B152960045855B /* PBXTextBookmark */;
+			449FC04816B152960045855B /* PBXTextBookmark */ = 449FC04816B152960045855B /* PBXTextBookmark */;
+			449FC04916B1547E0045855B /* PBXTextBookmark */ = 449FC04916B1547E0045855B /* PBXTextBookmark */;
+			449FC04A16B1547E0045855B /* PBXTextBookmark */ = 449FC04A16B1547E0045855B /* PBXTextBookmark */;
+			449FC04B16B1547E0045855B /* PBXTextBookmark */ = 449FC04B16B1547E0045855B /* PBXTextBookmark */;
+			449FC04C16B1547E0045855B /* PBXTextBookmark */ = 449FC04C16B1547E0045855B /* PBXTextBookmark */;
+			449FC04F16B160000045855B /* XCBuildMessageTextBookmark */ = 449FC04F16B160000045855B /* XCBuildMessageTextBookmark */;
+			449FC05416B1601B0045855B /* PBXTextBookmark */ = 449FC05416B1601B0045855B /* PBXTextBookmark */;
+			449FC05516B1601B0045855B /* PBXTextBookmark */ = 449FC05516B1601B0045855B /* PBXTextBookmark */;
+			449FC05616B1601B0045855B /* PBXTextBookmark */ = 449FC05616B1601B0045855B /* PBXTextBookmark */;
+			449FC05716B1601B0045855B /* PBXTextBookmark */ = 449FC05716B1601B0045855B /* PBXTextBookmark */;
+			449FC05A16B1610E0045855B /* PBXTextBookmark */ = 449FC05A16B1610E0045855B /* PBXTextBookmark */;
+			449FC05B16B1610E0045855B /* PBXTextBookmark */ = 449FC05B16B1610E0045855B /* PBXTextBookmark */;
+			449FC05C16B1610E0045855B /* PBXTextBookmark */ = 449FC05C16B1610E0045855B /* PBXTextBookmark */;
+			449FC05D16B1610E0045855B /* PBXTextBookmark */ = 449FC05D16B1610E0045855B /* PBXTextBookmark */;
+			449FC06216B161EF0045855B /* PBXTextBookmark */ = 449FC06216B161EF0045855B /* PBXTextBookmark */;
+			449FC06316B161EF0045855B /* PBXTextBookmark */ = 449FC06316B161EF0045855B /* PBXTextBookmark */;
+			449FC06416B161EF0045855B /* PBXTextBookmark */ = 449FC06416B161EF0045855B /* PBXTextBookmark */;
+			449FC06516B161EF0045855B /* PBXTextBookmark */ = 449FC06516B161EF0045855B /* PBXTextBookmark */;
+			449FC06616B162560045855B /* PBXTextBookmark */ = 449FC06616B162560045855B /* PBXTextBookmark */;
+			449FC06716B162560045855B /* PBXTextBookmark */ = 449FC06716B162560045855B /* PBXTextBookmark */;
+			449FC06816B162560045855B /* PBXTextBookmark */ = 449FC06816B162560045855B /* PBXTextBookmark */;
+			449FC06916B162560045855B /* PBXTextBookmark */ = 449FC06916B162560045855B /* PBXTextBookmark */;
+			449FC07016B162980045855B /* PBXTextBookmark */ = 449FC07016B162980045855B /* PBXTextBookmark */;
+			449FC07116B162980045855B /* PBXTextBookmark */ = 449FC07116B162980045855B /* PBXTextBookmark */;
+			449FC07216B162980045855B /* PBXTextBookmark */ = 449FC07216B162980045855B /* PBXTextBookmark */;
+			449FC07316B162980045855B /* PBXTextBookmark */ = 449FC07316B162980045855B /* PBXTextBookmark */;
+			449FC07616B162CB0045855B /* PBXBookmark */ = 449FC07616B162CB0045855B /* PBXBookmark */;
+			449FC07916B163280045855B /* PBXTextBookmark */ = 449FC07916B163280045855B /* PBXTextBookmark */;
+			449FC07C16B163280045855B /* PBXTextBookmark */ = 449FC07C16B163280045855B /* PBXTextBookmark */;
+			449FC07D16B163280045855B /* PBXTextBookmark */ = 449FC07D16B163280045855B /* PBXTextBookmark */;
+			449FC07E16B163280045855B /* PBXTextBookmark */ = 449FC07E16B163280045855B /* PBXTextBookmark */;
+			449FC07F16B163280045855B /* PBXTextBookmark */ = 449FC07F16B163280045855B /* PBXTextBookmark */;
+			449FC08016B1636E0045855B /* PBXTextBookmark */ = 449FC08016B1636E0045855B /* PBXTextBookmark */;
+			449FC08116B1636E0045855B /* PBXTextBookmark */ = 449FC08116B1636E0045855B /* PBXTextBookmark */;
+			449FC08216B1636E0045855B /* PBXTextBookmark */ = 449FC08216B1636E0045855B /* PBXTextBookmark */;
+			449FC08316B1636E0045855B /* PBXTextBookmark */ = 449FC08316B1636E0045855B /* PBXTextBookmark */;
+			449FC08416B1636E0045855B /* PBXTextBookmark */ = 449FC08416B1636E0045855B /* PBXTextBookmark */;
+			449FC08916B163960045855B /* PBXTextBookmark */ = 449FC08916B163960045855B /* PBXTextBookmark */;
+			449FC08A16B163960045855B /* PBXTextBookmark */ = 449FC08A16B163960045855B /* PBXTextBookmark */;
+			449FC08B16B163960045855B /* PBXTextBookmark */ = 449FC08B16B163960045855B /* PBXTextBookmark */;
+			449FC08C16B163960045855B /* PBXTextBookmark */ = 449FC08C16B163960045855B /* PBXTextBookmark */;
+			449FC08D16B163960045855B /* PBXTextBookmark */ = 449FC08D16B163960045855B /* PBXTextBookmark */;
+			449FC08E16B163F70045855B /* PBXTextBookmark */ = 449FC08E16B163F70045855B /* PBXTextBookmark */;
+			449FC08F16B163F70045855B /* PBXTextBookmark */ = 449FC08F16B163F70045855B /* PBXTextBookmark */;
+			449FC09016B163F70045855B /* PBXTextBookmark */ = 449FC09016B163F70045855B /* PBXTextBookmark */;
+			449FC09116B163F70045855B /* PBXTextBookmark */ = 449FC09116B163F70045855B /* PBXTextBookmark */;
+			449FC09216B163F70045855B /* PBXTextBookmark */ = 449FC09216B163F70045855B /* PBXTextBookmark */;
+			449FC09516B1653F0045855B /* PBXBookmark */ = 449FC09516B1653F0045855B /* PBXBookmark */;
+			449FC09816B1656B0045855B /* PBXTextBookmark */ = 449FC09816B1656B0045855B /* PBXTextBookmark */;
+			449FC09916B1656B0045855B /* PBXTextBookmark */ = 449FC09916B1656B0045855B /* PBXTextBookmark */;
+			449FC09C16B1656B0045855B /* PBXTextBookmark */ = 449FC09C16B1656B0045855B /* PBXTextBookmark */;
+			449FC09D16B1656B0045855B /* PBXTextBookmark */ = 449FC09D16B1656B0045855B /* PBXTextBookmark */;
+			449FC09E16B1656B0045855B /* PBXTextBookmark */ = 449FC09E16B1656B0045855B /* PBXTextBookmark */;
+			449FC0A416B166E40045855B /* XCBuildMessageTextBookmark */ = 449FC0A416B166E40045855B /* XCBuildMessageTextBookmark */;
+			449FC0A916B167120045855B /* PBXTextBookmark */ = 449FC0A916B167120045855B /* PBXTextBookmark */;
+			449FC0AA16B167120045855B /* PBXTextBookmark */ = 449FC0AA16B167120045855B /* PBXTextBookmark */;
+			449FC0AD16B167120045855B /* PBXTextBookmark */ = 449FC0AD16B167120045855B /* PBXTextBookmark */;
+			449FC0AE16B167120045855B /* PBXTextBookmark */ = 449FC0AE16B167120045855B /* PBXTextBookmark */;
+			449FC0AF16B167120045855B /* PBXTextBookmark */ = 449FC0AF16B167120045855B /* PBXTextBookmark */;
+			449FC0B016B167120045855B /* PBXTextBookmark */ = 449FC0B016B167120045855B /* PBXTextBookmark */;
+			449FC0B116B167120045855B /* PBXTextBookmark */ = 449FC0B116B167120045855B /* PBXTextBookmark */;
+			449FC0B416B167400045855B /* PBXTextBookmark */ = 449FC0B416B167400045855B /* PBXTextBookmark */;
+			449FC0B516B167400045855B /* PBXTextBookmark */ = 449FC0B516B167400045855B /* PBXTextBookmark */;
+			449FC0B616B167400045855B /* PBXTextBookmark */ = 449FC0B616B167400045855B /* PBXTextBookmark */;
+			449FC0B716B167400045855B /* PBXTextBookmark */ = 449FC0B716B167400045855B /* PBXTextBookmark */;
+			449FC0B816B167400045855B /* PBXTextBookmark */ = 449FC0B816B167400045855B /* PBXTextBookmark */;
+			449FC0B916B167400045855B /* PBXTextBookmark */ = 449FC0B916B167400045855B /* PBXTextBookmark */;
+			449FC0BC16B169140045855B /* XCBuildMessageTextBookmark */ = 449FC0BC16B169140045855B /* XCBuildMessageTextBookmark */;
+			449FC0BF16B1691F0045855B /* PBXTextBookmark */ = 449FC0BF16B1691F0045855B /* PBXTextBookmark */;
+			449FC0C016B1691F0045855B /* PBXTextBookmark */ = 449FC0C016B1691F0045855B /* PBXTextBookmark */;
+			449FC0C116B1691F0045855B /* PBXTextBookmark */ = 449FC0C116B1691F0045855B /* PBXTextBookmark */;
+			449FC0C216B1691F0045855B /* PBXTextBookmark */ = 449FC0C216B1691F0045855B /* PBXTextBookmark */;
+			449FC0C316B1691F0045855B /* PBXTextBookmark */ = 449FC0C316B1691F0045855B /* PBXTextBookmark */;
+			449FC0C416B1691F0045855B /* PBXTextBookmark */ = 449FC0C416B1691F0045855B /* PBXTextBookmark */;
+			449FC0C716B169A40045855B /* PBXTextBookmark */ = 449FC0C716B169A40045855B /* PBXTextBookmark */;
+			449FC0C816B169A40045855B /* PBXTextBookmark */ = 449FC0C816B169A40045855B /* PBXTextBookmark */;
+			449FC0C916B169A40045855B /* PBXTextBookmark */ = 449FC0C916B169A40045855B /* PBXTextBookmark */;
+			449FC0CA16B169A40045855B /* PBXTextBookmark */ = 449FC0CA16B169A40045855B /* PBXTextBookmark */;
+			449FC0CB16B169A40045855B /* PBXTextBookmark */ = 449FC0CB16B169A40045855B /* PBXTextBookmark */;
+			449FC0CC16B169A40045855B /* PBXTextBookmark */ = 449FC0CC16B169A40045855B /* PBXTextBookmark */;
+			449FC0CD16B169A40045855B /* PBXTextBookmark */ = 449FC0CD16B169A40045855B /* PBXTextBookmark */;
+			449FC0D016B16B280045855B /* PBXTextBookmark */ = 449FC0D016B16B280045855B /* PBXTextBookmark */;
+			449FC0D116B16B280045855B /* PBXTextBookmark */ = 449FC0D116B16B280045855B /* PBXTextBookmark */;
+			449FC0D216B16B280045855B /* PBXTextBookmark */ = 449FC0D216B16B280045855B /* PBXTextBookmark */;
+			449FC0D316B16B280045855B /* PBXTextBookmark */ = 449FC0D316B16B280045855B /* PBXTextBookmark */;
+			449FC0D416B16B280045855B /* PBXTextBookmark */ = 449FC0D416B16B280045855B /* PBXTextBookmark */;
+			449FC0D516B16B280045855B /* PBXTextBookmark */ = 449FC0D516B16B280045855B /* PBXTextBookmark */;
 		};
 		sourceControlManager = 449FBB8C16AE77E10045855B /* Source Control */;
 		userBuildSettings = {
@@ -586,17 +775,17 @@
 	};
 	449FBBA016AE783F0045855B /* fileio.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {856, 3542}}";
-			sepNavSelRange = "{2868, 0}";
-			sepNavVisRange = "{1253, 590}";
-			sepNavWindowFrame = "{{15, 57}, {915, 821}}";
+			sepNavIntBoundsRect = "{{0, 0}, {856, 3920}}";
+			sepNavSelRange = "{1724, 32}";
+			sepNavVisRange = "{1164, 1063}";
+			sepNavWindowFrame = "{{446, -7}, {915, 821}}";
 		};
 	};
 	449FBBA116AE783F0045855B /* fileio.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {856, 742}}";
-			sepNavSelRange = "{789, 21}";
-			sepNavVisRange = "{699, 265}";
+			sepNavIntBoundsRect = "{{0, 0}, {856, 854}}";
+			sepNavSelRange = "{326, 0}";
+			sepNavVisRange = "{14, 1021}";
 			sepNavWindowFrame = "{{15, 57}, {915, 821}}";
 		};
 	};
@@ -608,12 +797,19 @@
 			sepNavWindowFrame = "{{15, 57}, {915, 821}}";
 		};
 	};
+	449FBBA316AE783F0045855B /* hidapi.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1178, 5474}}";
+			sepNavSelRange = "{6514, 0}";
+			sepNavVisRange = "{5432, 1930}";
+		};
+	};
 	449FBBA416AE783F0045855B /* main.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {856, 4438}}";
-			sepNavSelRange = "{5384, 0}";
-			sepNavVisRange = "{4869, 1350}";
-			sepNavWindowFrame = "{{701, 56}, {915, 821}}";
+			sepNavIntBoundsRect = "{{0, 0}, {856, 3752}}";
+			sepNavSelRange = "{7357, 0}";
+			sepNavVisRange = "{5948, 1441}";
+			sepNavWindowFrame = "{{409, -162}, {915, 821}}";
 		};
 	};
 	449FBBA516AE783F0045855B /* md5.cpp */ = {
@@ -634,17 +830,17 @@
 	};
 	449FBBA716AE783F0045855B /* portalio_hidapi.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {856, 3808}}";
-			sepNavSelRange = "{4242, 0}";
-			sepNavVisRange = "{4396, 688}";
+			sepNavIntBoundsRect = "{{0, 0}, {856, 3416}}";
+			sepNavSelRange = "{2197, 0}";
+			sepNavVisRange = "{1536, 848}";
 			sepNavWindowFrame = "{{455, 57}, {915, 821}}";
 		};
 	};
 	449FBBA816AE783F0045855B /* portalio.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {645, 742}}";
-			sepNavSelRange = "{513, 0}";
-			sepNavVisRange = "{78, 1151}";
+			sepNavIntBoundsRect = "{{0, 0}, {645, 756}}";
+			sepNavSelRange = "{1165, 0}";
+			sepNavVisRange = "{57, 1163}";
 			sepNavWindowFrame = "{{610, 61}, {704, 817}}";
 		};
 	};
@@ -657,9 +853,9 @@
 	};
 	449FBBAB16AE783F0045855B /* skylander.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1178, 5782}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1158, 5670}}";
 			sepNavSelRange = "{10568, 0}";
-			sepNavVisRange = "{10260, 593}";
+			sepNavVisRange = "{3807, 3046}";
 			sepNavWindowFrame = "{{15, 57}, {704, 817}}";
 		};
 	};
@@ -694,7 +890,7 @@
 		comments = "No newline at end of file";
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		rLen = 1;
-		rLoc = 56;
+		rLoc = 57;
 		rType = 1;
 	};
 	449FBBF616AE8D980045855B /* PBXTextBookmark */ = {
@@ -702,7 +898,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 3";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1086;
 		rType = 0;
 		vrLen = 122;
 		vrLoc = 0;
@@ -723,7 +919,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 241;
+		rLoc = 248;
 		rType = 1;
 	};
 	449FBC2616AE8F330045855B /* PBXTextBookmark */ = {
@@ -742,7 +938,7 @@
 		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 45;
+		rLoc = 44;
 		rType = 1;
 	};
 	449FBC2816AE8F330045855B /* PBXTextBookmark */ = {
@@ -750,7 +946,7 @@
 		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
 		name = "portalio.h: 27";
 		rLen = 0;
-		rLoc = 999;
+		rLoc = 939;
 		rType = 0;
 		vrLen = 210;
 		vrLoc = 0;
@@ -760,7 +956,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 3";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1086;
 		rType = 0;
 		vrLen = 122;
 		vrLoc = 0;
@@ -770,7 +966,7 @@
 		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
 		name = "portalio.h: 6";
 		rLen = 0;
-		rLoc = 1229;
+		rLoc = 1224;
 		rType = 0;
 		vrLen = 223;
 		vrLoc = 0;
@@ -799,7 +995,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 342";
 		rLen = 0;
-		rLoc = 5007;
+		rLoc = 5099;
 		rType = 0;
 		vrLen = 932;
 		vrLoc = 6507;
@@ -819,7 +1015,7 @@
 		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
 		name = "portalio.h: 41";
 		rLen = 0;
-		rLoc = 1229;
+		rLoc = 1224;
 		rType = 0;
 		vrLen = 259;
 		vrLoc = 0;
@@ -843,7 +1039,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 342";
 		rLen = 0;
-		rLoc = 5007;
+		rLoc = 5099;
 		rType = 0;
 		vrLen = 932;
 		vrLoc = 6507;
@@ -853,7 +1049,7 @@
 		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
 		name = "portalio.h: 27";
 		rLen = 0;
-		rLoc = 999;
+		rLoc = 939;
 		rType = 0;
 		vrLen = 210;
 		vrLoc = 0;
@@ -882,7 +1078,7 @@
 		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
 		name = "portalio.h: 41";
 		rLen = 0;
-		rLoc = 1229;
+		rLoc = 1224;
 		rType = 0;
 		vrLen = 259;
 		vrLoc = 0;
@@ -911,7 +1107,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 342";
 		rLen = 0;
-		rLoc = 5007;
+		rLoc = 5099;
 		rType = 0;
 		vrLen = 932;
 		vrLoc = 6507;
@@ -1000,7 +1196,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 360";
 		rLen = 0;
-		rLoc = 5081;
+		rLoc = 5200;
 		rType = 0;
 		vrLen = 992;
 		vrLoc = 7480;
@@ -1034,7 +1230,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 78";
 		rLen = 0;
-		rLoc = 5756;
+		rLoc = 5300;
 		rType = 0;
 		vrLen = 1194;
 		vrLoc = 1141;
@@ -1084,7 +1280,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 70";
 		rLen = 0;
-		rLoc = 5460;
+		rLoc = 4975;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 810;
@@ -1114,7 +1310,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 70";
 		rLen = 0;
-		rLoc = 5460;
+		rLoc = 4975;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 810;
@@ -1134,7 +1330,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 81";
 		rLen = 0;
-		rLoc = 7015;
+		rLoc = 6559;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 1221;
@@ -1165,7 +1361,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 0;
-		rLoc = 279;
+		rLoc = 252;
 		rType = 1;
 	};
 	449FBC8616AF62E80045855B /* PBXTextBookmark */ = {
@@ -1173,7 +1369,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 85";
 		rLen = 0;
-		rLoc = 7017;
+		rLoc = 6561;
 		rType = 0;
 		vrLen = 576;
 		vrLoc = 2013;
@@ -1197,7 +1393,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 360";
 		rLen = 0;
-		rLoc = 5081;
+		rLoc = 5200;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 7446;
@@ -1207,7 +1403,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 81";
 		rLen = 0;
-		rLoc = 7015;
+		rLoc = 6559;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 1221;
@@ -1281,7 +1477,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 81";
 		rLen = 0;
-		rLoc = 7015;
+		rLoc = 6559;
 		rType = 0;
 		vrLen = 1349;
 		vrLoc = 1240;
@@ -1341,7 +1537,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 81";
 		rLen = 0;
-		rLoc = 7015;
+		rLoc = 6559;
 		rType = 0;
 		vrLen = 1349;
 		vrLoc = 1240;
@@ -1410,7 +1606,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 81";
 		rLen = 0;
-		rLoc = 5820;
+		rLoc = 5364;
 		rType = 0;
 		vrLen = 1351;
 		vrLoc = 1240;
@@ -1430,7 +1626,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 91";
 		rLen = 0;
-		rLoc = 6212;
+		rLoc = 5756;
 		rType = 0;
 		vrLen = 1432;
 		vrLoc = 1240;
@@ -1500,7 +1696,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 73";
 		rLen = 0;
-		rLoc = 5563;
+		rLoc = 5083;
 		rType = 0;
 		vrLen = 1436;
 		vrLoc = 1240;
@@ -1540,7 +1736,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 73";
 		rLen = 0;
-		rLoc = 5563;
+		rLoc = 5083;
 		rType = 0;
 		vrLen = 1436;
 		vrLoc = 1240;
@@ -1580,7 +1776,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 73";
 		rLen = 0;
-		rLoc = 5563;
+		rLoc = 5083;
 		rType = 0;
 		vrLen = 1436;
 		vrLoc = 1240;
@@ -1620,7 +1816,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 73";
 		rLen = 0;
-		rLoc = 5563;
+		rLoc = 5083;
 		rType = 0;
 		vrLen = 1436;
 		vrLoc = 1240;
@@ -1640,7 +1836,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 73";
 		rLen = 0;
-		rLoc = 5563;
+		rLoc = 5083;
 		rType = 0;
 		vrLen = 1436;
 		vrLoc = 1240;
@@ -1650,7 +1846,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 86";
 		rLen = 0;
-		rLoc = 6004;
+		rLoc = 5548;
 		rType = 0;
 		vrLen = 1447;
 		vrLoc = 1283;
@@ -1690,7 +1886,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 87";
 		rLen = 0;
-		rLoc = 6041;
+		rLoc = 5585;
 		rType = 0;
 		vrLen = 1508;
 		vrLoc = 1329;
@@ -1730,7 +1926,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 73";
 		rLen = 0;
-		rLoc = 5517;
+		rLoc = 5032;
 		rType = 0;
 		vrLen = 752;
 		vrLoc = 1609;
@@ -1789,7 +1985,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 87";
 		rLen = 0;
-		rLoc = 6041;
+		rLoc = 5585;
 		rType = 0;
 		vrLen = 1508;
 		vrLoc = 1329;
@@ -1857,7 +2053,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 121;
+		rLoc = 94;
 		rType = 1;
 	};
 	449FBD4616AFB92D0045855B /* PBXTextBookmark */ = {
@@ -1908,7 +2104,7 @@
 		isa = PBXTextBookmark;
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 35";
-		rLen = 4716;
+		rLen = 4835;
 		rLoc = 368;
 		rType = 0;
 		vrLen = 1219;
@@ -1919,7 +2115,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 49";
 		rLen = 0;
-		rLoc = 4563;
+		rLoc = 5072;
 		rType = 0;
 		vrLen = 379;
 		vrLoc = 0;
@@ -1928,7 +2124,7 @@
 		isa = PBXTextBookmark;
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		rLen = 0;
-		rLoc = 9223372036854776915;
+		rLoc = 9223372036854776972;
 		rType = 0;
 	};
 	449FBD5216AFB92D0045855B /* PBXTextBookmark */ = {
@@ -1946,7 +2142,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 49";
 		rLen = 0;
-		rLoc = 4563;
+		rLoc = 5072;
 		rType = 0;
 		vrLen = 379;
 		vrLoc = 0;
@@ -1956,7 +2152,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 52";
 		rLen = 0;
-		rLoc = 4679;
+		rLoc = 5188;
 		rType = 0;
 		vrLen = 370;
 		vrLoc = 921;
@@ -1966,7 +2162,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 51";
 		rLen = 0;
-		rLoc = 4869;
+		rLoc = 4384;
 		rType = 0;
 		vrLen = 1091;
 		vrLoc = 2566;
@@ -2040,7 +2236,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 20;
+		rLoc = 49;
 		rType = 1;
 	};
 	449FBD7516B0814B0045855B /* PBXTextBookmark */ = {
@@ -2068,7 +2264,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 13";
 		rLen = 0;
-		rLoc = 281;
+		rLoc = 790;
 		rType = 0;
 		vrLen = 385;
 		vrLoc = 0;
@@ -2108,7 +2304,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 449";
 		rLen = 0;
-		rLoc = 5082;
+		rLoc = 5201;
 		rType = 0;
 		vrLen = 617;
 		vrLoc = 9374;
@@ -2118,7 +2314,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 449";
 		rLen = 0;
-		rLoc = 5082;
+		rLoc = 5201;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 0;
@@ -2128,7 +2324,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 51";
 		rLen = 0;
-		rLoc = 4869;
+		rLoc = 4384;
 		rType = 0;
 		vrLen = 1091;
 		vrLoc = 2566;
@@ -2196,7 +2392,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 13";
 		rLen = 0;
-		rLoc = 281;
+		rLoc = 790;
 		rType = 0;
 		vrLen = 385;
 		vrLoc = 0;
@@ -2226,7 +2422,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 449";
 		rLen = 0;
-		rLoc = 5082;
+		rLoc = 5201;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 0;
@@ -2246,7 +2442,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 51";
 		rLen = 0;
-		rLoc = 4869;
+		rLoc = 4384;
 		rType = 0;
 		vrLen = 1200;
 		vrLoc = 2300;
@@ -2296,7 +2492,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 57";
 		rLen = 0;
-		rLoc = 4551;
+		rLoc = 5060;
 		rType = 0;
 		vrLen = 399;
 		vrLoc = 835;
@@ -2306,7 +2502,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 449";
 		rLen = 0;
-		rLoc = 5082;
+		rLoc = 5201;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 0;
@@ -2336,7 +2532,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 52";
 		rLen = 0;
-		rLoc = 4869;
+		rLoc = 4384;
 		rType = 0;
 		vrLen = 1091;
 		vrLoc = 2602;
@@ -2377,7 +2573,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 0;
-		rLoc = 279;
+		rLoc = 252;
 		rType = 1;
 	};
 	449FBDAA16B094860045855B /* PBXTextBookmark */ = {
@@ -2405,7 +2601,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 19";
 		rLen = 0;
-		rLoc = 234;
+		rLoc = 743;
 		rType = 0;
 		vrLen = 309;
 		vrLoc = 1283;
@@ -2415,7 +2611,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 54";
 		rLen = 0;
-		rLoc = 4869;
+		rLoc = 4384;
 		rType = 0;
 		vrLen = 1236;
 		vrLoc = 1141;
@@ -2425,7 +2621,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 449";
 		rLen = 0;
-		rLoc = 5082;
+		rLoc = 5201;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 0;
@@ -2495,7 +2691,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 13";
 		rLen = 0;
-		rLoc = 302;
+		rLoc = 359;
 		rType = 0;
 		vrLen = 451;
 		vrLoc = 110;
@@ -2505,7 +2701,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 19";
 		rLen = 0;
-		rLoc = 234;
+		rLoc = 743;
 		rType = 0;
 		vrLen = 309;
 		vrLoc = 1283;
@@ -2515,7 +2711,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 54";
 		rLen = 0;
-		rLoc = 4869;
+		rLoc = 4384;
 		rType = 0;
 		vrLen = 1236;
 		vrLoc = 1141;
@@ -2525,7 +2721,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 449";
 		rLen = 0;
-		rLoc = 5082;
+		rLoc = 5201;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 0;
@@ -2595,7 +2791,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 30";
 		rLen = 0;
-		rLoc = 962;
+		rLoc = 1019;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 110;
@@ -2605,7 +2801,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 27";
 		rLen = 0;
-		rLoc = 386;
+		rLoc = 895;
 		rType = 0;
 		vrLen = 379;
 		vrLoc = 116;
@@ -2615,7 +2811,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 54";
 		rLen = 0;
-		rLoc = 4869;
+		rLoc = 4384;
 		rType = 0;
 		vrLen = 1239;
 		vrLoc = 1141;
@@ -2625,7 +2821,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 449";
 		rLen = 0;
-		rLoc = 5082;
+		rLoc = 5201;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 0;
@@ -2695,7 +2891,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 28";
 		rLen = 0;
-		rLoc = 765;
+		rLoc = 822;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 110;
@@ -2705,7 +2901,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 27";
 		rLen = 0;
-		rLoc = 386;
+		rLoc = 895;
 		rType = 0;
 		vrLen = 358;
 		vrLoc = 379;
@@ -2715,7 +2911,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 54";
 		rLen = 0;
-		rLoc = 4869;
+		rLoc = 4384;
 		rType = 0;
 		vrLen = 1161;
 		vrLoc = 1141;
@@ -2725,7 +2921,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 449";
 		rLen = 0;
-		rLoc = 5082;
+		rLoc = 5201;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 0;
@@ -2795,7 +2991,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 28";
 		rLen = 0;
-		rLoc = 765;
+		rLoc = 822;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 110;
@@ -2805,7 +3001,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 27";
 		rLen = 0;
-		rLoc = 386;
+		rLoc = 895;
 		rType = 0;
 		vrLen = 358;
 		vrLoc = 379;
@@ -2815,7 +3011,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 54";
 		rLen = 0;
-		rLoc = 4869;
+		rLoc = 4384;
 		rType = 0;
 		vrLen = 1161;
 		vrLoc = 1141;
@@ -2825,7 +3021,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 449";
 		rLen = 0;
-		rLoc = 5082;
+		rLoc = 5201;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 0;
@@ -2886,7 +3082,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 232;
+		rLoc = 205;
 		rType = 1;
 	};
 	449FBE0716B0A9070045855B /* XCBuildMessageTextBookmark */ = {
@@ -2895,7 +3091,7 @@
 		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 47;
+		rLoc = 46;
 		rType = 1;
 	};
 	449FBE3C16B0B0050045855B /* XCBuildMessageTextBookmark */ = {
@@ -2904,7 +3100,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 0;
-		rLoc = 251;
+		rLoc = 258;
 		rType = 1;
 	};
 	449FBE3F16B0B5DF0045855B /* XCBuildMessageTextBookmark */ = {
@@ -2913,7 +3109,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 38;
+		rLoc = 67;
 		rType = 1;
 	};
 	449FBE4416B0B6AE0045855B /* PBXTextBookmark */ = {
@@ -2931,7 +3127,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 36";
 		rLen = 0;
-		rLoc = 1226;
+		rLoc = 1283;
 		rType = 0;
 		vrLen = 190;
 		vrLoc = 605;
@@ -2941,7 +3137,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 81";
 		rLen = 0;
-		rLoc = 1519;
+		rLoc = 2028;
 		rType = 0;
 		vrLen = 903;
 		vrLoc = 913;
@@ -2951,7 +3147,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 193";
 		rLen = 0;
-		rLoc = 4242;
+		rLoc = 4203;
 		rType = 0;
 		vrLen = 1445;
 		vrLoc = 0;
@@ -2971,7 +3167,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 65";
 		rLen = 0;
-		rLoc = 2530;
+		rLoc = 2074;
 		rType = 0;
 		vrLen = 728;
 		vrLoc = 1136;
@@ -3032,7 +3228,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 184;
+		rLoc = 213;
 		rType = 1;
 	};
 	449FBE6616B0BD130045855B /* PBXTextBookmark */ = {
@@ -3060,7 +3256,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 131";
 		rLen = 0;
-		rLoc = 2594;
+		rLoc = 3103;
 		rType = 0;
 		vrLen = 1467;
 		vrLoc = 631;
@@ -3070,7 +3266,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 65";
 		rLen = 0;
-		rLoc = 2530;
+		rLoc = 2074;
 		rType = 0;
 		vrLen = 728;
 		vrLoc = 1136;
@@ -3080,7 +3276,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 193";
 		rLen = 0;
-		rLoc = 4242;
+		rLoc = 4203;
 		rType = 0;
 		vrLen = 1445;
 		vrLoc = 0;
@@ -3160,7 +3356,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 65";
 		rLen = 0;
-		rLoc = 2530;
+		rLoc = 2074;
 		rType = 0;
 		vrLen = 728;
 		vrLoc = 1136;
@@ -3170,7 +3366,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 193";
 		rLen = 0;
-		rLoc = 4242;
+		rLoc = 4203;
 		rType = 0;
 		vrLen = 1445;
 		vrLoc = 0;
@@ -3220,7 +3416,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 27";
 		rLen = 0;
-		rLoc = 667;
+		rLoc = 724;
 		rType = 0;
 		vrLen = 256;
 		vrLoc = 346;
@@ -3230,7 +3426,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 140";
 		rLen = 0;
-		rLoc = 2805;
+		rLoc = 3314;
 		rType = 0;
 		vrLen = 2392;
 		vrLoc = 453;
@@ -3260,7 +3456,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 117";
 		rLen = 0;
-		rLoc = 5598;
+		rLoc = 5136;
 		rType = 0;
 		vrLen = 657;
 		vrLoc = 1888;
@@ -3270,7 +3466,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 23";
 		rLen = 0;
-		rLoc = 533;
+		rLoc = 590;
 		rType = 0;
 		vrLen = 474;
 		vrLoc = 321;
@@ -3290,7 +3486,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 247";
 		rLen = 0;
-		rLoc = 5076;
+		rLoc = 5195;
 		rType = 0;
 		vrLen = 186;
 		vrLoc = 4906;
@@ -3310,7 +3506,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 140";
 		rLen = 0;
-		rLoc = 2747;
+		rLoc = 3256;
 		rType = 0;
 		vrLen = 385;
 		vrLoc = 2386;
@@ -3419,7 +3615,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 65";
 		rLen = 0;
-		rLoc = 2530;
+		rLoc = 2074;
 		rType = 0;
 		vrLen = 728;
 		vrLoc = 1136;
@@ -3429,7 +3625,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 104";
 		rLen = 0;
-		rLoc = 5403;
+		rLoc = 4918;
 		rType = 0;
 		vrLen = 1118;
 		vrLoc = 1633;
@@ -3479,7 +3675,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 27";
 		rLen = 0;
-		rLoc = 667;
+		rLoc = 724;
 		rType = 0;
 		vrLen = 256;
 		vrLoc = 346;
@@ -3489,7 +3685,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 140";
 		rLen = 0;
-		rLoc = 2805;
+		rLoc = 3314;
 		rType = 0;
 		vrLen = 2392;
 		vrLoc = 453;
@@ -3529,7 +3725,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 104";
 		rLen = 0;
-		rLoc = 5403;
+		rLoc = 4918;
 		rType = 0;
 		vrLen = 1118;
 		vrLoc = 1633;
@@ -3579,7 +3775,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 27";
 		rLen = 0;
-		rLoc = 667;
+		rLoc = 724;
 		rType = 0;
 		vrLen = 256;
 		vrLoc = 346;
@@ -3589,7 +3785,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 140";
 		rLen = 0;
-		rLoc = 2805;
+		rLoc = 3314;
 		rType = 0;
 		vrLen = 2392;
 		vrLoc = 453;
@@ -3659,7 +3855,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 104";
 		rLen = 0;
-		rLoc = 5403;
+		rLoc = 4918;
 		rType = 0;
 		vrLen = 1118;
 		vrLoc = 1633;
@@ -3689,7 +3885,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 27";
 		rLen = 0;
-		rLoc = 667;
+		rLoc = 724;
 		rType = 0;
 		vrLen = 256;
 		vrLoc = 346;
@@ -3699,7 +3895,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 140";
 		rLen = 0;
-		rLoc = 2805;
+		rLoc = 3314;
 		rType = 0;
 		vrLen = 2392;
 		vrLoc = 453;
@@ -3723,7 +3919,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 193";
 		rLen = 0;
-		rLoc = 4242;
+		rLoc = 4203;
 		rType = 0;
 		vrLen = 688;
 		vrLoc = 4396;
@@ -3733,7 +3929,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 237";
 		rLen = 0;
-		rLoc = 7746;
+		rLoc = 7384;
 		rType = 0;
 		vrLen = 1343;
 		vrLoc = 4338;
@@ -3743,7 +3939,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -3753,7 +3949,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -3853,7 +4049,7 @@
 		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
 		name = "portalio_hidapi.cpp: 193";
 		rLen = 0;
-		rLoc = 4242;
+		rLoc = 4203;
 		rType = 0;
 		vrLen = 688;
 		vrLoc = 4396;
@@ -3863,7 +4059,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 237";
 		rLen = 0;
-		rLoc = 7746;
+		rLoc = 7384;
 		rType = 0;
 		vrLen = 1343;
 		vrLoc = 4338;
@@ -3873,7 +4069,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -3883,7 +4079,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -3973,7 +4169,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 237";
 		rLen = 0;
-		rLoc = 7746;
+		rLoc = 7384;
 		rType = 0;
 		vrLen = 1343;
 		vrLoc = 4338;
@@ -3983,7 +4179,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 231";
 		rLen = 0;
-		rLoc = 6630;
+		rLoc = 6174;
 		rType = 0;
 		vrLen = 1311;
 		vrLoc = 4336;
@@ -3993,7 +4189,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4003,7 +4199,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -4014,7 +4210,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 125;
+		rLoc = 98;
 		rType = 1;
 	};
 	449FBF1A16B0F49D0045855B /* PBXTextBookmark */ = {
@@ -4032,7 +4228,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 31";
 		rLen = 0;
-		rLoc = 1268;
+		rLoc = 1279;
 		rType = 0;
 		vrLen = 1547;
 		vrLoc = 0;
@@ -4062,7 +4258,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4072,7 +4268,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -4083,7 +4279,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 165;
+		rLoc = 138;
 		rType = 1;
 	};
 	449FBF2516B0FAD90045855B /* PBXTextBookmark */ = {
@@ -4101,7 +4297,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 156";
 		rLen = 0;
-		rLoc = 4117;
+		rLoc = 3632;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 3279;
@@ -4111,7 +4307,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4121,7 +4317,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -4161,7 +4357,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 36";
 		rLen = 0;
-		rLoc = 1246;
+		rLoc = 1257;
 		rType = 0;
 		vrLen = 1800;
 		vrLoc = 175;
@@ -4171,7 +4367,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4181,7 +4377,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -4221,7 +4417,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 90";
 		rLen = 0;
-		rLoc = 2787;
+		rLoc = 2302;
 		rType = 0;
 		vrLen = 913;
 		vrLoc = 2222;
@@ -4231,7 +4427,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4241,7 +4437,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -4281,7 +4477,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 254";
 		rLen = 0;
-		rLoc = 6310;
+		rLoc = 5854;
 		rType = 0;
 		vrLen = 1241;
 		vrLoc = 5622;
@@ -4291,7 +4487,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4301,7 +4497,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -4341,7 +4537,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 58";
 		rLen = 0;
-		rLoc = 2012;
+		rLoc = 2023;
 		rType = 0;
 		vrLen = 1153;
 		vrLoc = 1395;
@@ -4351,7 +4547,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4361,7 +4557,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -4401,7 +4597,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 58";
 		rLen = 0;
-		rLoc = 2010;
+		rLoc = 2021;
 		rType = 0;
 		vrLen = 1159;
 		vrLoc = 1395;
@@ -4411,7 +4607,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4421,7 +4617,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -4481,7 +4677,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 58";
 		rLen = 0;
-		rLoc = 2010;
+		rLoc = 2021;
 		rType = 0;
 		vrLen = 1159;
 		vrLoc = 1395;
@@ -4491,7 +4687,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4501,7 +4697,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -4550,7 +4746,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 58";
 		rLen = 0;
-		rLoc = 2010;
+		rLoc = 2021;
 		rType = 0;
 		vrLen = 1159;
 		vrLoc = 1395;
@@ -4560,7 +4756,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4570,7 +4766,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -4590,7 +4786,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 274";
 		rLen = 0;
-		rLoc = 7031;
+		rLoc = 6575;
 		rType = 0;
 		vrLen = 1417;
 		vrLoc = 5484;
@@ -4620,7 +4816,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4630,7 +4826,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -4650,7 +4846,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 221";
 		rLen = 0;
-		rLoc = 5381;
+		rLoc = 4896;
 		rType = 0;
 		vrLen = 1205;
 		vrLoc = 4533;
@@ -4680,7 +4876,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4690,7 +4886,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -4710,7 +4906,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 264";
 		rLen = 0;
-		rLoc = 6761;
+		rLoc = 6305;
 		rType = 0;
 		vrLen = 1521;
 		vrLoc = 6221;
@@ -4740,7 +4936,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4750,7 +4946,7 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
@@ -4761,7 +4957,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 283;
+		rLoc = 256;
 		rType = 1;
 	};
 	449FBF8516B0FFF80045855B /* PBXTextBookmark */ = {
@@ -4779,7 +4975,7 @@
 		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
 		name = "main.cpp: 224";
 		rLen = 0;
-		rLoc = 5384;
+		rLoc = 4899;
 		rType = 0;
 		vrLen = 1350;
 		vrLoc = 4869;
@@ -4809,7 +5005,7 @@
 		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
 		name = "fileio.h: 39";
 		rLen = 21;
-		rLoc = 789;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 265;
 		vrLoc = 699;
@@ -4819,9 +5015,1860 @@
 		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
 		name = "fileio.cpp: 145";
 		rLen = 0;
-		rLoc = 2868;
+		rLoc = 3377;
 		rType = 0;
 		vrLen = 590;
 		vrLoc = 1253;
+	};
+	449FBF8D16B1359A0045855B /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+	};
+	449FBF9216B1363D0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FBF9516B1363D0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 193";
+		rLen = 0;
+		rLoc = 4203;
+		rType = 0;
+		vrLen = 827;
+		vrLoc = 3656;
+	};
+	449FBF9C16B1396D0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FBF9D16B1396D0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 76";
+		rLen = 0;
+		rLoc = 2044;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 1466;
+	};
+	449FBFA016B139760045855B /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+	};
+	449FBFA716B139BE0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FBFAA16B139BE0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 15";
+		rLen = 0;
+		rLoc = 219;
+		rType = 0;
+		vrLen = 1754;
+		vrLoc = 0;
+	};
+	449FBFAB16B139BE0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 76";
+		rLen = 0;
+		rLoc = 2044;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 1466;
+	};
+	449FBFAE16B13A210045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FBFAF16B13A210045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 65";
+		rLen = 0;
+		rLoc = 2074;
+		rType = 0;
+		vrLen = 884;
+		vrLoc = 2157;
+	};
+	449FBFB016B13A210045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 76";
+		rLen = 0;
+		rLoc = 2044;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 1466;
+	};
+	449FBFB816B13DF60045855B /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Prototype for 'void SkylanderIO::fprinthex(FILE*, unsigned char*, unsigned int)' does not match any in class 'SkylanderIO'";
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 3;
+		rType = 1;
+	};
+	449FBFB916B13E100045855B /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Candidate is: void SkylanderIO::fprinthex(FILE, unsigned char*, unsigned int)";
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 21;
+		rType = 1;
+	};
+	449FBFBC16B13E190045855B /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'fprinthex' is not a member of 'std'";
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 0;
+		rLoc = 79;
+		rType = 1;
+	};
+	449FBFC116B13EBE0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FBFC216B13EBE0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 78";
+		rLen = 0;
+		rLoc = 2044;
+		rType = 0;
+		vrLen = 807;
+		vrLoc = 1686;
+	};
+	449FBFC516B13EBE0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 4";
+		rLen = 74;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	449FBFC616B13EBE0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FBFC916B13EBE0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 4";
+		rLen = 0;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	449FBFCA16B13EBE0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 206";
+		rLen = 0;
+		rLoc = 5145;
+		rType = 0;
+		vrLen = 1595;
+		vrLoc = 4843;
+	};
+	449FBFCD16B1441E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FBFCE16B1441E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 78";
+		rLen = 0;
+		rLoc = 2044;
+		rType = 0;
+		vrLen = 819;
+		vrLoc = 1686;
+	};
+	449FBFCF16B1441E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FBFD016B1441E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 4";
+		rLen = 0;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	449FBFD116B1441E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 206";
+		rLen = 0;
+		rLoc = 5145;
+		rType = 0;
+		vrLen = 1595;
+		vrLoc = 4843;
+	};
+	449FBFD416B1453B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FBFD716B1453B0045855B /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+	};
+	449FBFD816B1453B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FBFD916B1453B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 78";
+		rLen = 0;
+		rLoc = 2044;
+		rType = 0;
+		vrLen = 820;
+		vrLoc = 1686;
+	};
+	449FBFDA16B1453B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FBFDB16B1453B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 4";
+		rLen = 0;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	449FBFDC16B1453B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 206";
+		rLen = 0;
+		rLoc = 5145;
+		rType = 0;
+		vrLen = 1595;
+		vrLoc = 4843;
+	};
+	449FBFDD16B145590045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FBFDE16B145590045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FBFDF16B145590045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 76";
+		rLen = 0;
+		rLoc = 2044;
+		rType = 0;
+		vrLen = 801;
+		vrLoc = 1686;
+	};
+	449FBFE016B145590045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FBFE116B145590045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 4";
+		rLen = 0;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	449FBFE216B145590045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 206";
+		rLen = 0;
+		rLoc = 5145;
+		rType = 0;
+		vrLen = 1595;
+		vrLoc = 4843;
+	};
+	449FBFE516B145F10045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FBFE616B145F10045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 154";
+		rLen = 0;
+		rLoc = 3404;
+		rType = 0;
+		vrLen = 979;
+		vrLoc = 2743;
+	};
+	449FBFE716B145F10045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FBFE816B145F10045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 4";
+		rLen = 0;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	449FBFE916B145F10045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 206";
+		rLen = 0;
+		rLoc = 5145;
+		rType = 0;
+		vrLen = 1595;
+		vrLoc = 4843;
+	};
+	449FBFEA16B145F10045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FBFED16B148240045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FBFEE16B148240045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 156";
+		rLen = 0;
+		rLoc = 3429;
+		rType = 0;
+		vrLen = 921;
+		vrLoc = 2776;
+	};
+	449FBFEF16B148240045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FBFF016B148240045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 4";
+		rLen = 0;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	449FBFF116B148240045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 206";
+		rLen = 0;
+		rLoc = 5145;
+		rType = 0;
+		vrLen = 1595;
+		vrLoc = 4843;
+	};
+	449FBFF216B148240045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FBFF516B148EC0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FBFF616B148EC0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 91";
+		rLen = 0;
+		rLoc = 2823;
+		rType = 0;
+		vrLen = 709;
+		vrLoc = 2048;
+	};
+	449FBFF716B148EC0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FBFF816B148EC0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 4";
+		rLen = 0;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	449FBFF916B148EC0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 206";
+		rLen = 0;
+		rLoc = 5145;
+		rType = 0;
+		vrLen = 1595;
+		vrLoc = 4843;
+	};
+	449FBFFA16B148EC0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FBFFD16B14AAC0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FBFFE16B14AAC0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 60";
+		rLen = 0;
+		rLoc = 1748;
+		rType = 0;
+		vrLen = 940;
+		vrLoc = 1444;
+	};
+	449FBFFF16B14AAC0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FC00016B14AAC0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 4";
+		rLen = 0;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	449FC00116B14AAC0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 206";
+		rLen = 0;
+		rLoc = 5145;
+		rType = 0;
+		vrLen = 1595;
+		vrLoc = 4843;
+	};
+	449FC00216B14AAC0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC00716B14ADB0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC00816B14ADB0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 76";
+		rLen = 0;
+		rLoc = 2003;
+		rType = 0;
+		vrLen = 939;
+		vrLoc = 1444;
+	};
+	449FC00916B14ADB0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FC00A16B14ADB0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 4";
+		rLen = 0;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	449FC00B16B14ADB0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 206";
+		rLen = 0;
+		rLoc = 5145;
+		rType = 0;
+		vrLen = 1595;
+		vrLoc = 4843;
+	};
+	449FC00C16B14ADB0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC01116B14B690045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC01216B14B690045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 136";
+		rLen = 0;
+		rLoc = 3191;
+		rType = 0;
+		vrLen = 971;
+		vrLoc = 2817;
+	};
+	449FC01316B14B690045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FC01416B14B690045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 4";
+		rLen = 0;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	449FC01516B14B690045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 206";
+		rLen = 0;
+		rLoc = 5145;
+		rType = 0;
+		vrLen = 1595;
+		vrLoc = 4843;
+	};
+	449FC01616B14B690045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC01716B14B860045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC01816B14B860045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 161";
+		rLen = 0;
+		rLoc = 3429;
+		rType = 0;
+		vrLen = 977;
+		vrLoc = 2817;
+	};
+	449FC01916B14B860045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FC01A16B14B860045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 4";
+		rLen = 0;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	449FC01B16B14B860045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 206";
+		rLen = 0;
+		rLoc = 5145;
+		rType = 0;
+		vrLen = 1595;
+		vrLoc = 4843;
+	};
+	449FC01C16B14B860045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC02216B14BB80045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC02316B14BB80045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 206";
+		rLen = 0;
+		rLoc = 5145;
+		rType = 0;
+		vrLen = 1595;
+		vrLoc = 4843;
+	};
+	449FC02416B14BB80045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 267";
+		rLen = 0;
+		rLoc = 7093;
+		rType = 0;
+		vrLen = 1414;
+		vrLoc = 5868;
+	};
+	449FC02516B14BB80045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 161";
+		rLen = 0;
+		rLoc = 3429;
+		rType = 0;
+		vrLen = 977;
+		vrLoc = 2817;
+	};
+	449FC02616B14BB80045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FC02716B14BB80045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 4";
+		rLen = 0;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	449FC02816B14BB80045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC02E16B14D740045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC02F16B14D740045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 267";
+		rLen = 0;
+		rLoc = 7093;
+		rType = 0;
+		vrLen = 1627;
+		vrLoc = 4613;
+	};
+	449FC03016B14D740045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FC03116B14D740045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 161";
+		rLen = 0;
+		rLoc = 3429;
+		rType = 0;
+		vrLen = 977;
+		vrLoc = 2817;
+	};
+	449FC03216B14D740045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 123";
+		rLen = 0;
+		rLoc = 2823;
+		rType = 0;
+		vrLen = 916;
+		vrLoc = 2566;
+	};
+	449FC03316B14D740045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC03616B14E680045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC03716B14E680045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 135";
+		rLen = 0;
+		rLoc = 3191;
+		rType = 0;
+		vrLen = 796;
+		vrLoc = 2359;
+	};
+	449FC03816B14E680045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 267";
+		rLen = 0;
+		rLoc = 7093;
+		rType = 0;
+		vrLen = 1627;
+		vrLoc = 4613;
+	};
+	449FC03916B14E680045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FC03A16B14E680045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC04516B152960045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC04616B152960045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 108";
+		rLen = 0;
+		rLoc = 2985;
+		rType = 0;
+		vrLen = 741;
+		vrLoc = 2294;
+	};
+	449FC04716B152960045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FC04816B152960045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC04916B1547E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC04A16B1547E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 233";
+		rLen = 0;
+		rLoc = 4624;
+		rType = 0;
+		vrLen = 858;
+		vrLoc = 4193;
+	};
+	449FC04B16B1547E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FC04C16B1547E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC04F16B160000045855B /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'skio' was not declared in this scope";
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 150;
+		rType = 1;
+	};
+	449FC05416B1601B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC05516B1601B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 147";
+		rLen = 0;
+		rLoc = 3404;
+		rType = 0;
+		vrLen = 865;
+		vrLoc = 2775;
+	};
+	449FC05616B1601B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FC05716B1601B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC05A16B1610E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC05B16B1610E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 228";
+		rLen = 0;
+		rLoc = 4624;
+		rType = 0;
+		vrLen = 819;
+		vrLoc = 4180;
+	};
+	449FC05C16B1610E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FC05D16B1610E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC06216B161EF0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC06316B161EF0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 234";
+		rLen = 0;
+		rLoc = 4762;
+		rType = 0;
+		vrLen = 921;
+		vrLoc = 4318;
+	};
+	449FC06416B161EF0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FC06516B161EF0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC06616B162560045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC06716B162560045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 232";
+		rLen = 0;
+		rLoc = 4624;
+		rType = 0;
+		vrLen = 928;
+		vrLoc = 4542;
+	};
+	449FC06816B162560045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 14;
+	};
+	449FC06916B162560045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC07016B162980045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC07116B162980045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 215";
+		rLen = 0;
+		rLoc = 4401;
+		rType = 0;
+		vrLen = 956;
+		vrLoc = 4466;
+	};
+	449FC07216B162980045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1021;
+		vrLoc = 14;
+	};
+	449FC07316B162980045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC07616B162CB0045855B /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+	};
+	449FC07916B163280045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC07C16B163280045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 66";
+		rLen = 23;
+		rLoc = 1083;
+		rType = 0;
+		vrLen = 1042;
+		vrLoc = 1063;
+	};
+	449FC07D16B163280045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 278";
+		rLen = 0;
+		rLoc = 5161;
+		rType = 0;
+		vrLen = 764;
+		vrLoc = 4985;
+	};
+	449FC07E16B163280045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1021;
+		vrLoc = 14;
+	};
+	449FC07F16B163280045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC08016B1636E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC08116B1636E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 274";
+		rLen = 0;
+		rLoc = 5098;
+		rType = 0;
+		vrLen = 765;
+		vrLoc = 4983;
+	};
+	449FC08216B1636E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 94";
+		rLen = 32;
+		rLoc = 1724;
+		rType = 0;
+		vrLen = 1063;
+		vrLoc = 1164;
+	};
+	449FC08316B1636E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1021;
+		vrLoc = 14;
+	};
+	449FC08416B1636E0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC08916B163960045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC08A16B163960045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 255";
+		rLen = 0;
+		rLoc = 4935;
+		rType = 0;
+		vrLen = 961;
+		vrLoc = 4607;
+	};
+	449FC08B16B163960045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 94";
+		rLen = 32;
+		rLoc = 1724;
+		rType = 0;
+		vrLen = 1063;
+		vrLoc = 1164;
+	};
+	449FC08C16B163960045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1021;
+		vrLoc = 14;
+	};
+	449FC08D16B163960045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC08E16B163F70045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC08F16B163F70045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 252";
+		rLen = 0;
+		rLoc = 4763;
+		rType = 0;
+		vrLen = 933;
+		vrLoc = 4615;
+	};
+	449FC09016B163F70045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA016AE783F0045855B /* fileio.cpp */;
+		name = "fileio.cpp: 94";
+		rLen = 32;
+		rLoc = 1724;
+		rType = 0;
+		vrLen = 1063;
+		vrLoc = 1164;
+	};
+	449FC09116B163F70045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1021;
+		vrLoc = 14;
+	};
+	449FC09216B163F70045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC09516B1653F0045855B /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+	};
+	449FC09816B1656B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC09916B1656B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 142";
+		rLen = 0;
+		rLoc = 3195;
+		rType = 0;
+		vrLen = 928;
+		vrLoc = 2701;
+	};
+	449FC09C16B1656B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 270";
+		rLen = 0;
+		rLoc = 7312;
+		rType = 0;
+		vrLen = 1480;
+		vrLoc = 5891;
+	};
+	449FC09D16B1656B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1021;
+		vrLoc = 14;
+	};
+	449FC09E16B1656B0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC0A416B166E40045855B /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "No matching function for call to 'PortalIO::CheckResponse(RWBlock&, char)'";
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 204;
+		rType = 1;
+	};
+	449FC0A916B167120045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC0AA16B167120045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 243";
+		rLen = 0;
+		rLoc = 4617;
+		rType = 0;
+		vrLen = 746;
+		vrLoc = 4668;
+	};
+	449FC0AD16B167120045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
+		rLen = 0;
+		rLoc = 9223372036854775802;
+		rType = 0;
+	};
+	449FC0AE16B167120045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
+		name = "portalio.h: 45";
+		rLen = 0;
+		rLoc = 939;
+		rType = 0;
+		vrLen = 1132;
+		vrLoc = 78;
+	};
+	449FC0AF16B167120045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 270";
+		rLen = 0;
+		rLoc = 7312;
+		rType = 0;
+		vrLen = 1480;
+		vrLoc = 5891;
+	};
+	449FC0B016B167120045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1021;
+		vrLoc = 14;
+	};
+	449FC0B116B167120045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC0B416B167400045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC0B516B167400045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 237";
+		rLen = 0;
+		rLoc = 4617;
+		rType = 0;
+		vrLen = 793;
+		vrLoc = 4694;
+	};
+	449FC0B616B167400045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
+		name = "portalio.h: 45";
+		rLen = 0;
+		rLoc = 939;
+		rType = 0;
+		vrLen = 1132;
+		vrLoc = 78;
+	};
+	449FC0B716B167400045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 270";
+		rLen = 0;
+		rLoc = 7312;
+		rType = 0;
+		vrLen = 1480;
+		vrLoc = 5891;
+	};
+	449FC0B816B167400045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1021;
+		vrLoc = 14;
+	};
+	449FC0B916B167400045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC0BC16B169140045855B /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Expected `)' before ';' token";
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 143;
+		rType = 1;
+	};
+	449FC0BF16B1691F0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC0C016B1691F0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 144";
+		rLen = 0;
+		rLoc = 3188;
+		rType = 0;
+		vrLen = 859;
+		vrLoc = 2756;
+	};
+	449FC0C116B1691F0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
+		name = "portalio.h: 45";
+		rLen = 0;
+		rLoc = 939;
+		rType = 0;
+		vrLen = 1132;
+		vrLoc = 78;
+	};
+	449FC0C216B1691F0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 270";
+		rLen = 0;
+		rLoc = 7312;
+		rType = 0;
+		vrLen = 1480;
+		vrLoc = 5891;
+	};
+	449FC0C316B1691F0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1021;
+		vrLoc = 14;
+	};
+	449FC0C416B1691F0045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC0C716B169A40045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC0C816B169A40045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 86";
+		rLen = 0;
+		rLoc = 2197;
+		rType = 0;
+		vrLen = 848;
+		vrLoc = 1536;
+	};
+	449FC0C916B169A40045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
+		name = "portalio.h: 45";
+		rLen = 0;
+		rLoc = 939;
+		rType = 0;
+		vrLen = 1132;
+		vrLoc = 78;
+	};
+	449FC0CA16B169A40045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
+		name = "portalio.h: 51";
+		rLen = 0;
+		rLoc = 1165;
+		rType = 0;
+		vrLen = 1163;
+		vrLoc = 57;
+	};
+	449FC0CB16B169A40045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 270";
+		rLen = 0;
+		rLoc = 7312;
+		rType = 0;
+		vrLen = 1480;
+		vrLoc = 5891;
+	};
+	449FC0CC16B169A40045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1021;
+		vrLoc = 14;
+	};
+	449FC0CD16B169A40045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
+	};
+	449FC0D016B16B280045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBB9C16AE783F0045855B /* checksum.cpp */;
+		name = "checksum.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 0;
+	};
+	449FC0D116B16B280045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA416AE783F0045855B /* main.cpp */;
+		name = "main.cpp: 271";
+		rLen = 0;
+		rLoc = 7357;
+		rType = 0;
+		vrLen = 1441;
+		vrLoc = 5948;
+	};
+	449FC0D216B16B280045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA816AE783F0045855B /* portalio.h */;
+		name = "portalio.h: 51";
+		rLen = 0;
+		rLoc = 1165;
+		rType = 0;
+		vrLen = 1163;
+		vrLoc = 57;
+	};
+	449FC0D316B16B280045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */;
+		name = "portalio_hidapi.cpp: 86";
+		rLen = 0;
+		rLoc = 2197;
+		rType = 0;
+		vrLen = 848;
+		vrLoc = 1536;
+	};
+	449FC0D416B16B280045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA116AE783F0045855B /* fileio.h */;
+		name = "fileio.h: 22";
+		rLen = 0;
+		rLoc = 326;
+		rType = 0;
+		vrLen = 1021;
+		vrLoc = 14;
+	};
+	449FC0D516B16B280045855B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 449FBBA316AE783F0045855B /* hidapi.h */;
+		name = "hidapi.h: 197";
+		rLen = 0;
+		rLoc = 6514;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 5432;
 	};
 }

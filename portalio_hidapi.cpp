@@ -69,12 +69,42 @@ void PortalIO::OpenPortalHandle() throw (int)
 
 // Send a command to the portal
 void PortalIO::Write(RWBlock *pb) throw (int) {
-			
 	pb->buf[0] = 0; // Use report 0
 	
-	if (hid_write(hPortalHandle, pb->buf, 0x21) != 0)
+	/*
+	SkylanderIO *skio;
+	skio = new SkylanderIO();
+	printf(">>>\n");
+	skio->fprinthex(stdout,pb->buf, 0x21);
+	delete skio;
+	*/
+	if (hid_write(hPortalHandle, pb->buf, 0x21) == -1)
 		throw 6;
 
+}
+
+bool PortalIO::CheckResponse (RWBlock *res, char expect) throw (int)
+{
+	
+	int b = hid_read_timeout(hPortalHandle, res->buf, rw_buf_size, TIMEOUT);
+	
+	if(b<0)
+		throw 8;
+	
+	res->dwBytesTransferred = b;
+
+	
+	// found wireless USB but portal is not connected
+	if (res->buf[0] == 'Z')
+		throw 9;
+	
+	// Status says no skylander on portal
+	if (res->buf[0] == 'S' && res->buf[1]&1 == 0)
+		throw 11;
+	
+	
+	return   (res->buf[0] != expect);
+	
 }
 
 bool PortalIO::ReadBlock(unsigned int block, unsigned char data[0x10], bool isNEWskylander) throw (int) {
@@ -85,72 +115,42 @@ bool PortalIO::ReadBlock(unsigned int block, unsigned char data[0x10], bool isNE
 	if(block >= 0x40) {
 		throw 7;
 	}
-		
-	for(int retries = 0; retries < 3; retries++)
+
+	// Send query request
+	
+	
+	for(int attempt=0;attempt<15;attempt++)
 	{
-		// Send query request
+		int i=0;
+		gotData = false;
+		
+		
 		memset(req.buf, 0, rw_buf_size);
 		req.buf[1] = 'Q';
-		if(isNEWskylander) {
-			followup = 0x11;
-			
-			if(block == 0) {
-				req.buf[2] = 0x21;
-			} else {
-				req.buf[2] = followup;
-			}
-			
-		} else {
-			followup = 0x10;
-			
-			if(block == 0) {
-				req.buf[2] = 0x20;
-			} else {
-				req.buf[2] = followup;
-			}
-			 
-		}
+		
+		followup = 0x10 + attempt;
+		req.buf[2] = followup;
+		if(block == 0) {
+			req.buf[2] = followup + 0x10;
+		} 
+		
+		
 		
 		req.buf[3] = (unsigned char)block;
 		
 		memset(&(res.buf), 0, rw_buf_size);
 		
-				
-		int i=0;
-		gotData = false;
 		
-		
-		Write(&req);
-		// Don't wait.  Start polling for result immediately
-		
-		
-	//	printf("ReadBlock: %d.\n",block);
-		for(i=0;i<40;i++) // try up to 40 reads
-		{ 
-			int b = hid_read_timeout(hPortalHandle, res.buf, rw_buf_size, TIMEOUT);
+		do { Write(&req); } while (CheckResponse(&res,'Q'));
 			
-			if(b<0)
-				throw 8;
-			
-			
-			// if (b>=0) fprinthex(stdout,res.buf,19);
-			res.dwBytesTransferred = b;
-			
-			// found wireless USB but portal is not connected
-			if (res.buf[0] == 'Z')
-				throw 9;
-			
-				/* has data */
-			if(res.buf[0] == 'Q' && res.buf[2] == (unsigned char)block) {
+		if(res.buf[0] == 'Q' && res.buf[2] == (unsigned char)block) {
 					// Got our query back
-				if(res.buf[1] == followup) {						
-					/* got the query back with no error */
-					memcpy(data, res.buf + 3, 0x10);
-					return true;
-				}
+			if(res.buf[1] == followup) {						
+				/* got the query back with no error */
+				memcpy(data, res.buf + 3, 0x10);
+				return true;
 			}
-							
-		} /* read loop */
+		}
 		
 		
 	} // retries
@@ -190,7 +190,7 @@ bool PortalIO::WriteBlock(unsigned int block, unsigned char data[0x10], bool isN
 			;
 		}
 	}
-	throw 6;
+	throw 22;
 }
 
 
@@ -198,35 +198,42 @@ bool PortalIO::WriteBlock(unsigned int block, unsigned char data[0x10], bool isN
 // Start portal
 void PortalIO::RestartPortal() throw (int)
 {
-	RWBlock req;
-	
+	RWBlock req,res;
+		
 	memset(req.buf, 0, rw_buf_size);
 	req.buf[1] = 'R'; 
-	Write(&req);
+	do { Write(&req); } while (CheckResponse(&res,'R'));
+	
 }
 
 // Antenna up / activate
 void PortalIO::ActivatePortal() throw (int)
 {
-	RWBlock req;
-	
+	RWBlock req,res;
+
 	memset(req.buf, 0, rw_buf_size);
 	req.buf[1] = 'A';
 	req.buf[2] = 0x01;
-	Write(&req);
+	do { Write(&req); } while (CheckResponse(&res,'A'));
+	
 }
 
 // Set the portal color
 void PortalIO::SetPortalColor(unsigned char r, unsigned char g, unsigned char b) throw (int)
 {
-	RWBlock req;
+	RWBlock req,res;
 	
 	memset(req.buf, 0, rw_buf_size);
 	req.buf[1] = 'C';
 	req.buf[2] = r; // R
 	req.buf[3] = g; // G
 	req.buf[4] = b; // B
-	Write(&req);
+	
+	// no response for this one.
+		Write(&req);
+		
+	
+	
 }
 
 // Release hPortalInstance
@@ -236,14 +243,14 @@ PortalIO::~PortalIO() {
 
 }
 
-PortalIO::PortalIO(void) throw (int)
+PortalIO::PortalIO() throw (int)
 {
-		printf("Connecting to portal.\n");
+	printf("Connecting to portal.\n");
 				
-		OpenPortalHandle();		
-		RestartPortal();
-		ActivatePortal();
-		
+	OpenPortalHandle();
+	RestartPortal();
+	ActivatePortal();
+	SetPortalColor(0xC8, 0xC8, 0xC8);
 }
 
 

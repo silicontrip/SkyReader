@@ -1,6 +1,35 @@
 
 #include "fileio.h"
 
+void SkylanderIO::fprinthex(FILE *f, unsigned char *c, unsigned int n) {
+	unsigned int h,i;
+	unsigned char j;
+	
+	
+	for (h=0; h<n; h+=16) {
+		
+		fprintf (f,"%04x: ",h);
+		
+		for (i=0; i<16; i++) {
+			if (i+h < n) 
+				fprintf (f,"%02x ",*(c+i+h) & 0xff);
+			else
+				fprintf (f,"   ");
+		}
+		for (i=0; i<16; i++) {
+			if (i+h < n) { 
+				j = *(c+i+h);	
+				if (j<32) j='.';
+				if (j>=127) j='.';
+				fprintf (f,"%c",j);
+			} else
+				fprintf(f," ");
+		}
+		fprintf(f,"\n");
+	}
+}
+
+
 SkylanderIO::SkylanderIO ()
 {
 	sky = NULL;

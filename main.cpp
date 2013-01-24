@@ -7,9 +7,11 @@
 #include "portalio.h"
 #include "skylander.h"
 
+using namespace std;
+
+
 // Version 2.0
 
-void usage();
 
 void usage()
 {
@@ -59,35 +61,6 @@ void printquad (unsigned int i)
 	printf("\n");
 	
 }
-
-void fprinthex(FILE *f, unsigned char *c, unsigned int n) {
-	unsigned int h,i;
-	unsigned char j;
-	
-	
-	for (h=0; h<n; h+=16) {
-		
-		fprintf (f,"%04x: ",h);
-		
-		for (i=0; i<16; i++) {
-			if (i+h < n) 
-				fprintf (f,"%02x ",*(c+i+h) & 0xff);
-			else
-				fprintf (f,"   ");
-		}
-		for (i=0; i<16; i++) {
-			if (i+h < n) { 
-				j = *(c+i+h);	
-				if (j<32) j='.';
-				if (j>=127) j='.';
-				fprintf (f,"%c",j);
-			} else
-				fprintf(f," ");
-		}
-		fprintf(f,"\n");
-	}
-}
-
 
 int main(int argc, char* argv[])
 {
@@ -228,9 +201,9 @@ int main(int argc, char* argv[])
 			sky = skio->getSkylander() ;
 			
 			printf("Serial Number: %X\n",sky->getSerial());
-			printf("Toy Type: %s\n",sky->getToyTypeName());
+			printf("Toy Type: %s (%d)\n",sky->getToyTypeName(),sky->getToyType());
 			printf ("trading ID: ");
-			fprinthex(stdout,sky->getTradingID(),8);
+			skio->fprinthex(stdout,sky->getTradingID(),8);
 			
 			printf("Area 0 sequence: %d\n",sky->getArea0Sequence());
 			printf("Area 1 sequence: %d\n",sky->getArea1Sequence());
@@ -284,17 +257,18 @@ int main(int argc, char* argv[])
 	} catch (int e) {
 	
 		switch (e) {
-			case 1: printf ("Cannot open File\n"); break;
-			case 2: printf ("Invalid Skylander File\n"); break;
-			case 3: printf ("Cannot write to File\n"); break;
-			case 4: printf ("Unable to get USB Device List\n"); break;
-			case 5: printf ("Cannot Find Portal USB\n"); break;
-			case 6: printf ("Unable to write to Portal\n"); break;
-			case 7: printf ("Invalid Skylander Block\n"); break;
-			case 8: printf ("Unable to read from Portal\n"); break;
-			case 9: printf ("Wireless portal not connected\n"); break;
-			case 10: printf ("Skylander Write Verify Error\n"); break;
-			default: printf ("Unknown exception\n"); break;
+			case 1: printf ("Cannot open File.\n"); break;
+			case 2: printf ("Invalid Skylander File.\n"); break;
+			case 3: printf ("Cannot write to File.\n"); break;
+			case 4: printf ("Unable to get USB Device List.\n"); break;
+			case 5: printf ("Cannot Find Portal USB.\n"); break;
+			case 6: printf ("Unable to write to Portal.\n"); break;
+			case 7: printf ("Invalid Skylander Block.\n"); break;
+			case 8: printf ("Unable to read Skylander from Portal.\n"); break;
+			case 9: printf ("Wireless portal not connected.\n"); break;
+			case 10: printf ("Skylander Write Verify Error.\n"); break;
+			case 11: printf ("No Skylander detected on portal.\n"); break;
+			default: printf ("Unknown exception: %d.\n",e); break;
 		}
 		
 	}
