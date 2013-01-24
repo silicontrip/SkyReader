@@ -93,6 +93,11 @@ bool PortalIO::CheckResponse (RWBlock *res, char expect) throw (int)
 	
 	res->dwBytesTransferred = b;
 
+	SkylanderIO *skio;
+	skio = new SkylanderIO();
+	printf("<<<\n");
+	skio->fprinthex(stdout,res->buf, 0x21);
+	delete skio;
 	
 	// found wireless USB but portal is not connected
 	if (res->buf[0] == 'Z')
