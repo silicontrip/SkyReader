@@ -1,0 +1,250 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		449FBBAD16AE783F0045855B /* checksum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 449FBB9C16AE783F0045855B /* checksum.cpp */; };
+		449FBBAE16AE783F0045855B /* crypt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 449FBB9E16AE783F0045855B /* crypt.cpp */; };
+		449FBBAF16AE783F0045855B /* fileio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 449FBBA016AE783F0045855B /* fileio.cpp */; };
+		449FBBB016AE783F0045855B /* hid.c in Sources */ = {isa = PBXBuildFile; fileRef = 449FBBA216AE783F0045855B /* hid.c */; };
+		449FBBB116AE783F0045855B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 449FBBA416AE783F0045855B /* main.cpp */; };
+		449FBBB216AE783F0045855B /* md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 449FBBA516AE783F0045855B /* md5.cpp */; };
+		449FBBB316AE783F0045855B /* portalio_hidapi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 449FBBA716AE783F0045855B /* portalio_hidapi.cpp */; };
+		449FBBB416AE783F0045855B /* rijndael.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 449FBBA916AE783F0045855B /* rijndael.cpp */; };
+		449FBBB516AE783F0045855B /* skylander.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 449FBBAB16AE783F0045855B /* skylander.cpp */; };
+		449FBBB716AE785C0045855B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449FBBB616AE785C0045855B /* CoreFoundation.framework */; };
+		449FBBB916AE785C0045855B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449FBBB816AE785C0045855B /* IOKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		449FBB9616AE78120045855B /* editor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = editor; sourceTree = BUILT_PRODUCTS_DIR; };
+		449FBB9C16AE783F0045855B /* checksum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = checksum.cpp; sourceTree = "<group>"; };
+		449FBB9D16AE783F0045855B /* checksum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = checksum.h; sourceTree = "<group>"; };
+		449FBB9E16AE783F0045855B /* crypt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = crypt.cpp; sourceTree = "<group>"; };
+		449FBB9F16AE783F0045855B /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		449FBBA016AE783F0045855B /* fileio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fileio.cpp; sourceTree = "<group>"; };
+		449FBBA116AE783F0045855B /* fileio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileio.h; sourceTree = "<group>"; };
+		449FBBA216AE783F0045855B /* hid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hid.c; sourceTree = "<group>"; };
+		449FBBA316AE783F0045855B /* hidapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hidapi.h; sourceTree = "<group>"; };
+		449FBBA416AE783F0045855B /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		449FBBA516AE783F0045855B /* md5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = md5.cpp; sourceTree = "<group>"; };
+		449FBBA616AE783F0045855B /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
+		449FBBA716AE783F0045855B /* portalio_hidapi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = portalio_hidapi.cpp; sourceTree = "<group>"; };
+		449FBBA816AE783F0045855B /* portalio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = portalio.h; sourceTree = "<group>"; };
+		449FBBA916AE783F0045855B /* rijndael.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rijndael.cpp; sourceTree = "<group>"; };
+		449FBBAA16AE783F0045855B /* rijndael.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rijndael.h; sourceTree = "<group>"; };
+		449FBBAB16AE783F0045855B /* skylander.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = skylander.cpp; sourceTree = "<group>"; };
+		449FBBAC16AE783F0045855B /* skylander.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skylander.h; sourceTree = "<group>"; };
+		449FBBB616AE785C0045855B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		449FBBB816AE785C0045855B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		449FBB9416AE78120045855B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				449FBBB716AE785C0045855B /* CoreFoundation.framework in Frameworks */,
+				449FBBB916AE785C0045855B /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		449FBB8616AE77E10045855B = {
+			isa = PBXGroup;
+			children = (
+				449FBB9C16AE783F0045855B /* checksum.cpp */,
+				449FBB9D16AE783F0045855B /* checksum.h */,
+				449FBB9E16AE783F0045855B /* crypt.cpp */,
+				449FBB9F16AE783F0045855B /* crypt.h */,
+				449FBBA016AE783F0045855B /* fileio.cpp */,
+				449FBBA116AE783F0045855B /* fileio.h */,
+				449FBBA216AE783F0045855B /* hid.c */,
+				449FBBA316AE783F0045855B /* hidapi.h */,
+				449FBBA416AE783F0045855B /* main.cpp */,
+				449FBBA516AE783F0045855B /* md5.cpp */,
+				449FBBA616AE783F0045855B /* md5.h */,
+				449FBBA716AE783F0045855B /* portalio_hidapi.cpp */,
+				449FBBA816AE783F0045855B /* portalio.h */,
+				449FBBA916AE783F0045855B /* rijndael.cpp */,
+				449FBBAA16AE783F0045855B /* rijndael.h */,
+				449FBBAB16AE783F0045855B /* skylander.cpp */,
+				449FBBAC16AE783F0045855B /* skylander.h */,
+				449FBB9716AE78120045855B /* Products */,
+				449FBBB616AE785C0045855B /* CoreFoundation.framework */,
+				449FBBB816AE785C0045855B /* IOKit.framework */,
+			);
+			sourceTree = "<group>";
+		};
+		449FBB9716AE78120045855B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				449FBB9616AE78120045855B /* editor */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		449FBB9516AE78120045855B /* editor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 449FBB9B16AE78120045855B /* Build configuration list for PBXNativeTarget "editor" */;
+			buildPhases = (
+				449FBB9316AE78120045855B /* Sources */,
+				449FBB9416AE78120045855B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = editor;
+			productName = editor;
+			productReference = 449FBB9616AE78120045855B /* editor */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		449FBB8816AE77E10045855B /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 449FBB8B16AE77E10045855B /* Build configuration list for PBXProject "SkyReader" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 449FBB8616AE77E10045855B;
+			productRefGroup = 449FBB9716AE78120045855B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				449FBB9516AE78120045855B /* editor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		449FBB9316AE78120045855B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				449FBBAD16AE783F0045855B /* checksum.cpp in Sources */,
+				449FBBAE16AE783F0045855B /* crypt.cpp in Sources */,
+				449FBBAF16AE783F0045855B /* fileio.cpp in Sources */,
+				449FBBB016AE783F0045855B /* hid.c in Sources */,
+				449FBBB116AE783F0045855B /* main.cpp in Sources */,
+				449FBBB216AE783F0045855B /* md5.cpp in Sources */,
+				449FBBB316AE783F0045855B /* portalio_hidapi.cpp in Sources */,
+				449FBBB416AE783F0045855B /* rijndael.cpp in Sources */,
+				449FBBB516AE783F0045855B /* skylander.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		449FBB8916AE77E10045855B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		449FBB8A16AE77E10045855B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = NO;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_PROTOTYPE_CONVERSION = NO;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		449FBB9916AE78120045855B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = editor;
+			};
+			name = Debug;
+		};
+		449FBB9A16AE78120045855B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = editor;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		449FBB8B16AE77E10045855B /* Build configuration list for PBXProject "SkyReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				449FBB8916AE77E10045855B /* Debug */,
+				449FBB8A16AE77E10045855B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		449FBB9B16AE78120045855B /* Build configuration list for PBXNativeTarget "editor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				449FBB9916AE78120045855B /* Debug */,
+				449FBB9A16AE78120045855B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 449FBB8816AE77E10045855B /* Project object */;
+}
