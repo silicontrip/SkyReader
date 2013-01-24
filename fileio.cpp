@@ -63,9 +63,12 @@ void SkylanderIO::initWithPortal(void) throw (int) {
 	
 	
 	if (!sky) {
+		printf("Reading Skylander from portal.\n");
 		ReadPortal(buffer);
 		DecryptBuffer(buffer);
 		sky = new Skylander(buffer);
+		printf("\nSkylander read from portal.\n");
+
 	}
 }
 
@@ -80,7 +83,6 @@ void SkylanderIO::ReadPortal(unsigned char *s) throw (int)
 	
 	port = new PortalIO();
 	
-	printf("Reading Skylander from portal.\n");
 	
 	try {
 		// must start with a read of block zero
@@ -102,7 +104,6 @@ void SkylanderIO::ReadPortal(unsigned char *s) throw (int)
 		memcpy(ptr, data, sizeof(data));
 	}
 	
-	printf("\nSkylander read from portal.\n");
 	delete port;
 }	
 	
@@ -145,9 +146,9 @@ bool SkylanderIO::writeSkylanderToPortal() throw (int)
 			for(int block=0; block < 0x40; ++block) {
 				bool changed, OK;
 				int offset = block * BLOCK_SIZE;
-				changed = (memcmp(old + offset, skydata+offset,BLOCK_SIZE) == 0);
-				if(changed) {
-					if(crypt.IsAccessControlBlock(block) == selectAccessControlBlock) {
+				if(crypt.IsAccessControlBlock(block) == selectAccessControlBlock) {
+					changed = (memcmp(old + offset, skydata+offset,BLOCK_SIZE) != 0);
+					if(changed) {
 						port->WriteBlock( block, skydata+offset, bNewSkylander);
 					}
 				}
@@ -231,11 +232,6 @@ void SkylanderIO::ReadSkylanderFile(char *name) throw (int)
 
 	if(fileLen != 1024){
 		throw 2;
-	//	fprintf(stderr, "Error. File %s must be 1024 bytes long.  "
-//			"Are you sure this is a skylander file?\n", name);
-//		return NULL;
-	}
-
 
 	//Read file contents into buffer
 	fread(buffer, fileLen, 1, file);
