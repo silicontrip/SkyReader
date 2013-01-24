@@ -462,7 +462,8 @@ void ConnectToPortal(void) {
 	}
 }
 
-#if 0
+#if 1
+
 // stub for testing
 unsigned char *ReadSkylanderFromPortal(void) {
 	return ReadSkylanderFile("D:\\Skylanders\\Editor\\Debug\\dspyro.spy");  // emulate portal for testing
@@ -476,6 +477,7 @@ void WriteSkylanderToPortal(unsigned char *encrypted_new_data, unsigned char *en
 
 #endif
 
+#if 0 
 unsigned char *ReadSkylanderFromPortal(void) {
 	BOOL bResult;
 	BOOL bNewSkylander = FALSE;
@@ -576,4 +578,4 @@ BOOL WriteSkylanderToPortal(unsigned char *encrypted_new_data, unsigned char *en
 	}
 	return TRUE;
 }
-
+#endif

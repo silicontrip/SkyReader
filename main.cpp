@@ -9,6 +9,7 @@
 
 // Version 2.0
 
+void usage();
 
 void usage()
 {
@@ -23,6 +24,7 @@ void usage()
 		"u <optional skill path>: upgrade skylander stats.  <path> = - for left\n" 
 		"   skill path, + for right skill path, empty = do not upgrade skills.\n"
 		"   Original version saved as <filename>.\n"
+		   "d: dump the data of a skylander to the display.\n"
 		"\n"
 		"Examples: \n"
 		"editor u - dspyro.bak\n"
@@ -36,11 +38,42 @@ void usage()
 		"Read figurine, decrypt and save to file dspyro.bak\n");
 }
 
+void fprinthex(FILE *f, unsigned char *c, unsigned int n) {
+	unsigned int h,i;
+	unsigned char j;
+	
+	
+	for (h=0; h<n; h+=16) {
+		
+		fprintf (f,"%04x: ",h);
+		
+		for (i=0; i<16; i++) {
+			if (i+h < n) 
+				fprintf (f,"%02x ",*(c+i+h) & 0xff);
+			else
+				fprintf (f,"   ");
+		}
+		for (i=0; i<16; i++) {
+			if (i+h < n) { 
+				j = *(c+i+h);	
+				if (j<32) j='.';
+				if (j>=127) j='.';
+				fprintf (f,"%c",j);
+			} else
+				fprintf(f," ");
+		}
+		fprintf(f,"\n");
+	}
+}
+
 
 int main(int argc, char* argv[])
 {
 	unsigned char *buffer, *original_data;
 	bool OK, OK2;
+	
+	SkylanderIO *skio;
+	Checksum crc;
 	
 	if (argc<2)
 	{
@@ -48,7 +81,50 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 	
+	try {
+	
 	switch(*argv[1]) {
+		case 'd':
+			
+			if(argc !=3) {
+				usage();
+				return 1;
+			}			
+			
+			skio = new SkylanderIO();
+			
+			skio->initWithUnencryptedFile(argv[2]);
+			if(! skio->getSkylander()->validateChecksum()) {
+				fprintf(stderr, "Warning. Skylander data read from portal, but checksums are incorrect.  File may be corrupt.\n");
+			}
+
+			Skylander * sky ;
+			sky = skio->getSkylander() ;
+			
+			printf("Serial Number: %X\n",sky->getSerial());
+			printf("Toy Type: %s\n",sky->getToyTypeName());
+			printf ("trading ID: ");
+			fprinthex(stdout,sky->getTradingID(),8);
+			
+			printf("Area 0 sequence: %d\n",sky->getArea0Sequence());
+			printf("Area 1 sequence: %d\n",sky->getArea1Sequence());
+
+			printf("Area %d selected.\n",sky->getArea());
+			printf("Experience: %d\n",sky->getXP());
+			printf("Money: %d\n",sky->getMoney());
+
+			printf("Skills: %X\n",sky->getSkill());
+			printf("Platforms: %s\n",sky->getPlatformName());
+			printf("Name: %s\n",sky->getName());
+
+			printf("Hat: %d\n",sky->getHat());
+			printf("Hero Points: %d\n",sky->getHeroPoints());
+
+			printf("Heroic Challenges: %x\n",sky->getHeroicChallenges());
+			
+			delete skio;
+			
+			break;
 		case 'r':
 			// read from portal
 
@@ -57,26 +133,18 @@ int main(int argc, char* argv[])
 				return 1;
 			}
 			
-			buffer = ReadSkylanderFromPortal();
-			if(!buffer) {
-				fprintf(stderr, "Error. Could not read Skylander from portal.  Check portal connection and make sure "
-					"you have installed the portal driver via spyrowebworldportaldriver.exe\n");
-				return false;
-			}
+			skio = new SkylanderIO();
 
-			DecryptBuffer(buffer);
-			OK = ValidateAllChecksums(buffer, false);
-			if(!OK) {
+			skio->initWithPortal();
+
+			// DecryptBuffer(buffer);
+			if(! skio->getSkylander()->validateChecksum()) {
 				fprintf(stderr, "Warning. Skylander data read from portal, but checksums are incorrect.  File may be corrupt.\n");
 			}
-
-			OK2 = WriteSkylanderFile(argv[2], buffer);
-			OK = OK && OK2;
-
-			if(!OK) {
-				return 1;
-			}
-
+			
+			skio->writeSkylanderToUnencryptedFile(argv[2]);
+			
+			delete skio;
 			break;
 
 		case 'w':
@@ -87,20 +155,13 @@ int main(int argc, char* argv[])
 				return 1;
 			}
 
-			buffer = ReadSkylanderFile(argv[2]);  
-			if(!buffer) {
-				fprintf(stderr, "Error. Could not open Skylander file.\n");
-				return 1;
-			}
-
-			ValidateAllChecksums(buffer, true);  // recompute checksums for file
-			EncryptBuffer(buffer);
-
-			OK = WriteSkylanderToPortal(buffer, NULL);
-			if(!OK) {
-				return 1;
-			}
+			skio = new SkylanderIO();
+			skio->initWithUnencryptedFile(argv[2]);
+			skio->getSkylander()->computeChecksum();
 			
+			skio->writeSkylanderToPortal();
+			
+			delete skio;
 			break;
 
 		case 'u':
@@ -127,43 +188,27 @@ int main(int argc, char* argv[])
 				filename = argv[2];
 			}
 			
-			buffer = ReadSkylanderFromPortal();
-			if(!buffer) {
-				fprintf(stderr, "Error. Could not read Skylander from portal.  Check portal connection and make sure "
-					"you have installed the portal driver via spyrowebworldportaldriver.exe\n");
-				return false;
-			}
-
-			original_data=(unsigned char *)malloc(1024);
-			if(!original_data) {
-				fprintf(stderr, "Failed to allocate memory to store Skylander.  Aborting.\n");
+			skio = new SkylanderIO();
+			
+			skio -> initWithPortal();
+			
+			if(! skio->getSkylander()->validateChecksum()) {
+				fprintf(stderr, "Warning. Skylander data read from portal, but checksums are incorrect.  File may be corrupt.\n");
 				return 1;
 			}
-			memcpy(original_data, buffer, 1024);
+			
+			skio->writeSkylanderToUnencryptedFile(filename);
 
-			DecryptBuffer(buffer);
-			OK = ValidateAllChecksums(buffer, false);
-			if(!OK) {
-				fprintf(stderr, "Warning. Skylander data read from portal, but checksums are incorrect.  Aborting.\n");
-				return 1;
-			}
+			if (skill_path == '-')
+				skio->getSkylander()->MaxSkills(0xFF);
+			else 
+				skio->getSkylander()->MaxSkills(0xFD);
 
-			OK = WriteSkylanderFile(filename, buffer);
-			if(!OK) {
-				fprintf(stderr, "Could not save original version of Skylander to file.  Aborting.\n");
-				return 1;
-			}
-
-			MaxStats(buffer, skill_path);
-			ValidateAllChecksums(buffer, true);  // update checksums
-
-			EncryptBuffer(buffer);
-
-			OK = WriteSkylanderToPortal(buffer, original_data);
-			if(!OK) {
-				return 1;
-			}
-
+			skio->getSkylander()->computeChecksum();
+			skio->writeSkylanderToPortal();
+			
+			delete skio;
+			
 			break;
 		default:
 			usage();
@@ -172,4 +217,22 @@ int main(int argc, char* argv[])
 
 	printf("Success!\n");
 	return 0;
+		
+	} catch (int e) {
+	
+		switch (e) {
+			case 1: printf ("Cannot open File\n"); break;
+			case 2: printf ("Invalid Skylander File\n"); break;
+			case 3: printf ("Cannot write to File\n"); break;
+			case 4: printf ("Unable to get USB Device List\n"); break;
+			case 5: printf ("Cannot Find Portal USB\n"); break;
+			case 6: printf ("Unable to write to Portal\n"); break;
+			case 7: printf ("Invalid Skylander Block\n"); break;
+			case 8: printf ("Unable to read from Portal\n"); break;
+			case 9: printf ("Wireless portal not connected\n"); break;
+			case 10: printf ("Skylander Write Verify Error\n"); break;
+			default: printf ("Unknown exception\n"); break;
+		}
+		
+	}
 }

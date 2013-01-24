@@ -1,9 +1,5 @@
-#include "md5.h"
-#include "rijndael.h"
+
 #include "crypt.h"
-#include <memory.h>
-#include <stdlib.h>
-#include <assert.h>
 
 /*
 data encryption
@@ -18,12 +14,12 @@ The key itself is the MD5 hash of the following 0x56 bytes:
 */
 
 
-int IsAccessControlBlock(unsigned int blockIndex)
+int Crypt::IsAccessControlBlock(unsigned int blockIndex)
 {
 	return (((blockIndex % 4) != 3) ? 0 : 1);
 }
 
-static int ShouldEncryptBlock(unsigned int blockIndex)
+ int Crypt::ShouldEncryptBlock(unsigned int blockIndex)
 {
 	if ((blockIndex >= 8) && (IsAccessControlBlock(blockIndex) == 0))
 	{
@@ -33,7 +29,7 @@ static int ShouldEncryptBlock(unsigned int blockIndex)
 }
 
 
-static void ComputeMD5(unsigned char digest[16], void const* bytesIn, unsigned int inputLen)
+ void Crypt::ComputeMD5(unsigned char digest[16], void const* bytesIn, unsigned int inputLen)
 {
 	MD5 md5;
     MD5Open(&md5);
@@ -46,7 +42,7 @@ The key is the MD5 hash of the following 0x56 bytes:
 
 <first 0x20 bytes of sector 0> <1-byte block index> <0x35-byte constant>
 */
-static void ComputeEncryptionKey(unsigned char keyOut[16], unsigned char const* tagBlocks0and1, unsigned int blockIndex)
+ void Crypt::ComputeEncryptionKey(unsigned char keyOut[16], unsigned char const* tagBlocks0and1, unsigned int blockIndex)
 {
 	// <0x35-byte constant>
 	unsigned char hashConst[] = { 
@@ -62,12 +58,15 @@ static void ComputeEncryptionKey(unsigned char keyOut[16], unsigned char const* 
 	numPtr[0] = (unsigned char)blockIndex;
 	numPtr += 1;
 	memcpy(numPtr, hashConst, 0x35);
+	
+	//fprinthex(stdout,hashBuf, 0x56);
+	
 	ComputeMD5(keyOut, hashBuf, 0x56);
 }
 
 
 #define KEYBITS 128
-static void EncryptAES128ECB(unsigned char * key, unsigned char const* plainTextIn, unsigned char* cipherTextOut)
+ void Crypt::EncryptAES128ECB(unsigned char * key, unsigned char const* plainTextIn, unsigned char* cipherTextOut)
 {
 	unsigned long rk[RKLENGTH(KEYBITS)];
 	int nrounds;
@@ -75,7 +74,7 @@ static void EncryptAES128ECB(unsigned char * key, unsigned char const* plainText
 	rijndaelEncrypt(rk, nrounds, plainTextIn, cipherTextOut);
 }
 
-static void DecryptAES128ECB(unsigned char * key, unsigned char const* cipherTextIn, unsigned char* plainTextOut)
+ void Crypt::DecryptAES128ECB(unsigned char * key, unsigned char const* cipherTextIn, unsigned char* plainTextOut)
 {
 	unsigned long rk[RKLENGTH(KEYBITS)];
 	int nrounds;
@@ -83,7 +82,7 @@ static void DecryptAES128ECB(unsigned char * key, unsigned char const* cipherTex
 	rijndaelDecrypt(rk, nrounds, cipherTextIn, plainTextOut);
 }
 
-void EncryptTagBlock(unsigned char* blockData, unsigned int blockIndex, unsigned char const* tagBlocks0and1)
+void Crypt::EncryptTagBlock(unsigned char* blockData, unsigned int blockIndex, unsigned char const* tagBlocks0and1)
 {
 	if (ShouldEncryptBlock(blockIndex) != 0)
 	{
@@ -95,7 +94,7 @@ void EncryptTagBlock(unsigned char* blockData, unsigned int blockIndex, unsigned
 	}
 }
 
-void DecryptTagBlock(unsigned char* blockData, unsigned int blockIndex, unsigned char const* tagBlocks0and1)
+void Crypt::DecryptTagBlock(unsigned char* blockData, unsigned int blockIndex, unsigned char const* tagBlocks0and1)
 {
 	if (ShouldEncryptBlock(blockIndex) != 0)
 	{
@@ -107,31 +106,3 @@ void DecryptTagBlock(unsigned char* blockData, unsigned int blockIndex, unsigned
 	}
 }
 
-// Encrypt entire buffer of character data
-// Buffer is entire 1024 byte block of character data.
-
-void EncryptBuffer(unsigned char* buffer) {
-	unsigned int blockIndex;
-	unsigned char* blockData;
-	unsigned char const* tagBlocks0and1;
-	
-	tagBlocks0and1 = buffer;
-	for(blockIndex = 0x08; blockIndex < 0x40; blockIndex++) {
-		blockData = buffer + blockIndex * 0x10;
-		EncryptTagBlock(blockData, blockIndex, tagBlocks0and1);
-	}
-}
-
-// Decrypt entire buffer of character data
-// Buffer is entire 1024 byte block of character data.
-void DecryptBuffer(unsigned char* buffer) {
-	unsigned int blockIndex;
-	unsigned char* blockData;
-	unsigned char const* tagBlocks0and1;
-	
-	tagBlocks0and1 = buffer;
-	for(blockIndex = 0x08; blockIndex < 0x40; blockIndex++) {
-		blockData = buffer + blockIndex * 0x10;
-		DecryptTagBlock(blockData, blockIndex, tagBlocks0and1);
-	}
-}

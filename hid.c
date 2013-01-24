@@ -362,7 +362,7 @@ static int make_path(IOHIDDeviceRef device, char *buf, size_t len)
 	pid = get_product_id(device);
 
 	res = snprintf(buf, len, "%s_%04hx_%04hx_%p",
-	                   transport, vid, pid, device);
+	                   transport, vid, pid, (void *)device);
 	
 	
 	buf[len-1] = '\0';

@@ -1,23 +1,198 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <memory.h>
 
 #include "fileio.h"
 
-#pragma warning(disable : 4996)  // disable warnings about fopen being deprecated.
+SkylanderIO::SkylanderIO ()
+{
+	sky = NULL;
+	buffer=new unsigned char [1025];
+}
 
-unsigned char* ReadSkylanderFile(char *name)
+SkylanderIO::~SkylanderIO ()
+{
+	delete buffer;
+}
+
+
+void SkylanderIO::initWithUnencryptedFile(char * name) throw (int)
+{
+	if (!sky) {
+		ReadSkylanderFile(name);
+		sky = new Skylander(buffer);
+	}
+}
+
+void SkylanderIO::initWithEncryptedFile(char * name) throw (int)
+{
+	if (!sky) {
+		ReadSkylanderFile(name);
+		DecryptBuffer(buffer);
+		sky = new Skylander(buffer);
+	}
+}
+
+void SkylanderIO::initWithPortal(void) throw (int) {
+	
+	
+	if (!sky) {
+		ReadPortal(buffer);
+		DecryptBuffer(buffer);
+		sky = new Skylander(buffer);
+	}
+}
+
+void SkylanderIO::ReadPortal(unsigned char *s) throw (int) 
+{
+
+	bool bNewSkylander = false;
+	unsigned char data[0x10]; 
+	unsigned char *ptr;
+	
+	PortalIO *port;
+	
+	port = new PortalIO();
+	
+	printf("Reading Skylander from portal.\n");
+	
+	try {
+		// must start with a read of block zero
+		port->ReadBlock(0, data, bNewSkylander); 
+	} catch (int e) {
+		bNewSkylander = !bNewSkylander;
+		port->ReadBlock(0, data, bNewSkylander); 
+	}
+	
+	// I don't know that we need this, but the web driver sets the color when reading the data
+	port->SetPortalColor(0xC8, 0xC8, 0xC8);
+	
+	ptr = s;
+	memcpy(ptr, data, sizeof(data));
+	
+	for(int block=1; block < 0x40; ++block) {
+		ptr += 0x10;
+		port->ReadBlock(block, data, bNewSkylander); 
+		memcpy(ptr, data, sizeof(data));
+	}
+	
+	printf("\nSkylander read from portal.\n");
+	delete port;
+}	
+	
+bool SkylanderIO::writeSkylanderToPortal() throw (int)
+{
+	bool bResult;
+	bool bNewSkylander = false;
+	unsigned char data[0x10]; 
+
+	unsigned char old[1024];
+	unsigned char skydata[1024];
+	
+	Crypt crypt;
+	
+	if (sky) {
+		
+		PortalIO *port;
+
+		ReadPortal(old);
+		
+		memcpy (skydata,sky->getData(),1024);
+		
+		EncryptBuffer(skydata);
+		
+		printf("\nWriting Skylander to portal.\n");
+	
+		port = new PortalIO();
+
+		
+		for(int i=0; i<2; i++) {
+			// two pass write
+			// write the access control blocks first
+			bool selectAccessControlBlock;
+			if(i == 0) {
+				selectAccessControlBlock = 1;
+			} else {
+				selectAccessControlBlock = 0;
+			}
+		
+			for(int block=0; block < 0x40; ++block) {
+				bool changed, OK;
+				int offset = block * BLOCK_SIZE;
+				changed = (memcmp(old + offset, skydata+offset,BLOCK_SIZE) == 0);
+				if(changed) {
+					if(crypt.IsAccessControlBlock(block) == selectAccessControlBlock) {
+						port->WriteBlock( block, skydata+offset, bNewSkylander);
+					}
+				}
+			}
+		}
+		
+	return true;
+	}
+	return false;
+}
+
+
+bool SkylanderIO::writeSkylanderToUnencryptedFile(char *name) throw (int)
+{
+	if (sky) {
+		WriteSkylanderFile(name,sky->getData());
+	}
+}
+
+bool SkylanderIO::writeSkylanderToEncryptedFile(char *name) throw (int)
+{
+	if (sky) {
+		unsigned char skydata[1024];
+
+		memcpy (skydata,sky->getData(),1024);
+		EncryptBuffer(skydata);
+		WriteSkylanderFile(name,skydata);
+	}
+		
+}
+
+// Encrypt entire buffer of character data
+// Buffer is entire 1024 byte block of character data.
+
+void SkylanderIO::EncryptBuffer(unsigned char* buffer) {
+	unsigned int blockIndex;
+	unsigned char* blockData;
+	unsigned char const* tagBlocks0and1;
+	
+	tagBlocks0and1 = buffer;
+	for(blockIndex = 0x08; blockIndex < 0x40; blockIndex++) {
+		blockData = buffer + blockIndex * 0x10;
+		crypt.EncryptTagBlock(blockData, blockIndex, tagBlocks0and1);
+	}
+}
+
+// Decrypt entire buffer of character data
+// Buffer is entire 1024 byte block of character data.
+void SkylanderIO::DecryptBuffer(unsigned char* buffer) {
+	unsigned int blockIndex;
+	unsigned char* blockData;
+	unsigned char const* tagBlocks0and1;
+	
+	tagBlocks0and1 = buffer;
+	for(blockIndex = 0x08; blockIndex < 0x40; blockIndex++) {
+		blockData = buffer + blockIndex * 0x10;
+		crypt.DecryptTagBlock(blockData, blockIndex, tagBlocks0and1);
+	}
+}
+
+
+
+void SkylanderIO::ReadSkylanderFile(char *name) throw (int)
 {
 	FILE *file;
-	unsigned char *buffer = NULL;
 	unsigned long fileLen;
 
 	//Open file
 	file = fopen(name, "rb");
 	if (!file)
 	{
-		fprintf(stderr, "Unable to open file %s\n", name);
-		return NULL;
+		throw 1;
+//		fprintf(stderr, "Unable to open file %s\n", name);
+//		return NULL;
 	}
 
 	//Get file length
@@ -26,28 +201,21 @@ unsigned char* ReadSkylanderFile(char *name)
 	fseek(file, 0, SEEK_SET);
 
 	if(fileLen != 1024){
-		fprintf(stderr, "Error. File %s must be 1024 bytes long.  "
-			"Are you sure this is a skylander file?\n", name);
-		return NULL;
+		throw 2;
+	//	fprintf(stderr, "Error. File %s must be 1024 bytes long.  "
+//			"Are you sure this is a skylander file?\n", name);
+//		return NULL;
 	}
 
-	//Allocate memory
-	buffer=(unsigned char *)malloc(fileLen+1);
-	if (!buffer)
-	{
-		fprintf(stderr, "Could not allocate memory to read file.\n");
-		fclose(file);
-		return NULL;
-	}
 
 	//Read file contents into buffer
 	fread(buffer, fileLen, 1, file);
 	fclose(file);
 
-	return buffer;
 }
 
-bool WriteSkylanderFile(char *name, unsigned char *buffer){
+bool SkylanderIO::WriteSkylanderFile(char *name, unsigned char * filedata) throw (int)
+{
 	FILE *file;
 	bool OK = true;
 	int count;
@@ -55,15 +223,19 @@ bool WriteSkylanderFile(char *name, unsigned char *buffer){
 	file = fopen(name, "wb");
 	if (!file)
 	{
-		fprintf(stderr, "Unable to open file %s for writing.\n", name);
-		return false;
+		throw 1;
+//		fprintf(stderr, "Unable to open file %s for writing.\n", name);
+//		return false;
 	}
 
-	count = fwrite(buffer, 1024, 1, file);
+	count = fwrite(filedata, 1024, 1, file);
 	if(count < 1) {
+		fclose(file);
+		throw 3;
 		OK = false;
 	}
 
 	fclose(file);
 	return OK;
 }
+
