@@ -202,6 +202,46 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
+				<string>449FBF9316B1363D0045855B</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>portalio_hidapi.cpp</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>449FBF9416B1363D0045855B</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>portalio_hidapi.cpp</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>449FC0DD16B16C610045855B</string>
+						<key>history</key>
+						<array>
+							<string>449FC0BC16B169140045855B</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {915, 724}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>615 113 915 765 0 0 1440 878 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
 				<string>449FC09A16B1656B0045855B</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>main.cpp</string>
@@ -216,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>449FC0D116B16B280045855B</string>
+						<string>449FC0DE16B16C610045855B</string>
 						<key>history</key>
 						<array>
 							<string>449FC09516B1653F0045855B</string>
@@ -235,7 +275,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>409 113 915 765 0 0 1440 878 </string>
+				<string>569 113 915 765 0 0 1440 878 </string>
 			</dict>
 		</dict>
 		<dict>
@@ -256,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>449FC0D216B16B280045855B</string>
+						<string>449FC0DF16B16C610045855B</string>
 						<key>history</key>
 						<array>
 							<string>449FC0C916B169A40045855B</string>
@@ -282,46 +322,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>449FBF9316B1363D0045855B</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>portalio_hidapi.cpp</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>449FBF9416B1363D0045855B</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>portalio_hidapi.cpp</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>449FC0D316B16B280045855B</string>
-						<key>history</key>
-						<array>
-							<string>449FC0BC16B169140045855B</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {915, 724}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>452 -14 915 765 0 0 1440 878 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>449FBFC316B13EBE0045855B</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>fileio.h</string>
@@ -336,7 +336,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>449FC0D416B16B280045855B</string>
+						<string>449FC0E016B16C610045855B</string>
 						<key>history</key>
 						<array>
 							<string>449FBFC516B13EBE0045855B</string>
@@ -377,7 +377,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>449FC0D516B16B280045855B</string>
+						<string>449FC0E116B16C610045855B</string>
 						<key>history</key>
 						<array>
 							<string>449FBFD716B1453B0045855B</string>
@@ -528,7 +528,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>449FC0D016B16B280045855B</string>
+										<string>449FC0DC16B16C610045855B</string>
 										<key>history</key>
 										<array>
 											<string>449FBBF416AE8D980045855B</string>
@@ -742,11 +742,11 @@
 		<string>449FBC7716AF61F70045855B</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>449FBF9316B1363D0045855B</string>
 		<string>449FC0AB16B167120045855B</string>
 		<string>/Users/d332027/Developer/SkyReader/SkyReader.xcodeproj</string>
-		<string>449FBBC316AE8C290045855B</string>
 		<string>449FC09A16B1656B0045855B</string>
+		<string>449FBF9316B1363D0045855B</string>
+		<string>449FBBC316AE8C290045855B</string>
 	</array>
 	<key>WindowString</key>
 	<string>586 102 788 504 0 0 1440 878 </string>
