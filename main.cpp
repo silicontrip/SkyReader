@@ -16,18 +16,18 @@ using namespace std;
 void usage()
 {
 	printf("\n"
-		"Usage:\n"
-		"editor [-i <file>|-p] [-d] [-e] [-o <file>|-P] [-M <money>] [-X experience] ... \n"
-		"\n"
-		"Reading/Writing:\n"
-		"-i <file>\tread skylander data from file, with option to decrypt the data.\n"
+		   "Usage:\n"
+		   "editor [-i <file>|-p] [-d] [-e] [-o <file>|-P] [-M <money>] [-X experience] ... \n"
+		   "\n"
+		   "Reading/Writing:\n"
+		   "-i <file>\tread skylander data from file, with option to decrypt the data.\n"
 		   "-p\t\tread skylander data from portal and decrypt the data.\n"
 		   "-d\t\tdecrypt the data read from the file.\n"
-		"-o <file>\twrite skylander data to <filename>.\n"
+		   "-o <file>\twrite skylander data to <filename>.\n"
 		   "-P\t\tencrypt and write skylander data to the portal.\n"
 		   "-e\t\tencrypt data when writing file.\n"
 		   "-D\t\tdump the data of a skylander to the display.\n"
-
+		   
 		   "\nUpgrade:\n"
 		   "-M <money>\tupgrade skylander money (max 65,000).\n" 		
 		   "-X <xp>\t\tupgrade skylander Experience (level 10 = 33,000).\n" 
@@ -36,24 +36,24 @@ void usage()
 		   "-L <points>\tupgrade the skylander skillpoints on the left path.\n"
 		   "-R <points>\tupgrade the skylander skillpoints on the right path.\n"
 		   "-c\t\tupdate checksums.\n"
-		"\n"
-		"Examples: \n"
-		"editor -p -o spyro.bin\n"
-		"This would save a copy of the figurine to the file dspyro.bak\n"
+		   "\n"
+		   "Examples: \n"
+		   "editor -p -o spyro.bin\n"
+		   "This would save a copy of the figurine to the file dspyro.bak\n"
 		   "editor -i spyro.bin -o spyro_upgrade.bin -L 65535 -M 65000 -X 33000 -H 100\n"
-		"upgrade spyro.bin using skills on the LEFT path seen in the character menu\n"
+		   "upgrade spyro.bin using skills on the LEFT path seen in the character menu\n"
 		   "and write it to file spyro_upgrade.bin\n"
-		"\n"
-		"editor -i spyro.bin -P -M 65000 -X 33000\n"
-		"Upgrade skylander, leave skills as is, and write to the portal.\n"
-		"\n"
-		"editor -i spyro.bin -P\n"
-		"Read file from spyro.bin and write it to the portal.\n");
+		   "\n"
+		   "editor -i spyro.bin -P -M 65000 -X 33000\n"
+		   "Upgrade skylander, leave skills as is, and write to the portal.\n"
+		   "\n"
+		   "editor -i spyro.bin -P\n"
+		   "Read file from spyro.bin and write it to the portal.\n");
 }
 
 void printquad (unsigned int i)
 {
-
+	
 	printf("%02X ",i & 0xff);
 	printf("%02X ",(i & 0xff00 )/ 0x100);
 	printf("%02X ",(i & 0xff0000) / 0x10000);
@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
 	char * inFile, *outFile;
 	
 	const static char *legal_flags = "ePpcDo:i:dM:X:H:C:L:R:";
-
+	
 	encrypt = false;
 	decrypt = false;
 	portalIn = false;
@@ -135,16 +135,16 @@ int main(int argc, char* argv[])
 				skillright = atoi(optarg);
 				upgrade = true;
 				break;
-		   case 'c':
+			case 'c':
 				upgrade = true;
 				break;
 			default:
 				usage () ;
 				exit (0);
-	
+				
 		}
 	}
-
+	
 	// validate command line options
 	if ( (!inFile && !portalIn) || (inFile && portalIn)) {
 		printf ("Must Choose One of: read from file -i <file> or read from portal -p\n");
@@ -174,7 +174,7 @@ int main(int argc, char* argv[])
 	
 	
 	try {
-	
+		
 		skio = new SkylanderIO();
 		
 		printf ("Reading Skylander\n");
@@ -207,21 +207,21 @@ int main(int argc, char* argv[])
 			
 			printf("Area 0 sequence: %d\n",sky->getArea0Sequence());
 			printf("Area 1 sequence: %d\n",sky->getArea1Sequence());
-
+			
 			printf("Area %d selected.\n",sky->getArea());
 			printf("Experience: %d\n",sky->getXP());
 			printf("Money: %d\n",sky->getMoney());
-
+			
 			printf("Skills: %X\n",sky->getSkill());
 			printf("Platforms: %s\n",sky->getPlatformName());
 			printf("Name: %s\n",sky->getName());
-
+			
 			printf("Hat: %d\n",sky->getHat());
 			printf("Hero Points: %d\n",sky->getHeroPoints());
-
+			
 			printf("Heroic Challenges: %x\n",sky->getHeroicChallenges());
 		}
-	
+		
 		if (upgrade) {
 			if (money) { skio->getSkylander()->setMoney(money); }
 			if (xp) { skio->getSkylander()->setXP(xp); }
@@ -233,9 +233,9 @@ int main(int argc, char* argv[])
 			skio->getSkylander()->computeChecksum();
 		}
 		
-			if (outFile || portalOut)  {
-				printf ("Writing Skylander.\n");
-			}
+		if (outFile || portalOut)  {
+			printf ("Writing Skylander.\n");
+		}
 		if (outFile) {
 			if (encrypt) {
 				skio->writeSkylanderToEncryptedFile(outFile);
@@ -249,13 +249,13 @@ int main(int argc, char* argv[])
 		}
 		
 		delete skio;
-			
-
+		
+		
 		printf("\nSuccess!\n");
 		return 0;
 		
 	} catch (int e) {
-	
+		
 		switch (e) {
 			case 1: printf ("Cannot open File.\n"); break;
 			case 2: printf ("Invalid Skylander File.\n"); break;
