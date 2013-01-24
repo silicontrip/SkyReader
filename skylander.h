@@ -29,13 +29,19 @@ public:
 	unsigned char getArea0Sequence();
 	unsigned char getArea1Sequence();
 	unsigned short getSkill();
+	void setSkillLeft(unsigned short);
+	void setSkillRight(unsigned short);
 	void setSkill(unsigned short);
 	unsigned char getPlatform();
 	const char * getPlatformName();
 	unsigned short getHat();
+	void setHat(unsigned short);
 	char * getName();
 	unsigned short getHeroPoints();
+	void setHeroPoints(unsigned short);
 	unsigned int getHeroicChallenges();
+	void setHeroicChallenges(unsigned int);
+
 	void setAreaFromSequence();
 	
 	int getArea();
@@ -56,6 +62,8 @@ private:
 	unsigned char getByte(int, int);
 	unsigned short getShort(int,int);
 	void setByte(int,int,unsigned char);
+	void setShort(int, int, unsigned short); 
+
 	int getBlockNumberForArea();
 	void readName();
 	

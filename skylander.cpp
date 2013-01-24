@@ -1,5 +1,42 @@
 #include "skylander.h"
 
+/*
+ character data contents
+ Even though there are two "data areas" (headers at blocks 0x08 and 0x24, data starts at blocks 0x09 and 0x25), some data is stored outside of the area, so here's a breakdown of the whole 1KB:
+ 
+ Block   Block   Offset  Size     Description
+ Area 0  Area 1          (bytes)
+ 0x00    N/A     0x00    0x02    Unique serial number for the toy.
+ 0x00    N/A     0x04    0x0E    Unknown.
+ 0x01    N/A     0x00    0x02    Identifier for the character/toy type. In the dump above, you can see it's 0E 00 (Little Endian), or 0x000E (Gill Grunt).
+ 0x01    N/A     0x04    0x08    Trading card ID.
+ 0x01    N/A     0x0C    0x02    Unknown. Zeroes for me.
+ 0x01    N/A     0x0E    0x02    Type 0 CRC16 checksum.
+ 0x08    0x24    0x00    0x03    24-bit experience/level value. Maximum unknown. Set this really high to max out the level.
+ 0x08    0x24    0x03    0x02    16-bit money value. Maximum 65000. Set it higher and the game rounds down to 65000.
+ 0x08    0x24    0x05    0x02    Unknown.
+ 0x08    0x24    0x07    0x02    Unknown. Zeroes for me.
+ 0x08    0x24    0x09    0x01    8-bit sequence value for this data area. I'm not totally sure how it works yet, but I think the area with the higher value is the "primary" one at the moment.
+ 0x08    0x24    0x0A    0x02    Type 3 CRC16 checksum.
+ 0x08    0x24    0x0C    0x02    Type 2 CRC16 checksum.
+ 0x08    0x24    0x0E    0x02    Type 1 CRC16 checksum.
+ 0x09    0x25    0x00    0x04    Skills given by Fairy. Bit 7 = path chosen. FD0F = Left, FF0F = Right
+ 0x09    0x25    0x01    0x02    Unknown. Zeroes for me.
+ 0x09    0x25    0x03    0x01    8-bit value, bitmap of platforms the character has touched. Bit 0 is the Wii and bit 1 is the Xbox 360, evidently.
+ 0x09    0x25    0x04    0x02    ID of hat the character is currently wearing.
+ 0x09    0x25    0x06    0x02    Unknown. Zeroes for me.
+ 0x09    0x25    0x08    0x08    Unknown. I've seen FF BF 1B 7F FF 2F B9 7E and FF 83 EE 7E FF 19 30 7F.
+ 0x0A    0x26    0x00    0x10    First half of Unicode name of character, zero-terminated, maximum 14 characters.
+ 0x0C    0x28    0x00    0x10    Second half of Unicode name of character, zero-terminated, maximum 14 characters.
+ 0x0D    0x29    0x00    0x0A    Unknown.
+ 0x0D    0x29    0x0A    0x02    16-bit hero points value. Maximum 100.
+ 0x0D    0x29    0x0C    0x03    Unknown. Zeroes for me.
+ 0x0D    0x29    0x0E    0x01    Unknown. 01 for me.
+ 0x10    0x2C    0x00    0x0C    Unknown. Zeroes for me.
+ 0x10    0x2C    0x0C    0x04    32 bit flag value indicating heroic challenges completed.
+ 
+ */
+
 
 Skylander::Skylander(unsigned char *in)
 {
@@ -19,6 +56,13 @@ unsigned char *Skylander::getData() { return data; }
 unsigned char Skylander::getByte (int block, int offset) { return data[block * 16 + offset]; }
 unsigned short Skylander::getShort (int block, int offset) { return data[block * 16 + offset] + data[block * 16 + offset + 1] * 0x100; }
 void Skylander::setByte(int block, int offset, unsigned char b) { data[block * 16 + offset] = b; }
+void Skylander::setShort(int block, int offset, unsigned short b) 
+{ 
+	data[block * 16 + offset] = b & 0xff;
+	data[block * 16 + offset + 1] = (b & 0xff00) / 0x100;
+
+}
+
 
 void Skylander::readName()
 {
@@ -114,15 +158,7 @@ const char * Skylander::getToyTypeName() {
 
 unsigned char * Skylander::getTradingID()
 {
-
-	/*
-	unsigned char id[8];
-	memcpy(id, data+20, 8);
-	return id;
-	*/
-	
-	return data + 20;
-	
+	return data + 20;	
 }
 
 unsigned int Skylander::getXP()
@@ -138,9 +174,9 @@ void Skylander::setXP(unsigned int xp)
 	{
 		int block = getBlockNumberForArea();	
 
-		setByte(block,0, xp && 0xff);
-		setByte(block,1, xp && 0xff00 / 0x100);
-		setByte(block,2, xp && 0xff0000 / 0x10000);
+		setByte(block,0, xp & 0xff);
+		setByte(block,1, (xp & 0xff00) / 0x100);
+		setByte(block,2, (xp & 0xff0000) / 0x10000);
 	}
 	
 }
@@ -155,8 +191,7 @@ unsigned short Skylander::getMoney()
 void Skylander::setMoney(unsigned short money)
 {
 	int block = getBlockNumberForArea();
-	setByte(block, 3, money && 0xff);
-	setByte(block, 4, money && 0xff00 / 0x100);
+	setShort(block,3,money);
 }
 
 // apparently the largest here gives the area.
@@ -168,12 +203,27 @@ unsigned short Skylander::getSkill() {
 	return getShort(block+1, 0);
 }
 
+void Skylander::setSkillLeft(unsigned short skill) 
+{
+
+	skill = skill | 0x2;
+	setSkill(skill);
+	
+}
+
+void Skylander::setSkillRight(unsigned short skill) 
+{
+	
+	skill = skill & 0xfffd;
+	setSkill(skill);
+	
+}
+
+	
 void Skylander::setSkill(unsigned short skill) 
 {
 	int block = getBlockNumberForArea();
-	setByte(block+1, 0, skill && 0xff);
-	setByte(block+1, 0, skill && 0xff00 / 0x100);
-
+	setShort(block+1, 0, skill);
 }
 
 unsigned char Skylander::getPlatform() 
@@ -198,6 +248,13 @@ unsigned short Skylander::getHat()
 	return getShort(block+1, 4);
 }
 
+void Skylander::setHat(unsigned short hat)
+{
+	int block = getBlockNumberForArea();
+	return setShort(block+1, 4,hat);
+}
+
+
 char * Skylander::getName()
 {
 	return name;
@@ -210,12 +267,28 @@ unsigned short Skylander::getHeroPoints()
 	return getShort(block+5, 0xA);
 }
 
+void Skylander::setHeroPoints(unsigned short hp)
+{
+	int block = getBlockNumberForArea() + 5;
+	setShort(block,0xA,hp);
+}
+
 unsigned int Skylander::getHeroicChallenges() 
 {
-	int block = getBlockNumberForArea();
-	block += 8;
+	int block = getBlockNumberForArea() + 8;
 	return getByte(block , 0xc) + getByte(block , 0xd) * 0x100  + getByte(block , 0xe) * 0x10000 + getByte(block , 0xf) * 0x1000000;
 }
+
+
+void Skylander::setHeroicChallenges(unsigned int hc) 
+{
+	int block = getBlockNumberForArea() + 8 ;
+	setByte(block , 0xc, hc & 0xff);
+	setByte(block , 0xd, (hc & 0xff00) / 0x100);
+	setByte(block , 0xe, (hc & 0xff0000) / 0x10000);
+	setByte(block , 0xf, (hc & 0xff000000) / 0x1000000);
+}
+
 
 void Skylander::UpdateBuf( int block, int offset, int size, unsigned char val)
 {
@@ -250,42 +323,6 @@ static void UpdateBuf(unsigned char *buffer, int block, int offset, int size, un
 	}
 }
 
-/*
-character data contents
-Even though there are two "data areas" (headers at blocks 0x08 and 0x24, data starts at blocks 0x09 and 0x25), some data is stored outside of the area, so here's a breakdown of the whole 1KB:
-
-Block   Block   Offset  Size     Description
-Area 0  Area 1          (bytes)
-0x00    N/A     0x00    0x02    Unique serial number for the toy.
-0x00    N/A     0x04    0x0E    Unknown.
-0x01    N/A     0x00    0x02    Identifier for the character/toy type. In the dump above, you can see it's 0E 00 (Little Endian), or 0x000E (Gill Grunt).
-0x01    N/A     0x04    0x08    Trading card ID.
-0x01    N/A     0x0C    0x02    Unknown. Zeroes for me.
-0x01    N/A     0x0E    0x02    Type 0 CRC16 checksum.
-0x08    0x24    0x00    0x03    24-bit experience/level value. Maximum unknown. Set this really high to max out the level.
-0x08    0x24    0x03    0x02    16-bit money value. Maximum 65000. Set it higher and the game rounds down to 65000.
-0x08    0x24    0x05    0x02    Unknown.
-0x08    0x24    0x07    0x02    Unknown. Zeroes for me.
-0x08    0x24    0x09    0x01    8-bit sequence value for this data area. I'm not totally sure how it works yet, but I think the area with the higher value is the "primary" one at the moment.
-0x08    0x24    0x0A    0x02    Type 3 CRC16 checksum.
-0x08    0x24    0x0C    0x02    Type 2 CRC16 checksum.
-0x08    0x24    0x0E    0x02    Type 1 CRC16 checksum.
-0x09    0x25    0x00    0x04    Skills given by Fairy. Bit 7 = path chosen. FD0F = Left, FF0F = Right
-0x09    0x25    0x01    0x02    Unknown. Zeroes for me.
-0x09    0x25    0x03    0x01    8-bit value, bitmap of platforms the character has touched. Bit 0 is the Wii and bit 1 is the Xbox 360, evidently.
-0x09    0x25    0x04    0x02    ID of hat the character is currently wearing.
-0x09    0x25    0x06    0x02    Unknown. Zeroes for me.
-0x09    0x25    0x08    0x08    Unknown. I've seen FF BF 1B 7F FF 2F B9 7E and FF 83 EE 7E FF 19 30 7F.
-0x0A    0x26    0x00    0x10    First half of Unicode name of character, zero-terminated, maximum 14 characters.
-0x0C    0x28    0x00    0x10    Second half of Unicode name of character, zero-terminated, maximum 14 characters.
-0x0D    0x29    0x00    0x0A    Unknown.
-0x0D    0x29    0x0A    0x02    16-bit hero points value. Maximum 100.
-0x0D    0x29    0x0C    0x03    Unknown. Zeroes for me.
-0x0D    0x29    0x0E    0x01    Unknown. 01 for me.
-0x10    0x2C    0x00    0x0C    Unknown. Zeroes for me.
-0x10    0x2C    0x0C    0x04    32 bit flag value indicating heroic challenges completed.
-
-*/
 
 void Skylander::MaxXP()
 {
