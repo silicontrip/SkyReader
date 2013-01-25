@@ -33,22 +33,22 @@ public:
 	PortalIO() throw (int);
 	~PortalIO();
 	
-	bool WriteSkylanderToPortal(unsigned char *encrypted_new_data, unsigned char *encrypted_old_data);
+	bool WriteSkylanderToPortal(unsigned char *, unsigned char *);
 	
-	bool ReadBlock (unsigned int block, unsigned char data[0x10], bool isNEWskylander) throw (int); 
-	void SetPortalColor(unsigned char r, unsigned char g, unsigned char b) throw (int);
-	bool WriteBlock(unsigned int block, unsigned char data[0x10], bool isNEWskylander) throw (int);
+	bool ReadBlock (unsigned int , unsigned char [0x10], int ) throw (int); 
+	void SetPortalColor(unsigned char , unsigned char , unsigned char ) throw (int);
+	bool WriteBlock(unsigned int , unsigned char [0x10], int ) throw (int);
 
+	void flash (void) throw (int);
 	
 private:
-	
-void OpenPortalHandle() throw (int);
-void Write(RWBlock *pb) throw (int);
-void RestartPortal(void) throw (int);
-void ActivatePortal(void) throw (int);
-void DisconnectPortal(void);
-void ConnectToPortal(void) throw (int);
-bool CheckResponse (RWBlock *, char ) throw (int); 
-
+	void OpenPortalHandle() throw (int);
+	void Write(RWBlock *) throw (int);
+	void RestartPortal(void) throw (int);
+	void ActivatePortal(int) throw (int);
+	unsigned char PortalStatus() throw (int);
+	void DisconnectPortal(void);
+	void ConnectToPortal(void) throw (int);
+	bool CheckResponse (RWBlock *, char ) throw (int); 
 
 }; 
