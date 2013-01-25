@@ -37,6 +37,38 @@
  
  */
 
+void Skylander::fprinthex(FILE *f, unsigned char *c, unsigned int n) {
+	unsigned int h,i;
+	unsigned char j;
+	
+	
+	for (h=0; h<n; h+=16) {
+		
+		fprintf (f,"%04x: ",h);
+		
+		for (i=0; i<16; i++) {
+			if (i+h < n) 
+				fprintf (f,"%02x ",*(c+i+h) & 0xff);
+			else
+				fprintf (f,"   ");
+		}
+		for (i=0; i<16; i++) {
+			if (i+h < n) { 
+				j = *(c+i+h);	
+				if (j<32) j='.';
+				if (j>=127) j='.';
+				fprintf (f,"%c",j);
+			} else
+				fprintf(f," ");
+		}
+		fprintf(f,"\n");
+	}
+}
+
+void Skylander::dump(void)
+{
+	fprinthex(stdout,data,SKYLANDER_SIZE);
+}
 
 Skylander::Skylander(unsigned char *in)
 {
@@ -92,10 +124,10 @@ int Skylander::getBlockNumberForArea() { return area * 28 + 8; }
 void Skylander::setArea(int a) {  if (a == 1 || a == 0) {area = a;} }
 int Skylander::getArea() { return area; }
 unsigned short Skylander::getSerial() { return getShort(0,0); }
-unsigned short Skylander::getToyType() { return getShort(1,0);	 }
 
-const char * Skylander::getToyTypeName() {
-	switch (getToyType()) {
+const char * Skylander::toyName(int toy) {
+	
+	switch (toy) {
 		case kTfbSpyroTag_ToyType_Character_Bash: return "Bash";
 		case kTfbSpyroTag_ToyType_Character_Boomer: return "Boomer";
 		case kTfbSpyroTag_ToyType_Character_Camo: return "Camo";
@@ -154,7 +186,10 @@ const char * Skylander::getToyTypeName() {
 		case kTfbSpyroTag_ToyType_Pet_TriggerHappy: return "TriggerHappy";
 		default: return "UNKNOWN";
 	}
-}
+}	
+
+unsigned short Skylander::getToyType() { return getShort(1,0);	 }
+const char * Skylander::getToyTypeName() { return toyName(getToyType()); }
 
 unsigned char * Skylander::getTradingID()
 {

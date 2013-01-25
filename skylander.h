@@ -1,14 +1,16 @@
 #pragma once
+
 #include <string.h>
 #include "crypt.h"
 #include "checksum.h"
 
 void MaxStats(unsigned char *buffer, char skill_path);
 
-#define SKYLANDER_SIZE 1024
 
 class Skylander {
-	unsigned char data[1024];
+	#define SKYLANDER_SIZE 1024
+	
+	unsigned char data[SKYLANDER_SIZE];
 	char name[16];
 	int area;
 	Checksum crc;
@@ -21,6 +23,7 @@ public:
 	unsigned short getSerial();
 	unsigned short getToyType();
 	const char * getToyTypeName();
+	const char * toyName(int);
 	unsigned char * getTradingID();
 	unsigned int getXP();
 	void setXP(unsigned int);
@@ -57,6 +60,9 @@ public:
 	void MaxHeroicChallenges();
 	void MaxSkills(unsigned char);
 	
+	void dump(void);
+
+	
 private:
 	
 	unsigned char getByte(int, int);
@@ -66,6 +72,9 @@ private:
 
 	int getBlockNumberForArea();
 	void readName();
+	void fprinthex(FILE *, unsigned char *, unsigned int) ;
+
+	
 	
 enum SpyroToyType
 {
