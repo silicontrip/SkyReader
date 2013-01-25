@@ -22,13 +22,15 @@ public:
 	void fprinthex(FILE *, unsigned char *, unsigned int);
 	void initWithUnencryptedFile(char *) throw (int);
 	void initWithEncryptedFile(char *) throw (int);
-	void initWithPortal() throw (int);
+	void initWithPortal(int) throw (int);
 	
+	void listSkylanders();
+
 	Skylander * getSkylander() { return sky; }
 	
 //	void setSkylander(Skylander *);
 	
-	bool writeSkylanderToPortal() throw (int);
+	bool writeSkylanderToPortal(int) throw (int);
 	bool writeSkylanderToUnencryptedFile(char *) throw (int);
 	bool writeSkylanderToEncryptedFile(char *) throw (int);
 	
@@ -50,7 +52,7 @@ protected:
 
 	void ReadSkylanderFile(char *name) throw (int);
 	bool WriteSkylanderFile(char *name, unsigned char *) throw (int);
-	void ReadPortal(unsigned char *s) throw (int);
+	void ReadPortal(unsigned char *, int) throw (int);
 	
 	void EncryptBuffer(unsigned char* );
 	void DecryptBuffer(unsigned char* );
