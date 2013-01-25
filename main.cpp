@@ -17,16 +17,18 @@ void usage()
 {
 	printf("\n"
 		   "Usage:\n"
-		   "editor [-i <file>|-p] [-d] [-e] [-o <file>|-P] [-M <money>] [-X experience] ... \n"
+		   "editor [-i <file>|-p] [-s <skylander>] [-d] [-e] [-o <file>|-P] [-M <money>] [-X experience] ... \n"
 		   "\n"
 		   "Reading/Writing:\n"
 		   "-i <file>\tread skylander data from file, with option to decrypt the data.\n"
 		   "-p\t\tread skylander data from portal and decrypt the data.\n"
+		   "-s <skylander> select which skylander.\n"
 		   "-d\t\tdecrypt the data read from the file.\n"
 		   "-o <file>\twrite skylander data to <filename>.\n"
 		   "-P\t\tencrypt and write skylander data to the portal.\n"
 		   "-e\t\tencrypt data when writing file.\n"
 		   "-D\t\tdump the data of a skylander to the display.\n"
+		   "-l\t\tList skylanders on portal.\n"
 		   
 		   "\nUpgrade:\n"
 		   "-M <money>\tupgrade skylander money (max 65,000).\n" 		
@@ -67,11 +69,11 @@ int main(int argc, char* argv[])
 	unsigned char *buffer, *original_data;
 	bool OK, OK2;
 	
-	bool encrypt,decrypt,portalIn,portalOut,dump,upgrade;
+	bool encrypt,decrypt,portalIn,portalOut,dump,upgrade,flash,list;
 	
 	char * inFile, *outFile;
 	
-	const static char *legal_flags = "ePpcDo:i:dM:X:H:C:L:R:";
+	const static char *legal_flags = "lFePpcDo:i:dM:X:H:C:L:R:s:";
 	
 	encrypt = false;
 	decrypt = false;
@@ -81,8 +83,10 @@ int main(int argc, char* argv[])
 	dump = false;
 	inFile = NULL;
 	outFile = NULL;
+	flash = false;
+	list = false;
 	
-	unsigned int money, xp, hp, challenges, skillleft, skillright;
+	unsigned int money, xp, hp, challenges, skillleft, skillright,skylander_number;
 	
 	money = 0;
 	xp = 0;
@@ -90,6 +94,7 @@ int main(int argc, char* argv[])
 	challenges = 0;
 	skillleft = 0;
 	skillright = 0;
+	skylander_number = 0;
 	
 	SkylanderIO *skio;
 	Checksum crc;
@@ -103,6 +108,7 @@ int main(int argc, char* argv[])
 			case 'P': portalOut = true; break;
 			case 'p': portalIn = true; break;
 			case 'D': dump = true; break;
+			case 'F': flash = true; break;
 			case 'i': 
 				inFile = new char[strlen(optarg)+1];
 				strcpy(inFile,optarg);
@@ -135,8 +141,14 @@ int main(int argc, char* argv[])
 				skillright = atoi(optarg);
 				upgrade = true;
 				break;
+			case 's':
+				skylander_number = atoi(optarg);
+				break;
 			case 'c':
 				upgrade = true;
+				break;
+			case 'l':
+				list = true;
 				break;
 			default:
 				usage () ;
@@ -144,6 +156,32 @@ int main(int argc, char* argv[])
 				
 		}
 	}
+	
+	try {
+		
+		
+		// some entertainment.
+		if (flash) 
+		{
+			PortalIO  *pio ;
+			pio = new PortalIO();
+			
+			pio->flash();
+			exit (0);
+		}
+		
+		if (list) 
+		{
+			
+			printf ("Listing Skylanders.\n\n");
+
+			
+			skio = new SkylanderIO();
+			skio->listSkylanders();
+			
+			exit (0);
+		}
+	
 	
 	// validate command line options
 	if ( (!inFile && !portalIn) || (inFile && portalIn)) {
@@ -171,16 +209,13 @@ int main(int argc, char* argv[])
 	}
 	
 	
-	
-	
-	try {
 		
 		skio = new SkylanderIO();
 		
-		printf ("Reading Skylander\n");
+		printf ("Reading Skylander\n\n");
 		
 		if (portalIn) {
-			skio->initWithPortal();
+			skio->initWithPortal(skylander_number);
 		}
 		if (inFile) {
 			if (decrypt) {
@@ -190,12 +225,16 @@ int main(int argc, char* argv[])
 			}
 		}
 		
+		//skio->getSkylander()->dump();
+		
 		if(! skio->getSkylander()->validateChecksum()) {
 			fprintf(stderr, "Warning. Skylander data read from portal, but checksums are incorrect.  File may be corrupt.\n");
-		} else {
+		} 
+		/*
+		else {
 			printf ("Skylander Checksum OK.\n");
 		}
-		
+		*/
 		if (dump) {
 			Skylander * sky ;
 			sky = skio->getSkylander() ;
@@ -220,6 +259,7 @@ int main(int argc, char* argv[])
 			printf("Hero Points: %d\n",sky->getHeroPoints());
 			
 			printf("Heroic Challenges: %x\n",sky->getHeroicChallenges());
+			printf("\n");
 		}
 		
 		if (upgrade) {
@@ -234,7 +274,7 @@ int main(int argc, char* argv[])
 		}
 		
 		if (outFile || portalOut)  {
-			printf ("Writing Skylander.\n");
+			printf ("Writing Skylander.\n\n");
 		}
 		if (outFile) {
 			if (encrypt) {
@@ -245,13 +285,13 @@ int main(int argc, char* argv[])
 		}
 		if (portalOut)
 		{
-			skio->writeSkylanderToPortal();
+			skio->writeSkylanderToPortal(skylander_number);
 		}
 		
 		delete skio;
 		
 		
-		printf("\nSuccess!\n");
+		printf("Success!\n");
 		return 0;
 		
 	} catch (int e) {
