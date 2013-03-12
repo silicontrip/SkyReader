@@ -32,6 +32,7 @@ Examples
 --------
         editor -p -o spyro.bin
 This would save a copy of the figurine to the file spyro.bin
+
         editor -i spyro.bin -o spyro_upgrade.bin -L 65535 -M 65000 -X 33000 -H 100
 upgrade spyro.bin using skills on the LEFT path seen in the character menu
 and write it to file spyro_upgrade.bin
