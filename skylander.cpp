@@ -161,12 +161,12 @@ const char * Skylander::toyName(int toy) {
 		case kTfbSpyroTag_ToyType_Character_WreckingBall: return "WreckingBall";
 		case kTfbSpyroTag_ToyType_Character_Zap: return "Zap";
 		case kTfbSpyroTag_ToyType_Character_Zook: return "Zook";
-		case kTfbSpyroTag_ToyType_Expansion_Dragon: return "Dragon";
-		case kTfbSpyroTag_ToyType_Expansion_Ice: return "Ice";
-		case kTfbSpyroTag_ToyType_Expansion_Pirate: return "Pirate";
+		case kTfbSpyroTag_ToyType_Expansion_Dragon: return "Dragon's Peak";
+		case kTfbSpyroTag_ToyType_Expansion_Ice: return "Empire of Ice";
+		case kTfbSpyroTag_ToyType_Expansion_Pirate: return "Pirate Seas";
 		case kTfbSpyroTag_ToyType_Expansion_PVPUnlock: return "PVPUnlock";
 		case kTfbSpyroTag_ToyType_Expansion_Undead: return "Undead";
-		case kTfbSpyroTag_ToyType_Item_Anvil: return "Anvil";
+		case kTfbSpyroTag_ToyType_Item_Anvil: return "Anvil Rain";
 		case kTfbSpyroTag_ToyType_Item_CrossedSwords: return "CrossedSwords";
 		case kTfbSpyroTag_ToyType_Item_Hourglass: return "Hourglass";
 		case kTfbSpyroTag_ToyType_Item_Regeneration: return "Regeneration";
