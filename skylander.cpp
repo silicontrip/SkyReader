@@ -184,6 +184,21 @@ const char * Skylander::toyName(int toy) {
 		case kTfbSpyroTag_ToyType_Pet_StealthElf: return "StealthElf";
 		case kTfbSpyroTag_ToyType_Pet_Terrafin: return "Terrafin";
 		case kTfbSpyroTag_ToyType_Pet_TriggerHappy: return "TriggerHappy";
+
+        // giants
+        case kTfbGiantsTag_ToyType_Giant_TreeRex: return "TreeRex";
+        case kTfbGiantsTag_ToyType_Giant_GnarlyTreeRex: return "GnarlyTreeRex";
+        case kTfbGiantsTag_ToyType_Giant_Bouncer: return "Bouncer";
+        case kTfbGiantsTag_ToyType_Giant_LegendaryBouncer: return "LegendaryBouncer";
+        case kTfbGiantsTag_ToyType_Giant_Crusher: return "Crusher";
+        case kTfbGiantsTag_ToyType_Giant_GraniteCrusher: return "GraniteCrusher";
+        case kTfbGiantsTag_ToyType_Giant_Swarm: return "Swarm";
+        case kTfbGiantsTag_ToyType_Giant_HotHead: return "HotHead";
+        case kTfbGiantsTag_ToyType_Giant_EyeBrawl: return "EyeBrawl";
+        case kTfbGiantsTag_ToyType_Giant_Ninjini: return "Ninjini";
+        case kTfbGiantsTag_ToyType_Giant_ScarletNinjini: return "ScarletNinjini";
+        case kTfbGiantsTag_ToyType_Giant_Thumpback: return "Thumpback";
+            
 		default: return "UNKNOWN";
 	}
 }	

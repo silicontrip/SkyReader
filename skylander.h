@@ -137,7 +137,21 @@ enum SpyroToyType
 	kTfbSpyroTag_ToyType_Pet_StealthElf = 0x20e,
 	kTfbSpyroTag_ToyType_Pet_Terrafin = 0x1f9,
 	kTfbSpyroTag_ToyType_Pet_TriggerHappy = 0x207,
+    
+    kTfbGiantsTag_ToyType_Giant_TreeRex = 0x999,
+    kTfbGiantsTag_ToyType_Giant_GnarlyTreeRex = 0x998,
+    kTfbGiantsTag_ToyType_Giant_Bouncer = 0x997,
+    kTfbGiantsTag_ToyType_Giant_LegendaryBouncer = 0x996,
+    kTfbGiantsTag_ToyType_Giant_Crusher = 0x995,
+    kTfbGiantsTag_ToyType_Giant_GraniteCrusher = 0x994,
+    kTfbGiantsTag_ToyType_Giant_Swarm = 101,
+    kTfbGiantsTag_ToyType_Giant_HotHead = 0x993,
+    kTfbGiantsTag_ToyType_Giant_EyeBrawl = 0x992,
+    kTfbGiantsTag_ToyType_Giant_Ninjini = 0x991,
+    kTfbGiantsTag_ToyType_Giant_ScarletNinjini = 0x990,
+    kTfbGiantsTag_ToyType_Giant_Thumpback = 0x989,
+
 	kTfbSpyroTag_ToyType_UNKNOWN = -1
-} ; 
+} ;
 
 } ;
