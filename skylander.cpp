@@ -269,9 +269,10 @@ unsigned char Skylander::getPlatform()
 
 const char * Skylander::getPlatformName()
 {
-
-	if ( getPlatform() & 1 == 1) return "Wii";
-	if ( getPlatform() & 2 == 2) return "Xbox 360";
+    char platform = getPlatform();
+	if ( (platform & 1) == 1) return "Wii";
+	if ( (platform & 2) == 2) return "Xbox 360";
+	if ( (platform & 4) == 4) return "PS3";
 
 	return "UNKNOWN";
 	
