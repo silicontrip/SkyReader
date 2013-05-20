@@ -195,8 +195,7 @@ const char * Skylander::toyName(int toy) {
         case kTfbGiantsTag_ToyType_Giant_Swarm: return "Swarm";
         case kTfbGiantsTag_ToyType_Giant_HotHead: return "HotHead";
         case kTfbGiantsTag_ToyType_Giant_EyeBrawl: return "EyeBrawl";
-        case kTfbGiantsTag_ToyType_Giant_Ninjini: return "Ninjini";
-        case kTfbGiantsTag_ToyType_Giant_ScarletNinjini: return "ScarletNinjini";
+        case kTfbGiantsTag_ToyType_Giant_Ninjini: return "Ninjini/ScarletNinjini";
         case kTfbGiantsTag_ToyType_Giant_Thumpback: return "Thumpback";
             
 		default: return "UNKNOWN";
