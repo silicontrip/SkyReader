@@ -184,6 +184,20 @@ const char * Skylander::toyName(int toy) {
 		case kTfbSpyroTag_ToyType_Pet_StealthElf: return "StealthElf";
 		case kTfbSpyroTag_ToyType_Pet_Terrafin: return "Terrafin";
 		case kTfbSpyroTag_ToyType_Pet_TriggerHappy: return "TriggerHappy";
+
+        // giants
+        case kTfbGiantsTag_ToyType_Giant_TreeRex: return "TreeRex";
+        case kTfbGiantsTag_ToyType_Giant_GnarlyTreeRex: return "GnarlyTreeRex";
+        case kTfbGiantsTag_ToyType_Giant_Bouncer: return "Bouncer";
+        case kTfbGiantsTag_ToyType_Giant_LegendaryBouncer: return "LegendaryBouncer";
+        case kTfbGiantsTag_ToyType_Giant_Crusher: return "Crusher";
+        case kTfbGiantsTag_ToyType_Giant_GraniteCrusher: return "GraniteCrusher";
+        case kTfbGiantsTag_ToyType_Giant_Swarm: return "Swarm";
+        case kTfbGiantsTag_ToyType_Giant_HotHead: return "HotHead";
+        case kTfbGiantsTag_ToyType_Giant_EyeBrawl: return "EyeBrawl";
+        case kTfbGiantsTag_ToyType_Giant_Ninjini: return "Ninjini/ScarletNinjini";
+        case kTfbGiantsTag_ToyType_Giant_Thumpback: return "Thumpback";
+            
 		default: return "UNKNOWN";
 	}
 }	
@@ -269,9 +283,10 @@ unsigned char Skylander::getPlatform()
 
 const char * Skylander::getPlatformName()
 {
-
-	if ( getPlatform() & 1 == 1) return "Wii";
-	if ( getPlatform() & 2 == 2) return "Xbox 360";
+    char platform = getPlatform();
+	if ( (platform & 1) == 1) return "Wii";
+	if ( (platform & 2) == 2) return "Xbox 360";
+	if ( (platform & 4) == 4) return "PS3";
 
 	return "UNKNOWN";
 	

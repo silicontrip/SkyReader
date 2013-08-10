@@ -5,3 +5,17 @@ editor
 usbtest
 build
 skylanders
+
+*.xcworkspacedata
+
+*.xcuserstate
+
+*.xcsettings
+
+*.xcexplist
+
+*.xcbkptlist
+
+*.xcscheme
+
+*.plist
