@@ -27,10 +27,14 @@ void PortalIO::OpenPortalHandle() throw (int)
 		{
 			if ((attributes->product_id == 0x150) || (attributes->product_id == 0x967))
 			{
-				// printf("Found portal usb device\n");
+				printf("Found portal usb device\n");
 				int err;
 
 				hPortalHandle = hid_open(attributes->vendor_id, attributes->product_id, NULL);
+				if (hPortalHandle == NULL)
+				{
+					printf ("Error communicating with Portal.\n ");
+				}
 				
 				/*
 				wstr[0] = 0x0000;
