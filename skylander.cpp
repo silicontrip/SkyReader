@@ -10,8 +10,8 @@
  0x00    N/A     0x04    0x0E    Unknown.
  0x01    N/A     0x00    0x02    Identifier for the character/toy type. In the dump above, you can see it's 0E 00 (Little Endian), or 0x000E (Gill Grunt).
  0x01    N/A     0x04    0x08    Trading card ID.
- 0x01    N/A     0x0C    0x02    Unknown. Zeroes for me.
- 0x01    N/A     0x0E    0x02    Type 0 CRC16 checksum.
+ 0x01    N/A     0x0C    0x02    Alter egos / trap type (e.g. 0030 for Krypt King / 0234 for Nitro Krypt King; with Toy ID d600 (tech trap): 0030 Tech Totem, 0730 Automatic Angel, 0930 Factory Flower, etc)
+ 0x01    N/A     0x0E    0x02    Type 0 CRC16 checksum. AKA CRC16CCITT with a seed of 0xFFFF
  0x08    0x24    0x00    0x03    24-bit experience/level value. Maximum unknown. Set this really high to max out the level.
  0x08    0x24    0x03    0x02    16-bit money value. Maximum 65000. Set it higher and the game rounds down to 65000.
  0x08    0x24    0x05    0x02    Unknown.
