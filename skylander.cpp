@@ -6,7 +6,7 @@
  
  Block   Block   Offset  Size     Description
  Area 0  Area 1          (bytes)
- 0x00    N/A     0x00    0x02    Unique serial number for the toy.
+ 0x00    N/A     0x00    0x04    Unique serial number for the toy.
  0x00    N/A     0x04    0x0E    Unknown.
  0x01    N/A     0x00    0x02    Identifier for the character/toy type. In the dump above, you can see it's 0E 00 (Little Endian), or 0x000E (Gill Grunt).
  0x01    N/A     0x04    0x08    Trading card ID.
@@ -124,71 +124,7 @@ int Skylander::getBlockNumberForArea() { return (area == 0) ? 0x08 : 0x24; }
 void Skylander::setArea(int a) {  if (a == 1 || a == 0) {area = a;} }
 int Skylander::getArea() { return area; }
 
-unsigned short Skylander::getSerial() { return getShort(0,0); }
-
-const char * Skylander::toyName(int toy) {
-	
-	switch (toy) {
-		case kTfbSpyroTag_ToyType_Character_Bash: return "Bash";
-		case kTfbSpyroTag_ToyType_Character_Boomer: return "Boomer";
-		case kTfbSpyroTag_ToyType_Character_Camo: return "Camo";
-		case kTfbSpyroTag_ToyType_Character_ChopChop: return "ChopChop";
-		case kTfbSpyroTag_ToyType_Character_Cynder: return "Cynder";
-		case kTfbSpyroTag_ToyType_Character_DarkSpyro: return "DarkSpyro";
-		case kTfbSpyroTag_ToyType_Character_DinoRang: return "DinoRang";
-		case kTfbSpyroTag_ToyType_Character_DoubleTrouble: return "DoubleTrouble";
-		case kTfbSpyroTag_ToyType_Character_DrillSergeant: return "DrillSergeant";
-		case kTfbSpyroTag_ToyType_Character_Drobot: return "Drobot";
-		case kTfbSpyroTag_ToyType_Character_Eruptor: return "Eruptor";
-		case kTfbSpyroTag_ToyType_Character_Flameslinger: return "Flameslinger";
-		case kTfbSpyroTag_ToyType_Character_GhostRoaster: return "GhostRoaster";
-		case kTfbSpyroTag_ToyType_Character_GillGrunt: return "GillGrunt";
-		case kTfbSpyroTag_ToyType_Character_Hex: return "Hex";
-		case kTfbSpyroTag_ToyType_Character_Ignitor: return "Ignitor";
-		case kTfbSpyroTag_ToyType_Character_LightningRod: return "LightningRod";
-		case kTfbSpyroTag_ToyType_Character_PrismBreak: return "PrismBreak";
-		case kTfbSpyroTag_ToyType_Character_SlamBam: return "SlamBam";
-		case kTfbSpyroTag_ToyType_Character_SonicBoom: return "SonicBoom";
-		case kTfbSpyroTag_ToyType_Character_Spyro: return "Spyro";
-		case kTfbSpyroTag_ToyType_Character_StealthElf: return "StealthElf";
-		case kTfbSpyroTag_ToyType_Character_StumpSmash: return "StumpSmash";
-		case kTfbSpyroTag_ToyType_Character_Sunburn: return "Sunburn";
-		case kTfbSpyroTag_ToyType_Character_Terrafin: return "Terrafin";
-		case kTfbSpyroTag_ToyType_Character_TriggerHappy: return "TriggerHappy";
-		case kTfbSpyroTag_ToyType_Character_Voodood: return "Voodood";
-		case kTfbSpyroTag_ToyType_Character_Warnado: return "Warnado";
-		case kTfbSpyroTag_ToyType_Character_WhamShell: return "WhamShell";
-		case kTfbSpyroTag_ToyType_Character_Whirlwind: return "Whirlwind";
-		case kTfbSpyroTag_ToyType_Character_WreckingBall: return "WreckingBall";
-		case kTfbSpyroTag_ToyType_Character_Zap: return "Zap";
-		case kTfbSpyroTag_ToyType_Character_Zook: return "Zook";
-		case kTfbSpyroTag_ToyType_Expansion_Dragon: return "Dragon";
-		case kTfbSpyroTag_ToyType_Expansion_Ice: return "Ice";
-		case kTfbSpyroTag_ToyType_Expansion_Pirate: return "Pirate";
-		case kTfbSpyroTag_ToyType_Expansion_PVPUnlock: return "PVPUnlock";
-		case kTfbSpyroTag_ToyType_Expansion_Undead: return "Undead";
-		case kTfbSpyroTag_ToyType_Item_Anvil: return "Anvil";
-		case kTfbSpyroTag_ToyType_Item_CrossedSwords: return "CrossedSwords";
-		case kTfbSpyroTag_ToyType_Item_Hourglass: return "Hourglass";
-		case kTfbSpyroTag_ToyType_Item_Regeneration: return "Regeneration";
-		case kTfbSpyroTag_ToyType_Item_SecretStash: return "SecretStash";
-		case kTfbSpyroTag_ToyType_Item_Shield: return "Shield";
-		case kTfbSpyroTag_ToyType_Item_Sparx: return "Sparx";
-		case kTfbSpyroTag_ToyType_Item_SpeedBoots: return "SpeedBoots";
-		case kTfbSpyroTag_ToyType_LEGENDARY: return "LEGENDARY";
-		case kTfbSpyroTag_ToyType_Legendary_Bash: return "Bash";
-		case kTfbSpyroTag_ToyType_Legendary_ChopChop: return "ChopChop";
-		case kTfbSpyroTag_ToyType_Legendary_Spyro: return "Spyro";
-		case kTfbSpyroTag_ToyType_Legendary_TriggerHappy: return "TriggerHappy";
-		case kTfbSpyroTag_ToyType_PET: return "PET";
-		case kTfbSpyroTag_ToyType_Pet_GillGrunt: return "GillGrunt";
-		case kTfbSpyroTag_ToyType_Pet_StealthElf: return "StealthElf";
-		case kTfbSpyroTag_ToyType_Pet_Terrafin: return "Terrafin";
-		case kTfbSpyroTag_ToyType_Pet_TriggerHappy: return "TriggerHappy";
-		default: return "UNKNOWN";
-	}
-}	
-
+unsigned long Skylander::getSerial() { return getShort(0x00,0x00) + getShort(0x00,0x02) * 0x10000; }
 unsigned short Skylander::getToyType() { return getShort(0x01,0x00); }
 const char * Skylander::getToyTypeName() { return toyName(getToyType()); }
 unsigned char * Skylander::getTradingID() { return data + 20; }
@@ -305,13 +241,13 @@ char * Skylander::getName()
 unsigned short Skylander::getHeroPoints()
 {
 	int block = getBlockNumberForArea();
-	return getShort(block+5, 0xA);
+	return getShort(block+5, 0x0A);
 }
 
 void Skylander::setHeroPoints(unsigned short hp)
 {
-	int block = getBlockNumberForArea() + 5;
-	setShort(block,0xA,hp);
+	int block = getBlockNumberForArea();
+	setShort(block+5,0x0A,hp);
 }
 
 unsigned int Skylander::getHeroicChallenges() 
