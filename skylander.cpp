@@ -191,11 +191,7 @@ const char * Skylander::toyName(int toy) {
 
 unsigned short Skylander::getToyType() { return getShort(0x01,0x00); }
 const char * Skylander::getToyTypeName() { return toyName(getToyType()); }
-
-unsigned char * Skylander::getTradingID()
-{
-	return data + 20;	
-}
+unsigned char * Skylander::getTradingID() { return data + 20; }
 
 unsigned int Skylander::getXP()
 {	
@@ -261,6 +257,14 @@ void Skylander::setSkill(unsigned short skill)
 {
 	int block = getBlockNumberForArea();
 	setShort(block+1, 0x00, skill);
+}
+
+const char * Skylander::getPath() {
+	int block = getBlockNumberForArea();
+	unsigned short p = getByte(block+1, 0x0);
+	if ((p & 1) == 0)	{ return "No Path"; }
+	else if ((p & 2) == 0)	{ return "Path A (Left)"; }
+	else			{ return "Path B (Right)"; }
 }
 
 unsigned char Skylander::getPlatform() 

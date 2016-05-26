@@ -35,6 +35,7 @@ public:
 	void setSkillLeft(unsigned short);
 	void setSkillRight(unsigned short);
 	void setSkill(unsigned short);
+	const char * getPath();
 	unsigned char getPlatform();
 	const char * getPlatformName();
 	unsigned short getHat();
