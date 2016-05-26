@@ -10,18 +10,18 @@
  0x00    N/A     0x04    0x0E    Unknown.
  0x01    N/A     0x00    0x02    Identifier for the character/toy type. In the dump above, you can see it's 0E 00 (Little Endian), or 0x000E (Gill Grunt).
  0x01    N/A     0x04    0x08    Trading card ID.
- 0x01    N/A     0x0C    0x02    Unknown. Zeroes for me.
- 0x01    N/A     0x0E    0x02    Type 0 CRC16 checksum.
- 0x08    0x24    0x00    0x03    24-bit experience/level value. Maximum unknown. Set this really high to max out the level.
+ 0x01    N/A     0x0C    0x02    Alter Egos / Trap Type (e.g. 0030 for Krypt King / 0234 for Nitro Krypt King; with Toy ID d600 (tech trap): 0030 Tech Totem, 0730 Automatic Angel, 0930 Factory Flower, etc)
+ 0x01    N/A     0x0E    0x02    Type 0 CRC16 checksum. AKA CRC16CCITT with a seed of 0xFFFF
+ 0x08    0x24    0x00    0x03    24-bit experience/level value. Maximum 33000 here.
  0x08    0x24    0x03    0x02    16-bit money value. Maximum 65000. Set it higher and the game rounds down to 65000.
  0x08    0x24    0x05    0x02    Unknown.
  0x08    0x24    0x07    0x02    Unknown. Zeroes for me.
- 0x08    0x24    0x09    0x01    8-bit sequence value for this data area. I'm not totally sure how it works yet, but I think the area with the higher value is the "primary" one at the moment.
+ 0x08    0x24    0x09    0x01    8-bit sequence value for this data area. The area with the higher value is the last save location.
  0x08    0x24    0x0A    0x02    Type 3 CRC16 checksum.
  0x08    0x24    0x0C    0x02    Type 2 CRC16 checksum.
  0x08    0x24    0x0E    0x02    Type 1 CRC16 checksum.
- 0x09    0x25    0x00    0x04    Skills given by Fairy. Bit 7 = path chosen. FD0F = Left, FF0F = Right
- 0x09    0x25    0x01    0x02    Unknown. Zeroes for me.
+ 0x09    0x25    0x00    0x02    Skills given by Fairy. Bit 7 = path chosen. FD0F = Left, FF0F = Right
+ 0x09    0x25    0x02    0x01    Unknown. Zeroes for me.
  0x09    0x25    0x03    0x01    8-bit value, bitmap of platforms the character has touched. Bit 0 is the Wii and bit 1 is the Xbox 360, evidently.
  0x09    0x25    0x04    0x02    ID of hat the character is currently wearing.
  0x09    0x25    0x06    0x02    Unknown. Zeroes for me.
@@ -118,11 +118,12 @@ void Skylander::setAreaFromSequence()
 	area = 0;
 	if (getArea0Sequence() < getArea1Sequence()) { area = 1;}
 }
-int Skylander::getBlockNumberForArea() { return area * 28 + 8; }
+int Skylander::getBlockNumberForArea() { return (area == 0) ? 0x08 : 0x24; }
 
 // should validate for 0 or 1
 void Skylander::setArea(int a) {  if (a == 1 || a == 0) {area = a;} }
 int Skylander::getArea() { return area; }
+
 unsigned short Skylander::getSerial() { return getShort(0,0); }
 
 const char * Skylander::toyName(int toy) {
@@ -188,7 +189,7 @@ const char * Skylander::toyName(int toy) {
 	}
 }	
 
-unsigned short Skylander::getToyType() { return getShort(1,0);	 }
+unsigned short Skylander::getToyType() { return getShort(0x01,0x00); }
 const char * Skylander::getToyTypeName() { return toyName(getToyType()); }
 
 unsigned char * Skylander::getTradingID()
@@ -220,67 +221,68 @@ void Skylander::setXP(unsigned int xp)
 unsigned short Skylander::getMoney()
 {
 	int block = getBlockNumberForArea();
-	return getShort(block, 3);
+	return getShort(block, 0x03);
 }
 
 void Skylander::setMoney(unsigned short money)
 {
 	int block = getBlockNumberForArea();
-	setShort(block,3,money);
+	setShort(block,0x03,money);
 }
 
 // apparently the largest here gives the area.
-unsigned char Skylander::getArea0Sequence() { return getByte(8, 9); }
-unsigned char Skylander::getArea1Sequence() { return getByte(24, 9); }
+unsigned char Skylander::getArea0Sequence() { return getByte(0x08, 0x09); }
+unsigned char Skylander::getArea1Sequence() { return getByte(0x24, 0x09); }
 
 unsigned short Skylander::getSkill() {
 	int block = getBlockNumberForArea();
-	return getShort(block+1, 0);
+	return getShort(block+1, 0x00);
 }
 
 void Skylander::setSkillLeft(unsigned short skill) 
 {
-
-	skill = skill | 0x2;
+	if (skill <= 0) skill = getSkill();
+	skill = skill & 0xFFFD; //Sets bit 7 same way every time
+	printf ("Setting Skill %04x LEFT\n\n", skill);
 	setSkill(skill);
-	
 }
 
 void Skylander::setSkillRight(unsigned short skill) 
 {
-	
-	skill = skill & 0xfffd;
+	if (skill <= 0) skill = getSkill();
+	skill = skill & 0xFFFD;	//Sets bit 7 same way every time
+	skill = skill | 0x2;	//Flip bit 7 to other path
+	printf ("Setting Skill %04x RIGHT\n\n", skill);
 	setSkill(skill);
-	
 }
 
 	
 void Skylander::setSkill(unsigned short skill) 
 {
 	int block = getBlockNumberForArea();
-	setShort(block+1, 0, skill);
+	setShort(block+1, 0x00, skill);
 }
 
 unsigned char Skylander::getPlatform() 
 {
 	int block = getBlockNumberForArea();
-	return getByte(block+1, 3);
+	return getByte(block+1, 0x03);
 }
 
 const char * Skylander::getPlatformName()
 {
-
-	if ( getPlatform() & 1 == 1) return "Wii";
-	if ( getPlatform() & 2 == 2) return "Xbox 360";
+	char platform = getPlatform();
+	if ( (platform & 1) == 1) return "Wii";
+	if ( (platform & 2) == 2) return "Xbox 360";
+	if ( (platform & 4) == 4) return "PS3";
 
 	return "UNKNOWN";
-	
 }
 
 unsigned short Skylander::getHat()
 {
 	int block = getBlockNumberForArea();
-	return getShort(block+1, 4);
+	return getShort(block+1, 0x04);
 }
 
 void Skylander::setHat(unsigned short hat)
