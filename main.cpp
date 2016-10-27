@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
+#include <unistd.h>
 #include "checksum.h"
 #include "crypt.h"
 #include "fileio.h"
@@ -8,10 +9,6 @@
 #include "skylander.h"
 
 using namespace std;
-
-
-// Version 2.0
-
 
 void usage()
 {
@@ -25,6 +22,7 @@ void usage()
 		   "-s <skylander> select which skylander.\n"
 		   "-d\t\tdecrypt the data read from the file.\n"
 		   "-o <file>\twrite skylander data to <filename>.\n"
+		   "-a\t\twrite skylander data to automatic filename.\n"
 		   "-P\t\tencrypt and write skylander data to the portal.\n"
 		   "-e\t\tencrypt data when writing file.\n"
 		   "-D\t\tdump the data of a skylander to the display.\n"
@@ -35,8 +33,8 @@ void usage()
 		   "-X <xp>\t\tupgrade skylander Experience (level 10 = 33,000).\n" 
 		   "-H <hp>\t\tupgrade skylander Hero Points (max 100).\n" 
 		   "-C <challenges>\tupgrade skylander challenges.\n"
-		   "-L <points>\tupgrade the skylander skillpoints on the left path.\n"
-		   "-R <points>\tupgrade the skylander skillpoints on the right path.\n"
+		   "-L <points>\tupgrade the skillpoints left path. (0 = set path)\n"
+		   "-R <points>\tupgrade the skillpoints right path. (0 = set path)\n"
 		   "-c\t\tupdate checksums.\n"
 		   "\n"
 		   "Examples: \n"
@@ -69,11 +67,11 @@ int main(int argc, char* argv[])
 	unsigned char *buffer, *original_data;
 	bool OK, OK2;
 	
-	bool encrypt,decrypt,portalIn,portalOut,dump,upgrade,flash,list;
+	bool encrypt,decrypt,portalIn,portalOut,dump,upgrade,flash,list,autoFile;
 	
 	char * inFile, *outFile;
 	
-	const static char *legal_flags = "lFePpcDo:i:dM:X:H:C:L:R:s:";
+	const static char *legal_flags = "alFePpcDo:i:dM:X:H:C:L:R:s:";
 	
 	encrypt = false;
 	decrypt = false;
@@ -85,15 +83,19 @@ int main(int argc, char* argv[])
 	outFile = NULL;
 	flash = false;
 	list = false;
+	autoFile = false;
 	
 	unsigned int money, xp, hp, challenges, skillleft, skillright,skylander_number;
+	bool pathleft, pathright;
 	
 	money = 0;
 	xp = 0;
 	hp = 0;
 	challenges = 0;
 	skillleft = 0;
+	pathleft = false;
 	skillright = 0;
+	pathright = false;
 	skylander_number = 0;
 	
 	SkylanderIO *skio;
@@ -117,6 +119,11 @@ int main(int argc, char* argv[])
 				outFile = new char[strlen(optarg)+1];
 				strcpy(outFile,optarg);
 				break;
+			case 'a':
+				autoFile = true;
+				outFile = new char[65];
+				strcpy(outFile,"TEMP");
+				break;
 			case 'M':
 				money = atoi(optarg);
 				upgrade = true;
@@ -135,10 +142,12 @@ int main(int argc, char* argv[])
 				break;
 			case 'L':
 				skillleft = atoi(optarg);
+				pathleft = true;
 				upgrade = true;
 				break;
 			case 'R':
 				skillright = atoi(optarg);
+				pathright = true;
 				upgrade = true;
 				break;
 			case 's':
@@ -159,10 +168,8 @@ int main(int argc, char* argv[])
 	
 	try {
 		
-		
 		// some entertainment.
-		if (flash) 
-		{
+		if (flash) {
 			PortalIO  *pio ;
 			pio = new PortalIO();
 			
@@ -170,18 +177,14 @@ int main(int argc, char* argv[])
 			exit (0);
 		}
 		
-		if (list) 
-		{
-			
+		if (list)  {
 			printf ("Listing Skylanders.\n\n");
 
-			
 			skio = new SkylanderIO();
 			skio->listSkylanders();
 			
 			exit (0);
 		}
-	
 	
 	// validate command line options
 	if ( (!inFile && !portalIn) || (inFile && portalIn)) {
@@ -208,10 +211,9 @@ int main(int argc, char* argv[])
 		exit(0);
 	}
 	
-	
-		
 		skio = new SkylanderIO();
 		
+		printf ("====================================================\n\n");
 		printf ("Reading Skylander\n\n");
 		
 		if (portalIn) {
@@ -225,8 +227,6 @@ int main(int argc, char* argv[])
 			}
 		}
 		
-		//skio->getSkylander()->dump();
-		
 		if(! skio->getSkylander()->validateChecksum()) {
 			fprintf(stderr, "Warning. Skylander data read from portal, but checksums are incorrect.  File may be corrupt.\n");
 		} 
@@ -239,26 +239,24 @@ int main(int argc, char* argv[])
 			Skylander * sky ;
 			sky = skio->getSkylander() ;
 			
-			printf("Serial Number: %X\n",sky->getSerial());
-			printf("Toy Type: %s (%d)\n",sky->getToyTypeName(),sky->getToyType());
-			printf ("trading ID: ");
+			printf("Serial Number: %08X\n",sky->getSerial());
+			printf("Toy Type: %s (%d)\n\n",sky->getToyTypeName(),sky->getToyType());
+			printf ("Trading ID: ");
 			skio->fprinthex(stdout,sky->getTradingID(),8);
 			
+			//Debugging Use
 			printf("Area 0 sequence: %d\n",sky->getArea0Sequence());
 			printf("Area 1 sequence: %d\n",sky->getArea1Sequence());
+			printf("Area %d selected (higher sequence)\n\n",sky->getArea());
 			
-			printf("Area %d selected.\n",sky->getArea());
 			printf("Experience: %d\n",sky->getXP());
 			printf("Money: %d\n",sky->getMoney());
-			
-			printf("Skills: %X\n",sky->getSkill());
+			printf("Skills: %04X - %s\n",sky->getSkill(), sky->getPath());
 			printf("Platforms: %s\n",sky->getPlatformName());
-			printf("Name: %s\n",sky->getName());
-			
+			printf("Nickname: %s\n",sky->getName());
 			printf("Hat: %d\n",sky->getHat());
 			printf("Hero Points: %d\n",sky->getHeroPoints());
-			
-			printf("Heroic Challenges: %x\n",sky->getHeroicChallenges());
+			printf("Heroic Challenges: %08x\n",sky->getHeroicChallenges());
 			printf("\n");
 		}
 		
@@ -267,31 +265,43 @@ int main(int argc, char* argv[])
 			if (xp) { skio->getSkylander()->setXP(xp); }
 			if (hp) { skio->getSkylander()->setHeroPoints(hp); }
 			if (challenges) { skio->getSkylander()->setHeroicChallenges(challenges); }
-			if (skillleft) { skio->getSkylander() ->setSkillLeft(skillleft); }
-			if (skillright) { skio->getSkylander() ->setSkillLeft(skillright); }
+			if (pathleft) { skio->getSkylander()->setSkillLeft(skillleft); }
+			if (pathright) { skio->getSkylander()->setSkillRight(skillright); }
 			
 			skio->getSkylander()->computeChecksum();
 		}
 		
 		if (outFile || portalOut)  {
-			printf ("Writing Skylander.\n\n");
+			printf ("Writing Skylander.\n");
 		}
 		if (outFile) {
+			if (autoFile) {
+				Skylander * sky;
+				sky = skio->getSkylander();
+				unsigned long num = sky->getSerial();
+				unsigned long serial = ((num>>24)&0xff) | // move byte 3 to byte 0
+					((num<<8)&0xff0000) | // move byte 1 to byte 2
+					((num>>8)&0xff00) | // move byte 2 to byte 1
+					((num<<24)&0xff000000); // byte 0 to byte 3
+
+				sprintf(outFile, "%s - %s - %08X.dmp", sky->getToyTypeName(), sky->getPath(), serial);
+				printf("Saving to automatic filename: %s\n", outFile);
+			}
+
 			if (encrypt) {
 				skio->writeSkylanderToEncryptedFile(outFile);
 			} else {
 				skio->writeSkylanderToUnencryptedFile(outFile);
 			}
 		}
-		if (portalOut)
-		{
+		if (portalOut) {
 			skio->writeSkylanderToPortal(skylander_number);
 		}
 		
 		delete skio;
 		
 		
-		printf("Success!\n");
+		printf("\nSuccess!\n\n");
 		return 0;
 		
 	} catch (int e) {

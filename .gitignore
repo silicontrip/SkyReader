@@ -1,7 +1,9 @@
 *.o
 a.out
 *.pdf
+*.bat
 editor
 usbtest
+bin
 build
 skylanders

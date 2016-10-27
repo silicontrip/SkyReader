@@ -1,0 +1,29 @@
+##################################################
+#  Makefile for MinGW32 on windows by jtp10181
+#  To compile run: mingw32-make -f Makefile.mingw
+##################################################
+CFLAGS=-g -c -pthread
+#LDFLAGS=-static -static-libgcc -static-libstdc++ -lusb-1.0 -lsetupapi
+LDFLAGS=-static -static-libgcc -static-libstdc++ -lsetupapi
+OBJ=checksum.o fileio.o md5.o rijndael.o crypt.o skylander.o toynames.o main.o hid.o
+
+LIBHIDAPI = portalio_hidapi.o
+LIBUSBIO = portalio_libusb.o
+WIN_WDK = portalio.o
+IOKIT = portalio_iokit.o
+
+editor: $(OBJ) $(LIBHIDAPI)
+	g++ -g $^ $(LDFLAGS) -o bin\$@
+
+usbtest: usbtest.o
+	gcc -g $(LDFLAGS) -o $@ $<
+
+hid.o: hid_win.c
+	gcc $(CFLAGS) $< -o $@
+
+%.o: %.cpp
+	g++ $(CFLAGS) $<
+
+clean:
+	del /Q *.o
+	del /Q bin\*.exe
