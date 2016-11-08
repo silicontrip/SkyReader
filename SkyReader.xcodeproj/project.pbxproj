@@ -18,6 +18,7 @@
 		449FBBB516AE783F0045855B /* skylander.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 449FBBAB16AE783F0045855B /* skylander.cpp */; };
 		449FBBB716AE785C0045855B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449FBBB616AE785C0045855B /* CoreFoundation.framework */; };
 		449FBBB916AE785C0045855B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449FBBB816AE785C0045855B /* IOKit.framework */; };
+		4D28F3EC1DD1EA1D0026FB0E /* toynames.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D28F3EB1DD1EA1D0026FB0E /* toynames.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		449FBBAC16AE783F0045855B /* skylander.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skylander.h; sourceTree = "<group>"; };
 		449FBBB616AE785C0045855B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
 		449FBBB816AE785C0045855B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		4D28F3EB1DD1EA1D0026FB0E /* toynames.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = toynames.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				449FBBA716AE783F0045855B /* portalio_hidapi.cpp */,
 				449FBBA816AE783F0045855B /* portalio.h */,
 				449FBBA916AE783F0045855B /* rijndael.cpp */,
+				4D28F3EB1DD1EA1D0026FB0E /* toynames.cpp */,
 				449FBBAA16AE783F0045855B /* rijndael.h */,
 				449FBBAB16AE783F0045855B /* skylander.cpp */,
 				449FBBAC16AE783F0045855B /* skylander.h */,
@@ -145,6 +148,7 @@
 				449FBBAD16AE783F0045855B /* checksum.cpp in Sources */,
 				449FBBAE16AE783F0045855B /* crypt.cpp in Sources */,
 				449FBBAF16AE783F0045855B /* fileio.cpp in Sources */,
+				4D28F3EC1DD1EA1D0026FB0E /* toynames.cpp in Sources */,
 				449FBBB016AE783F0045855B /* hid.c in Sources */,
 				449FBBB116AE783F0045855B /* main.cpp in Sources */,
 				449FBBB216AE783F0045855B /* md5.cpp in Sources */,
