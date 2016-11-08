@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <memory.h>
 #include <unistd.h>
+#include <iostream> 
 #include "checksum.h"
 #include "crypt.h"
 #include "fileio.h"
