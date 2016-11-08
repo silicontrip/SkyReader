@@ -239,7 +239,7 @@ int main(int argc, char* argv[])
 			Skylander * sky ;
 			sky = skio->getSkylander() ;
 			
-			printf("Serial Number: %08X\n",sky->getSerial());
+			printf("Serial Number: %08lX\n",sky->getSerial());
 			printf("Toy Type: %s (%d)\n\n",sky->getToyTypeName(),sky->getToyType());
 			printf ("Trading ID: ");
 			skio->fprinthex(stdout,sky->getTradingID(),8);
@@ -284,7 +284,7 @@ int main(int argc, char* argv[])
 					((num>>8)&0xff00) | // move byte 2 to byte 1
 					((num<<24)&0xff000000); // byte 0 to byte 3
 
-				sprintf(outFile, "%s - %s - %08X.dmp", sky->getToyTypeName(), sky->getPath(), serial);
+				sprintf(outFile, "%s - %s - %08lX.dmp", sky->getToyTypeName(), sky->getPath(), serial);
 				printf("Saving to automatic filename: %s\n", outFile);
 			}
 
