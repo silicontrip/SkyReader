@@ -63,7 +63,7 @@ void SkylanderIO::initWithEncryptedFile(char * name) throw (int)
 void SkylanderIO::initWithPortal(int number) throw (int) {
 	
 #if DEBUG
-printf(">>> SkylanderIO::initWithPortal\n);
+printf(">>> SkylanderIO::initWithPortal\n");
 #endif
 	
 	if (!sky) {
@@ -75,7 +75,7 @@ printf(">>> SkylanderIO::initWithPortal\n);
 		
 	}
 #if DEBUG
-printf("<<< SkylanderIO::initWithPortal\n);
+printf("<<< SkylanderIO::initWithPortal\n");
 #endif
 }
 
@@ -83,7 +83,7 @@ void SkylanderIO::ReadPortal(unsigned char *s, int number) throw (int)
 {
 	
 #if DEBUG
-printf(">>> SkylanderIO::ReadPortal\n);
+printf(">>> SkylanderIO::ReadPortal\n");
 #endif
 	unsigned char data[0x10]; 
 	unsigned char *ptr;
@@ -109,7 +109,7 @@ printf(">>> SkylanderIO::ReadPortal\n);
 	
 	delete port;
 #if DEBUG
-printf("<<< SkylanderIO::ReadPortal\n);
+printf("<<< SkylanderIO::ReadPortal\n");
 #endif
 }	
 
@@ -172,6 +172,7 @@ bool SkylanderIO::writeSkylanderToUnencryptedFile(char *name) throw (int)
 	if (sky) {
 		WriteSkylanderFile(name,sky->getData());
 	}
+	return true;
 }
 
 bool SkylanderIO::writeSkylanderToEncryptedFile(char *name) throw (int)
@@ -183,6 +184,7 @@ bool SkylanderIO::writeSkylanderToEncryptedFile(char *name) throw (int)
 		EncryptBuffer(skydata);
 		WriteSkylanderFile(name,skydata);
 	}
+	return true;
 	
 }
 
