@@ -113,22 +113,30 @@ void PortalIO::Write(RWBlock *pb) throw (int) {
 bool PortalIO::CheckResponse (RWBlock *res, char expect) throw (int)
 {
 	
+#if DEBUG
+	printf(">>> PortalIO::CheckResponse\n");
+#endif
 	int b = hid_read_timeout(hPortalHandle, res->buf, rw_buf_size, TIMEOUT);
 	
 	if(b<0)
 		throw 8;
+
+#if DEBUG
+	printf("PortalIO::CheckResponse hid_read_timeout bytes read = %d\n",b);
+#endif
 	
 	res->dwBytesTransferred = b;
 
 	// this is here to debug the different responses from the portal.
 	
-	/*
+#if DEBUG	
 	SkylanderIO *skio;
 	skio = new SkylanderIO();
 	printf("<<<\n");
 	skio->fprinthex(stdout,res->buf, 0x21);
 	delete skio;
-	*/
+#endif
+	
 	
 	// found wireless USB but portal is not connected
 	if (res->buf[0] == 'Z')
@@ -139,6 +147,9 @@ bool PortalIO::CheckResponse (RWBlock *res, char expect) throw (int)
 	throw 11;
 	
 	
+#if DEBUG
+	printf("<<< PortalIO::CheckResponse\n");
+#endif
 	return   (res->buf[0] != expect);
 	
 }
@@ -162,8 +173,8 @@ bool PortalIO::ReadBlock(unsigned int block, unsigned char data[0x10], int skyla
 	// Send query request
 	
 	
-for(int attempt=0;attempt<15;attempt++)
-{
+	for(int attempt=0;attempt<15;attempt++)
+	{
 		int i=0;
 		gotData = false;
 		
