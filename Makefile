@@ -1,7 +1,7 @@
 
 
-CFLAGS=-I/opt/local/include/libusb-1.0 -g
-LDFLAGS=-L/opt/local/lib -lusb-1.0 -framework CoreFoundation -framework IOKit
+CFLAGS=-I/usr/local/include/libusb-1.0 -g
+LDFLAGS=-L/usr/local/lib -lusb-1.0 -framework CoreFoundation -framework IOKit
 OBJ= checksum.o fileio.o md5.o  rijndael.o crypt.o skylander.o main.o hid.o
 
 LIBUSBIO = portalio_libusb.o
