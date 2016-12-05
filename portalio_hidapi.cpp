@@ -330,9 +330,9 @@ PortalIO::PortalIO() throw (int)
 	OpenPortalHandle();
 	RestartPortal();
 	ActivatePortal(1);
-	// SetPortalColor(0xC8, 0xC8, 0xC8);
+	SetPortalColor(0xC8, 0xC8, 0xC8);
 
-	// printf ("Portal Status: %d\n",PortalStatus());
+	printf ("Portal Status: %d\n",PortalStatus());
 
 }
 
