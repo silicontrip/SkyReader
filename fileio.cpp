@@ -1,6 +1,8 @@
 
 #include "fileio.h"
 
+#define DEBUG 1
+
 void SkylanderIO::fprinthex(FILE *f, unsigned char *c, unsigned int n) {
 	unsigned int h,i;
 	unsigned char j;
@@ -60,6 +62,9 @@ void SkylanderIO::initWithEncryptedFile(char * name) throw (int)
 
 void SkylanderIO::initWithPortal(int number) throw (int) {
 	
+#if DEBUG
+printf(">>> SkylanderIO::initWithPortal\n);
+#endif
 	
 	if (!sky) {
 		//printf("Reading Skylander from portal.\n");
@@ -69,11 +74,17 @@ void SkylanderIO::initWithPortal(int number) throw (int) {
 		// printf("\nSkylander read from portal.\n");
 		
 	}
+#if DEBUG
+printf("<<< SkylanderIO::initWithPortal\n);
+#endif
 }
 
 void SkylanderIO::ReadPortal(unsigned char *s, int number) throw (int) 
 {
 	
+#if DEBUG
+printf(">>> SkylanderIO::ReadPortal\n);
+#endif
 	unsigned char data[0x10]; 
 	unsigned char *ptr;
 	
@@ -97,6 +108,9 @@ void SkylanderIO::ReadPortal(unsigned char *s, int number) throw (int)
 	}
 	
 	delete port;
+#if DEBUG
+printf("<<< SkylanderIO::ReadPortal\n);
+#endif
 }	
 
 bool SkylanderIO::writeSkylanderToPortal(int number) throw (int)

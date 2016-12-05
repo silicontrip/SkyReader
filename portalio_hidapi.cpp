@@ -1,5 +1,7 @@
 #include "portalio.h"
 
+#define DEBUG 1
+
 //Port usleep to windows
 #ifdef _WIN32
 	#include <windows.h>
@@ -82,6 +84,10 @@ void PortalIO::OpenPortalHandle() throw (int)
 
 // Send a command to the portal
 void PortalIO::Write(RWBlock *pb) throw (int) {
+
+#if DEBUG
+	printf(">>> PortalIO::Write\n");
+#endif
 	pb->buf[0] = 0; // Use report 0
 	
 	/*
@@ -92,7 +98,15 @@ void PortalIO::Write(RWBlock *pb) throw (int) {
 	delete skio;
 	*/
 	if (hid_write(hPortalHandle, pb->buf, 0x21) == -1)
+	{
+#if DEBUG
+	printf("<<< PortalIO::Write throw 6\n");
+#endif
 		throw 6;
+	}
+#if DEBUG
+	printf("<<< PortalIO::Write\n");
+#endif
 
 }
 
@@ -133,8 +147,15 @@ bool PortalIO::ReadBlock(unsigned int block, unsigned char data[0x10], int skyla
 	RWBlock req, res;
 	bool gotData;
 	unsigned char followup;
+
+#if DEBUG
+	printf(">>> PortalIO:ReadBlock\n");
+#endif
 	
 	if(block >= 0x40) {
+#if DEBUG
+	printf("<<< PortalIO:ReadBlock throw 7\n");
+#endif
 		throw 7;
 	}
 
@@ -168,6 +189,9 @@ for(int attempt=0;attempt<15;attempt++)
 			if(res.buf[1] == followup) {						
 				/* got the query back with no error */
 				memcpy(data, res.buf + 3, 0x10);
+#if DEBUG
+	printf("<<< PortalIO:ReadBlock\n");
+#endif
 				return true;
 			}
 		}
@@ -175,6 +199,9 @@ for(int attempt=0;attempt<15;attempt++)
 		
 	} // retries
 	
+#if DEBUG
+	printf("<<< PortalIO:ReadBlock throw 8\n");
+#endif
 	throw 8;
 }
 
