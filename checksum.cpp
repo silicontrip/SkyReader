@@ -1,4 +1,8 @@
+#include "crypt.h"
 #include "checksum.h"
+#include <memory.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 /*
 data checksums
@@ -26,7 +30,7 @@ Just to re-iterate, the encryption is applied AFTER all this checksum mess is do
 // CCITT CRC Code
 // Update the CRC for transmitted and received data using
 // the CCITT 16bit algorithm (X^16 + X^12 + X^5 + 1).
- unsigned short Checksum::UpdateCcittCrc16(unsigned short crc16, unsigned char data)
+static unsigned short UpdateCcittCrc16(unsigned short crc16, unsigned char data)
 {
 	unsigned short num2 = (unsigned short) (data << 8);
 	for (unsigned int i = 0; i < 8; i++)
@@ -46,7 +50,7 @@ Just to re-iterate, the encryption is applied AFTER all this checksum mess is do
 	return crc16;
 }
 
-unsigned short Checksum::ComputeCcittCrc16(void const* data, unsigned int bytes)
+unsigned short ComputeCcittCrc16(void const* data, unsigned int bytes)
 {
 	unsigned short crc = 0xffff;
 	unsigned char const* numPtr = (unsigned char const*)data;
@@ -57,7 +61,7 @@ unsigned short Checksum::ComputeCcittCrc16(void const* data, unsigned int bytes)
 	return crc;
 }
 
- bool Checksum::getChecksumParameters(int checksumType, unsigned int* checksumOffset, unsigned int* dataOffset, unsigned int* dataLength)
+static bool getChecksumParameters(int checksumType, unsigned int* checksumOffset, unsigned int* dataOffset, unsigned int* dataLength)
 {
 	switch (checksumType)
 	{
@@ -103,15 +107,12 @@ unsigned short Checksum::ComputeCcittCrc16(void const* data, unsigned int bytes)
 	return true;
 }
 
- bool Checksum::computeChecksum(int type, void const* memoryIn, unsigned short* checksum)
+static bool computeChecksum(int type, void const* memoryIn, unsigned short* checksum)
 {
 	unsigned int startBlock;
 	unsigned int cntBlock;
 	unsigned int block;
 	unsigned char const* numPtr = (unsigned char const*)memoryIn;
-	
-	Crypt crypt;
-	
 	if ((type == 0) || (type == 1))
 	{
 		unsigned int dataLength;
@@ -164,7 +165,7 @@ unsigned short Checksum::ComputeCcittCrc16(void const* data, unsigned int bytes)
 			block = startBlock + cntBlock;
 			break;
 		}
-		if (!crypt.IsAccessControlBlock(block))
+		if (!IsAccessControlBlock(block))
 		{
 			for (unsigned int i = 0; i < 0x10; i++)
 			{
@@ -178,7 +179,7 @@ unsigned short Checksum::ComputeCcittCrc16(void const* data, unsigned int bytes)
 	// Pad Type 3 checksum with 0x0E blocks of zeroes
 	while (block < 0x1c)
 	{
-		if (!crypt.IsAccessControlBlock(block))
+		if (!IsAccessControlBlock(block))
 		{
 			for (unsigned int j = 0; j < 0x10; j++)
 			{
@@ -200,7 +201,7 @@ unsigned short Checksum::ComputeCcittCrc16(void const* data, unsigned int bytes)
 // overwrite: if true, replace checksum in buffer with newly computed checksum
 //
 // returns true if old checksum in buffer matches computed checksum.
-bool Checksum::validateChecksum(unsigned char *buffer, int type, int dataArea, bool overwrite)
+bool validateChecksum(unsigned char *buffer, int type, int dataArea, bool overwrite)
 {
 	unsigned int checksumOffset;
 	unsigned int areaSequenceOffset;
@@ -255,7 +256,7 @@ bool Checksum::validateChecksum(unsigned char *buffer, int type, int dataArea, b
 	return match;
 }
 
-bool Checksum::ValidateAllChecksums(unsigned char *buffer, bool overwrite)
+bool ValidateAllChecksums(unsigned char *buffer, bool overwrite)
 {
 	bool OK = true;
 	bool res;
