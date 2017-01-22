@@ -50,7 +50,10 @@ extern "C" {
 	/* Copied from inc/ddk/hidclass.h, part of the Windows DDK. */
 	#define HID_OUT_CTL_CODE(id)  \
 		CTL_CODE(FILE_DEVICE_KEYBOARD, (id), METHOD_OUT_DIRECT, FILE_ANY_ACCESS)
+	#define HID_IN_CTL_CODE(id)  \
+		CTL_CODE(FILE_DEVICE_KEYBOARD, (id), METHOD_IN_DIRECT, FILE_ANY_ACCESS)
 	#define IOCTL_HID_GET_FEATURE                   HID_OUT_CTL_CODE(100)
+	#define IOCTL_HID_SET_OUTPUT_REPORT             HID_IN_CTL_CODE(101)
 
 #ifdef __cplusplus
 } /* extern "C" */
@@ -607,53 +610,21 @@ int HID_API_EXPORT HID_API_CALL hid_write(hid_device *dev, const unsigned char *
 	BOOL res;
 
 	OVERLAPPED ol;
-	unsigned char *buf;
 	memset(&ol, 0, sizeof(ol));
 
-	/* Make sure the right number of bytes are passed to WriteFile. Windows
-	   expects the number of bytes which are in the _longest_ report (plus
-	   one for the report number) bytes even if the data is a report
-	   which is shorter than that. Windows gives us this value in
-	   caps.OutputReportByteLength. If a user passes in fewer bytes than this,
-	   create a temporary buffer which is the proper size. */
-	if (length >= dev->output_report_length) {
-		/* The user passed the right number of bytes. Use the buffer as-is. */
-		buf = (unsigned char *) data;
-	} else {
-		/* Create a temporary buffer and copy the user's data
-		   into it, padding the rest with zeros. */
-		buf = (unsigned char *) malloc(dev->output_report_length);
-		memcpy(buf, data, length);
-		memset(buf + length, 0, dev->output_report_length - length);
-		length = dev->output_report_length;
-	}
+	res = DeviceIoControl(dev->device_handle,
+		IOCTL_HID_SET_OUTPUT_REPORT,
+		(unsigned char*)data, length,
+		(unsigned char*)data, length,
+		&bytes_written, &ol);
 
-	res = WriteFile(dev->device_handle, buf, length, NULL, &ol);
-	
 	if (!res) {
 		if (GetLastError() != ERROR_IO_PENDING) {
-			/* WriteFile() failed. Return error. */
-			register_error(dev, "WriteFile");
-			bytes_written = -1;
-			goto end_of_function;
+			/* DeviceIoControl() failed. Return error. */
+			register_error(dev, "Send Output Report DeviceIoControl");
+			return -1;
 		}
 	}
-
-	/* Wait here until the write is done. This makes
-	   hid_write() synchronous. */
-	res = GetOverlappedResult(dev->device_handle, &ol, &bytes_written, TRUE/*wait*/);
-	if (!res) {
-		/* The Write operation failed. */
-		register_error(dev, "WriteFile");
-		bytes_written = -1;
-		goto end_of_function;
-	}
-
-end_of_function:
-	if (buf != data)
-		free(buf);
-
-	return bytes_written;
 }
 
 
