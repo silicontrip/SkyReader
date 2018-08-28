@@ -1,7 +1,9 @@
 SkyReader
 =========
 
-A cross platform (using hidapi) Skylander portal reader/editor/writer.
+A Skylander portal reader/editor/writer for OSX.  
+
+May compile on other platforms due to use of the cross platform hidapi usb library.   Please check out the forks for other platform builds.
 
 HIDAPI can be found here http://www.signal11.us/oss/hidapi/
 
