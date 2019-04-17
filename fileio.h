@@ -23,6 +23,7 @@ public:
 	void initWithUnencryptedFile(char *) throw (int);
 	void initWithEncryptedFile(char *) throw (int);
 	void initWithPortal(int) throw (int);
+	void initRawReadPortal(int) throw (int);
 	
 	void listSkylanders();
 
@@ -31,6 +32,7 @@ public:
 //	void setSkylander(Skylander *);
 	
 	bool writeSkylanderToPortal(int) throw (int);
+	bool RawWriteSkylanderToPortal(int) throw (int);
 	bool writeSkylanderToUnencryptedFile(char *) throw (int);
 	bool writeSkylanderToEncryptedFile(char *) throw (int);
 	

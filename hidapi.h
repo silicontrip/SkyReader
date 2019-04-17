@@ -289,6 +289,8 @@ extern "C" {
 				This function returns the actual number of bytes written and
 				-1 on error.
 		*/
+		int HID_API_EXPORT HID_API_CALL hid_set_output_report(hid_device *device, const unsigned char *data, size_t length);
+		
 		int HID_API_EXPORT HID_API_CALL hid_send_feature_report(hid_device *device, const unsigned char *data, size_t length);
 
 		/** @brief Get a feature report from a HID device.
