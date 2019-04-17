@@ -20,10 +20,12 @@ void usage()
 		   "Reading/Writing:\n"
 		   "-i <file>\tread skylander data from file, with option to decrypt the data.\n"
 		   "-p\t\tread skylander data from portal and decrypt the data.\n"
+		   "-K\t\tread skylander data from portal without decrypting\n"
 		   "-s <skylander> select which skylander.\n"
 		   "-d\t\tdecrypt the data read from the file.\n"
 		   "-o <file>\twrite skylander data to <filename>.\n"
 		   "-a\t\twrite skylander data to automatic filename.\n"
+		   "-W\t\twrite skylander data without encrypting\n"
 		   "-P\t\tencrypt and write skylander data to the portal.\n"
 		   "-e\t\tencrypt data when writing file.\n"
 		   "-D\t\tdump the data of a skylander to the display.\n"
@@ -68,11 +70,11 @@ int main(int argc, char* argv[])
 	unsigned char *buffer, *original_data;
 	bool OK, OK2;
 	
-	bool encrypt,decrypt,portalIn,portalOut,dump,upgrade,flash,list,autoFile;
+	bool encrypt,decrypt,portalIn,portalOut,dump,upgrade,flash,list,autoFile,RawWrite,RawRead;
 	
 	char * inFile, *outFile;
 	
-	const static char *legal_flags = "alFePpcDo:i:dM:X:H:C:L:R:s:";
+	const static char *legal_flags = "alFWePpKcDo:i:dM:X:H:C:L:R:s:";
 	
 	encrypt = false;
 	decrypt = false;
@@ -85,6 +87,8 @@ int main(int argc, char* argv[])
 	flash = false;
 	list = false;
 	autoFile = false;
+	RawWrite = false;
+	RawRead = false;
 	
 	unsigned int money, xp, hp, challenges, skillleft, skillright,skylander_number;
 	bool pathleft, pathright;
@@ -110,8 +114,10 @@ int main(int argc, char* argv[])
 			case 'd': decrypt = true; break;
 			case 'P': portalOut = true; break;
 			case 'p': portalIn = true; break;
+			case 'K': RawRead = true; break;
 			case 'D': dump = true; break;
 			case 'F': flash = true; break;
+			case 'W': RawWrite = true; break;
 			case 'i': 
 				inFile = new char[strlen(optarg)+1];
 				strcpy(inFile,optarg);
@@ -178,6 +184,7 @@ int main(int argc, char* argv[])
 			exit (0);
 		}
 		
+		
 		if (list)  {
 			printf ("Listing Skylanders.\n\n");
 
@@ -188,13 +195,13 @@ int main(int argc, char* argv[])
 		}
 	
 	// validate command line options
-	if ( (!inFile && !portalIn) || (inFile && portalIn)) {
+	if ( (!inFile && !portalIn && !RawRead) || (inFile && portalIn)) {
 		printf ("Must Choose One of: read from file -i <file> or read from portal -p\n");
 		usage();
 		exit(0);
 	}
 	
-	if (!outFile && !portalOut && !dump) {
+	if (!outFile && !portalOut && !dump && !RawWrite) {
 		printf ("Nothing to write. Choose file -o, portal -P or dump -D\n");
 		usage();
 		exit(0);
@@ -220,6 +227,10 @@ int main(int argc, char* argv[])
 		if (portalIn) {
 			skio->initWithPortal(skylander_number);
 		}
+		if (RawRead) {
+			skio->initRawReadPortal(skylander_number);
+		}
+		
 		if (inFile) {
 			if (decrypt) {
 				skio->initWithEncryptedFile(inFile);
@@ -279,13 +290,8 @@ int main(int argc, char* argv[])
 			if (autoFile) {
 				Skylander * sky;
 				sky = skio->getSkylander();
-				unsigned long num = sky->getSerial();
-				unsigned long serial = ((num>>24)&0xff) | // move byte 3 to byte 0
-					((num<<8)&0xff0000) | // move byte 1 to byte 2
-					((num>>8)&0xff00) | // move byte 2 to byte 1
-					((num<<24)&0xff000000); // byte 0 to byte 3
 
-				sprintf(outFile, "%s - %s - %08lX.dmp", sky->getToyTypeName(), sky->getPath(), serial);
+				sprintf(outFile, "%s.bin", sky->getToyTypeName());
 				printf("Saving to automatic filename: %s\n", outFile);
 			}
 
@@ -297,6 +303,9 @@ int main(int argc, char* argv[])
 		}
 		if (portalOut) {
 			skio->writeSkylanderToPortal(skylander_number);
+		}
+		if (RawWrite) {
+			skio->RawWriteSkylanderToPortal(skylander_number);
 		}
 		
 		delete skio;
