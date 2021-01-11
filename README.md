@@ -30,6 +30,8 @@ HIDAPI can be found here http://www.signal11.us/oss/hidapi/
     -R <points>	upgrade the skylander skillpoints on the right path.
     -c		update checksums.
 
+It is mandatory that you specify an input and an output.  So input either from a file with the `-i` option or the Portal with the `-p` option. An output must also be specified either from a file with the `-o` option or to the Portal with the `-P` option.  However the input and output cannot both be the Portal. 
+
 Examples
 --------
         editor -p -o spyro.bin
