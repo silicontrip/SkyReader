@@ -1,7 +1,5 @@
 #include "portalio.h"
 
-#define DEBUG 1
-
 //Port usleep to windows
 #ifdef _WIN32
 	#include <windows.h>
@@ -84,10 +82,6 @@ void PortalIO::OpenPortalHandle() throw (int)
 
 // Send a command to the portal
 void PortalIO::Write(RWBlock *pb) throw (int) {
-
-#if DEBUG
-	printf(">>> PortalIO::Write\n");
-#endif
 	pb->buf[0] = 0; // Use report 0
 	
 	/*
@@ -97,46 +91,30 @@ void PortalIO::Write(RWBlock *pb) throw (int) {
 	skio->fprinthex(stdout,pb->buf, 0x21);
 	delete skio;
 	*/
-	if (hid_write(hPortalHandle, pb->buf, 0x21) == -1)
-	{
-#if DEBUG
-	printf("<<< PortalIO::Write throw 6\n");
-#endif
+	if (hid_set_output_report(hPortalHandle, pb->buf, 0x21) == -1)
 		throw 6;
-	}
-#if DEBUG
-	printf("<<< PortalIO::Write\n");
-#endif
 
 }
 
 bool PortalIO::CheckResponse (RWBlock *res, char expect) throw (int)
 {
 	
-#if DEBUG
-	printf(">>> PortalIO::CheckResponse\n");
-#endif
 	int b = hid_read_timeout(hPortalHandle, res->buf, rw_buf_size, TIMEOUT);
 	
 	if(b<0)
 		throw 8;
-
-#if DEBUG
-	printf("PortalIO::CheckResponse hid_read_timeout bytes read = %d\n",b);
-#endif
 	
 	res->dwBytesTransferred = b;
 
 	// this is here to debug the different responses from the portal.
 	
-#if DEBUG	
+	/*
 	SkylanderIO *skio;
 	skio = new SkylanderIO();
 	printf("<<<\n");
 	skio->fprinthex(stdout,res->buf, 0x21);
 	delete skio;
-#endif
-	
+	*/
 	
 	// found wireless USB but portal is not connected
 	if (res->buf[0] == 'Z')
@@ -147,9 +125,6 @@ bool PortalIO::CheckResponse (RWBlock *res, char expect) throw (int)
 	throw 11;
 	
 	
-#if DEBUG
-	printf("<<< PortalIO::CheckResponse\n");
-#endif
 	return   (res->buf[0] != expect);
 	
 }
@@ -158,23 +133,16 @@ bool PortalIO::ReadBlock(unsigned int block, unsigned char data[0x10], int skyla
 	RWBlock req, res;
 	bool gotData;
 	unsigned char followup;
-
-#if DEBUG
-	printf(">>> PortalIO:ReadBlock\n");
-#endif
 	
 	if(block >= 0x40) {
-#if DEBUG
-	printf("<<< PortalIO:ReadBlock throw 7\n");
-#endif
 		throw 7;
 	}
 
 	// Send query request
 	
 	
-	for(int attempt=0;attempt<15;attempt++)
-	{
+for(int attempt=0;attempt<15;attempt++)
+{
 		int i=0;
 		gotData = false;
 		
@@ -192,7 +160,6 @@ bool PortalIO::ReadBlock(unsigned int block, unsigned char data[0x10], int skyla
 		
 		memset(&(res.buf), 0, rw_buf_size);
 		
-		
 		do { Write(&req); } while (CheckResponse(&res,'Q'));
 			
 		if(res.buf[0] == 'Q' && res.buf[2] == (unsigned char)block) {
@@ -200,9 +167,6 @@ bool PortalIO::ReadBlock(unsigned int block, unsigned char data[0x10], int skyla
 			if(res.buf[1] == followup) {						
 				/* got the query back with no error */
 				memcpy(data, res.buf + 3, 0x10);
-#if DEBUG
-	printf("<<< PortalIO:ReadBlock\n");
-#endif
 				return true;
 			}
 		}
@@ -210,9 +174,6 @@ bool PortalIO::ReadBlock(unsigned int block, unsigned char data[0x10], int skyla
 		
 	} // retries
 	
-#if DEBUG
-	printf("<<< PortalIO:ReadBlock throw 8\n");
-#endif
 	throw 8;
 }
 
@@ -307,7 +268,7 @@ void PortalIO::SetPortalColor(unsigned char r, unsigned char g, unsigned char b)
 // Release hPortalInstance
 PortalIO::~PortalIO() {
 	
-	ActivatePortal(0);
+	//ActivatePortal(0);
 
 	hid_close(hPortalHandle);
 
@@ -330,9 +291,10 @@ PortalIO::PortalIO() throw (int)
 	OpenPortalHandle();
 	RestartPortal();
 	ActivatePortal(1);
+	Sleep(500);
 	SetPortalColor(0xC8, 0xC8, 0xC8);
 
-	printf ("Portal Status: %d\n",PortalStatus());
+	// printf ("Portal Status: %d\n",PortalStatus());
 
 }
 

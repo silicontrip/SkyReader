@@ -1,8 +1,6 @@
 
 #include "fileio.h"
 
-#define DEBUG 1
-
 void SkylanderIO::fprinthex(FILE *f, unsigned char *c, unsigned int n) {
 	unsigned int h,i;
 	unsigned char j;
@@ -62,9 +60,6 @@ void SkylanderIO::initWithEncryptedFile(char * name) throw (int)
 
 void SkylanderIO::initWithPortal(int number) throw (int) {
 	
-#if DEBUG
-printf(">>> SkylanderIO::initWithPortal\n");
-#endif
 	
 	if (!sky) {
 		//printf("Reading Skylander from portal.\n");
@@ -74,17 +69,24 @@ printf(">>> SkylanderIO::initWithPortal\n");
 		// printf("\nSkylander read from portal.\n");
 		
 	}
-#if DEBUG
-printf("<<< SkylanderIO::initWithPortal\n");
-#endif
+}
+
+
+void SkylanderIO::initRawReadPortal(int number) throw (int) {
+	
+	
+	if (!sky) {
+		//printf("Reading Skylander from portal.\n");
+		ReadPortal(buffer,number);
+		sky = new Skylander(buffer);
+		// printf("\nSkylander read from portal.\n");
+		
+	}
 }
 
 void SkylanderIO::ReadPortal(unsigned char *s, int number) throw (int) 
 {
 	
-#if DEBUG
-printf(">>> SkylanderIO::ReadPortal\n");
-#endif
 	unsigned char data[0x10]; 
 	unsigned char *ptr;
 	
@@ -108,15 +110,11 @@ printf(">>> SkylanderIO::ReadPortal\n");
 	}
 	
 	delete port;
-#if DEBUG
-printf("<<< SkylanderIO::ReadPortal\n");
-#endif
 }	
 
 bool SkylanderIO::writeSkylanderToPortal(int number) throw (int)
 {
 	bool bResult;
-	bool bNewSkylander = false;
 	unsigned char data[0x10]; 
 	
 	unsigned char old[1024];
@@ -155,7 +153,7 @@ bool SkylanderIO::writeSkylanderToPortal(int number) throw (int)
 				if(crypt.IsAccessControlBlock(block) == selectAccessControlBlock) {
 					changed = (memcmp(old + offset, skydata+offset,BLOCK_SIZE) != 0);
 					if(changed) {
-						port->WriteBlock( block, skydata+offset, bNewSkylander);
+						port->WriteBlock( block, skydata+offset, number);
 					}
 				}
 			}
@@ -167,12 +165,61 @@ bool SkylanderIO::writeSkylanderToPortal(int number) throw (int)
 }
 
 
+bool SkylanderIO::RawWriteSkylanderToPortal(int number) throw (int)
+{
+	bool bResult;
+	unsigned char data[0x10]; 
+	
+	unsigned char old[1024];
+	unsigned char skydata[1024];
+	
+	Crypt crypt;
+	
+	if (sky) {
+		
+		PortalIO *port;
+		
+		ReadPortal(old,number);
+		
+		memcpy (skydata,sky->getData(),1024);
+		
+		printf("\nWriting Skylander to portal.\n");
+		
+		port = new PortalIO();
+		
+		
+		for(int i=0; i<2; i++) {
+			// two pass write
+			// write the access control blocks first
+			bool selectAccessControlBlock;
+			if(i == 0) {
+				selectAccessControlBlock = 1;
+			} else {
+				selectAccessControlBlock = 0;
+			}
+			
+			for(int block=0; block < 0x40; ++block) {
+				bool changed, OK;
+				int offset = block * BLOCK_SIZE;
+				if(crypt.IsAccessControlBlock(block) == selectAccessControlBlock) {
+					changed = (memcmp(old + offset, skydata+offset,BLOCK_SIZE) != 0);
+					if(changed) {
+						port->WriteBlock( block, skydata+offset, number);
+					}
+				}
+			}
+		}
+		
+		return true;
+	}
+	return false;
+}
+
 bool SkylanderIO::writeSkylanderToUnencryptedFile(char *name) throw (int)
 {
 	if (sky) {
 		WriteSkylanderFile(name,sky->getData());
 	}
-	return true;
 }
 
 bool SkylanderIO::writeSkylanderToEncryptedFile(char *name) throw (int)
@@ -184,7 +231,6 @@ bool SkylanderIO::writeSkylanderToEncryptedFile(char *name) throw (int)
 		EncryptBuffer(skydata);
 		WriteSkylanderFile(name,skydata);
 	}
-	return true;
 	
 }
 
@@ -279,7 +325,7 @@ void SkylanderIO::listSkylanders() {
 	Skylander *sky;
 	unsigned char data[0x10]; 
 
-	
+				
 	port = new PortalIO();
 	sky = new Skylander(buffer);
 	
@@ -288,6 +334,7 @@ void SkylanderIO::listSkylanders() {
 		{
 			memset(data,0,0x10);
 			// must start with a read of block zero
+
 			port->ReadBlock(1, data, s); 
 
 			printf("%0d: %s\n",s,sky->toyName(data[0] + data[1] * 0x100));
