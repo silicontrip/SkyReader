@@ -28,8 +28,13 @@ documentation and/or software.
 
 #ifndef H__MD5
 #define H__MD5
+#include <climits>
 
+#if ULONG_MAX == 0xFFFFFFFF
 typedef unsigned long UINT4;
+#elif UINT_MAX == 0xFFFFFFFF
+typedef unsigned int UINT4;
+#endif
 
 typedef struct
 {
