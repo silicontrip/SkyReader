@@ -154,7 +154,7 @@ bool PortalIO::CheckResponse (RWBlock *res, char expect) throw (int)
 	
 }
 
-bool PortalIO::ReadBlock(unsigned int block, unsigned char data[0x10], int skylander) throw (int) {
+bool PortalIO::ReadBlock(unsigned char block, unsigned char data[0x10], int skylander) throw (int) {
 	RWBlock req, res;
 	bool gotData;
 	unsigned char followup;
@@ -216,7 +216,7 @@ bool PortalIO::ReadBlock(unsigned int block, unsigned char data[0x10], int skyla
 	throw 8;
 }
 
-bool PortalIO::WriteBlock(unsigned int block, unsigned char data[0x10], int skylander) throw (int) 
+bool PortalIO::WriteBlock(unsigned char block, unsigned char data[0x10], int skylander) throw (int) 
 {
 	RWBlock req;
 	unsigned char verify[0x10];
@@ -322,6 +322,8 @@ void PortalIO::flash() throw (int)
 	}
 }
 
+void PortalIO::setName(char *name) {
+}
 
 PortalIO::PortalIO() throw (int)
 {

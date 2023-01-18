@@ -5,16 +5,30 @@
 #include <memory.h>
 
 #include "skylander.h"
-#include "portalio.h"
 #include "crypt.h"
 
 #define BLOCK_SIZE 16
+
+class PortIO {
+public:
+	virtual bool ReadBlock (unsigned char , unsigned char [0x10], int ) = 0;
+	virtual void SetPortalColor(unsigned char , unsigned char , unsigned char ) = 0;
+	virtual bool WriteBlock(unsigned char , unsigned char [0x10], int ) = 0;
+	virtual void flash (void) = 0;
+	virtual void setName(char *) = 0;
+	virtual ~PortIO() = 0;
+};
+
+#include "portalio.h"
+#include "mfrc522.h"
 
 class SkylanderIO {
 	
 	Skylander *sky;
 	unsigned char * buffer;
 	Crypt crypt;
+	char *serial;
+  
 	
 public:
 	SkylanderIO();
@@ -34,6 +48,8 @@ public:
 	bool writeSkylanderToUnencryptedFile(char *) throw (int);
 	bool writeSkylanderToEncryptedFile(char *) throw (int);
 	
+	void setSerial(char*);
+  
 	enum IOException {
 		Success,
 		CannotOpenFile,

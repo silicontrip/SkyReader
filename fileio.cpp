@@ -3,6 +3,8 @@
 
 #define DEBUG 1
 
+PortIO::~PortIO() { }
+
 void SkylanderIO::fprinthex(FILE *f, unsigned char *c, unsigned int n) {
 	unsigned int h,i;
 	unsigned char j;
@@ -35,6 +37,7 @@ SkylanderIO::SkylanderIO ()
 {
 	sky = NULL;
 	buffer=new unsigned char [1025];
+	serial = NULL;
 }
 
 SkylanderIO::~SkylanderIO ()
@@ -88,9 +91,13 @@ printf(">>> SkylanderIO::ReadPortal\n");
 	unsigned char data[0x10]; 
 	unsigned char *ptr;
 	
-	PortalIO *port;
-	
-	port = new PortalIO();
+	PortIO *port = NULL;
+	if (serial) {
+		port = new MFRC522();
+		port->setName(serial);
+	} else {
+		port = new PortalIO();
+	}
 	
 	// must start with a read of block zero
 	port->ReadBlock(0, data, number); 
@@ -125,20 +132,29 @@ bool SkylanderIO::writeSkylanderToPortal(int number) throw (int)
 	Crypt crypt;
 	
 	if (sky) {
-		
-		PortalIO *port;
-		
+
 		ReadPortal(old,number);
-		
+		old[0x36] = 0x0f;       // fix access control on first sector
+		old[0x37] = 0x0f;
+		old[0x38] = 0x0f;
+
 		memcpy (skydata,sky->getData(),1024);
 		
-		EncryptBuffer(skydata);
+		if (sky->validateChecksum()) {
+			printf("Encrypting Skylander\n");
+			EncryptBuffer(skydata);
+		}
 		
 		printf("\nWriting Skylander to portal.\n");
-		
-		port = new PortalIO();
-		
-		
+
+		PortIO *port = NULL;
+		if (serial) {
+			port = new MFRC522();
+			port->setName(serial);
+		} else {
+			port = new PortalIO();
+		}
+
 		for(int i=0; i<2; i++) {
 			// two pass write
 			// write the access control blocks first
@@ -149,7 +165,8 @@ bool SkylanderIO::writeSkylanderToPortal(int number) throw (int)
 				selectAccessControlBlock = 0;
 			}
 			
-			for(int block=0; block < 0x40; ++block) {
+			// write in reverse so block 0 is the last block written
+			for(int block=0x3F; block >= 0; --block) {
 				bool changed, OK;
 				int offset = block * BLOCK_SIZE;
 				if(crypt.IsAccessControlBlock(block) == selectAccessControlBlock) {
@@ -275,12 +292,16 @@ bool SkylanderIO::WriteSkylanderFile(char *name, unsigned char * filedata) throw
 
 void SkylanderIO::listSkylanders() {
 
-	PortalIO *port;
+	PortIO *port = NULL;
+	if (serial) {
+		port = new MFRC522();
+		port->setName(serial);
+	} else {
+		port = new PortalIO();
+	}
 	Skylander *sky;
 	unsigned char data[0x10]; 
 
-	
-	port = new PortalIO();
 	sky = new Skylander(buffer);
 	
 	try {
@@ -288,7 +309,7 @@ void SkylanderIO::listSkylanders() {
 		{
 			memset(data,0,0x10);
 			// must start with a read of block zero
-			port->ReadBlock(1, data, s); 
+			port->ReadBlock(1, data, s);
 
 			printf("%0d: %s\n",s,sky->toyName(data[0] + data[1] * 0x100));
 		}
@@ -302,5 +323,9 @@ void SkylanderIO::listSkylanders() {
 			throw e;
 	}
 
+}
+
+void SkylanderIO::setSerial(char *port) {
+	serial = port;
 }
 

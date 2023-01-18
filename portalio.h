@@ -25,22 +25,21 @@ typedef struct  {
 	int dwBytesTransferred;
 } RWBlock;
 
-class PortalIO {
+class PortalIO : public PortIO {
 
 	hid_device *hPortalHandle;
 	
 public:
 	PortalIO() throw (int);
 	~PortalIO();
-	
-	bool WriteSkylanderToPortal(unsigned char *, unsigned char *);
-	
-	bool ReadBlock (unsigned int , unsigned char [0x10], int ) throw (int); 
+
+	bool ReadBlock (unsigned char , unsigned char [0x10], int ) throw (int);
 	void SetPortalColor(unsigned char , unsigned char , unsigned char ) throw (int);
-	bool WriteBlock(unsigned int , unsigned char [0x10], int ) throw (int);
+	bool WriteBlock(unsigned char , unsigned char [0x10], int ) throw (int);
 
 	void flash (void) throw (int);
-	
+	void setName(char *);
+
 private:
 	void OpenPortalHandle() throw (int);
 	void Write(RWBlock *) throw (int);

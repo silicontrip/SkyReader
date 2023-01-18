@@ -61,6 +61,7 @@ public:
 	void MaxHeroicChallenges();
 	void MaxSkills(unsigned char);
 	
+	void reset(void);
 	void dump(void);
 
 	

@@ -270,7 +270,7 @@ bool Checksum::ValidateAllChecksums(unsigned char *buffer, bool overwrite)
 		for(type = 3; type >=0; type--) {
 			res = validateChecksum(buffer, type, dataArea, overwrite);
 			if(!res && !overwrite) {
-				fprintf(stderr, "Checksum failure for checksum type %d, data area %d", type, dataArea);
+				fprintf(stderr, "Checksum failure for checksum type %d, data area %d\n", type, dataArea);
 			}
 			OK = OK && res;
 		}

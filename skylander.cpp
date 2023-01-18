@@ -65,6 +65,15 @@ void Skylander::fprinthex(FILE *f, unsigned char *c, unsigned int n) {
 	}
 }
 
+void Skylander::reset(void)
+{
+	for (int block = 5; block < 0x40; ++block) {
+		if (block % 4 != 3 && block != 0x22 && block != 0x3e) {
+			memset(&data[block*16], 0, 16);
+		}
+	}
+}
+
 void Skylander::dump(void)
 {
 	fprinthex(stdout,data,SKYLANDER_SIZE);

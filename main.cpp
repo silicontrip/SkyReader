@@ -28,6 +28,7 @@ void usage()
 		   "-e\t\tencrypt data when writing file.\n"
 		   "-D\t\tdump the data of a skylander to the display.\n"
 		   "-l\t\tList skylanders on portal.\n"
+		   "-r <device>\tredirect portal [pP] options to RC522 on serial device.\n"
 		   
 		   "\nUpgrade:\n"
 		   "-M <money>\tupgrade skylander money (max 65,000).\n" 		
@@ -70,9 +71,9 @@ int main(int argc, char* argv[])
 	
 	bool encrypt,decrypt,portalIn,portalOut,dump,upgrade,flash,list,autoFile;
 	
-	char * inFile, *outFile;
+	char * inFile, *outFile, *serial;
 	
-	const static char *legal_flags = "alFePpcDo:i:dM:X:H:C:L:R:s:";
+	const static char *legal_flags = "alFePpcDo:i:dM:X:H:C:L:R:s:r:";
 	
 	encrypt = false;
 	decrypt = false;
@@ -82,6 +83,7 @@ int main(int argc, char* argv[])
 	dump = false;
 	inFile = NULL;
 	outFile = NULL;
+	serial = NULL;
 	flash = false;
 	list = false;
 	autoFile = false;
@@ -160,6 +162,10 @@ int main(int argc, char* argv[])
 			case 'l':
 				list = true;
 				break;
+			case 'r':
+				serial = new char[strlen(optarg)+1];
+				strcpy(serial,optarg);
+				break;
 			default:
 				usage () ;
 				exit (0);
@@ -216,7 +222,9 @@ int main(int argc, char* argv[])
 		
 		printf ("====================================================\n\n");
 		printf ("Reading Skylander\n\n");
-		
+		if (serial) {
+			skio->setSerial(serial);
+		}
 		if (portalIn) {
 			skio->initWithPortal(skylander_number);
 		}
